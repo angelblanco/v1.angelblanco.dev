@@ -1,0 +1,134 @@
+// based on https://github.com/vuejs/vuepress/blob/master/packages/%40vuepress/theme-default/styles/code.styl
+// code {
+//   border-radius: 3px;
+// }
+
+// pre,
+// pre[class*="language-"] {
+//   // padding: 1em;
+//   // margin: 0.5em 0;
+//   // border-radius: 4px;
+//   overflow: auto;
+// }
+
+// pre code {
+//   font-size: 0.85em;
+// }
+
+/*
+
+div[class*="language-"] {
+  position: relative;
+  background-color: $codeBgColor;
+  border-radius: 6px;
+
+  .highlight-lines {
+    user-select: none;
+    padding-top: 1.3rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    line-height: $body-line-height;
+
+    .highlighted {
+      background-color: rgba(0, 0, 0, 66%);
+    }
+  }
+
+  pre,
+  pre[class*="language-"] {
+    background: transparent;
+    position: relative;
+    z-index: 1;
+  }
+
+  &::before {
+    position: absolute;
+    z-index: 3;
+    top: 0.8em;
+    right: 1em;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  &:not(.line-numbers-mode) {
+    .line-numbers-wrapper {
+      display: none;
+    }
+  }
+
+  &.line-numbers-mode {
+    .highlight-lines .highlighted {
+      position: relative;
+
+      &::before {
+        content: ' ';
+        position: absolute;
+        z-index: 3;
+        left: 0;
+        top: 0;
+        display: block;
+        width: $lineNumbersWrapperWidth;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 66%);
+      }
+    }
+
+    pre {
+      padding-left: $lineNumbersWrapperWidth + 1 rem;
+      vertical-align: middle;
+    }
+
+    .line-numbers-wrapper {
+      position: absolute;
+      top: 0;
+      width: $lineNumbersWrapperWidth;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.3);
+      //padding: 1rem 0;
+      //line-height: $body-line-height;
+
+      br {
+        user-select: none;
+      }
+
+      .line-number {
+        position: relative;
+        z-index: 4;
+        user-select: none;
+        font-size: 0.8rem;
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      width: $lineNumbersWrapperWidth;
+      height: 100%;
+      border-radius: 6px 0 0 6px;
+      border-right: 1px solid rgba(0, 0, 0, 66%);
+      background-color: $codeBgColor;
+    }
+  }
+} */
+
+/*
+@each $lang in $$codeLang {
+  div'[class~="language-' + $lang + '"]' {
+    &:before {
+      content: '' + $lang;
+    }
+  }
+} */
+
+@import 'prismThemes/oneDark';
+//@import 'prismThemes/github';
+//@import 'prismThemes/prism';
+//@import 'prismThemes/laravel';
+//@import 'prismThemes/vueOrg';
+//@import 'prismThemes/gridsome';
+//@import 'prismThemes/duoToneSpace';

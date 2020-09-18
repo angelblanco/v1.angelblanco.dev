@@ -1,0 +1,120 @@
+// Based on this code pen https://codepen.io/jamesduncombe/pen/QNMapK
+$terminal-bg: adjust-hue(#25313e, 0%);
+$terminal-bar-bg: #191919;
+$terminal-recessed: desaturate(lighten($terminal-bg, 20%), 5%); //#6c7886
+
+$terminal-close-btn-bg: #f55551;
+$terminal-minimize-btn-bg: #f6b73e;
+$terminal-maximize-btn-bg: #32c146;
+$terminal-command-color: #fff;
+$terminal-btn-size: 12px;
+$terminal-btn-left-offset: 18px;
+$terminal-btn-inner-margin: 8px;
+$terminal-bar-height: $terminal-btn-size * 3;
+
+.terminal {
+  font-family: $family-monospace;
+  width: 100%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 0.25rem 0.5rem darken($terminal-bg, 10%);
+  margin: 0 auto 2rem;
+  padding: 0;
+  background: #191919;
+  white-space: normal !important;
+  padding: 0 !important;
+
+  pre {
+    white-space: pre;
+  }
+
+  .bar {
+    background: $terminal-bar-bg;
+    height: $terminal-bar-height;
+
+    .bar-title {
+      color: $white;
+      margin: auto;
+      width: 100%;
+      text-align: center;
+      font-size: $terminal-btn-size;
+      line-height: $terminal-btn-size;
+      user-select: none;
+
+      strong {
+        color: $white;
+      }
+    }
+
+    %btn {
+      width: $terminal-btn-size;
+      height: $terminal-btn-size;
+      border-radius: 100%;
+      display: block;
+    }
+
+    .btn {
+      @extend %btn;
+
+      background: $terminal-minimize-btn-bg;
+      position: relative;
+      margin-left: $terminal-btn-left-offset + $terminal-btn-size + $terminal-btn-inner-margin;
+      top: $terminal-btn-size;
+
+      &::before,
+      &::after {
+        @extend %btn;
+
+        content: " ";
+        position: absolute;
+      }
+
+      &::before {
+        background: $terminal-close-btn-bg;
+        margin-left: ($terminal-btn-size + $terminal-btn-inner-margin) * -1;
+      }
+
+      &::after {
+        background: $terminal-maximize-btn-bg;
+        margin-left: $terminal-btn-size + $terminal-btn-inner-margin;
+      }
+    }
+
+    button.copy {
+      margin-top: -18px;
+      margin-right: 6px;
+      font-size: 10px;
+      line-height: 10px;
+      transition: all 0.3s ease-in-out;
+      color: $white;
+      border-color: transparent;
+      background-color: transparent;
+      text-transform: lowercase;
+      font-family: $family-monospace;
+
+      &.copied {
+        background-color: $success;
+        border-color: $success;
+        color: $white;
+        pointer-events: none;
+      }
+    }
+  }
+
+  .body {
+    background: #232323;
+    color: $terminal-command-color;
+
+    > * {
+      padding: $terminal-btn-left-offset;
+
+      @include scrollbars(8px, lighten($terminal-bar-bg, 20%), $terminal-bar-bg);
+    }
+
+    pre {
+      width: 100%;
+      margin: 0;
+      background: #232323;
+    }
+  }
+}

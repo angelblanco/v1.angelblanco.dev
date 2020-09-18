@@ -1,0 +1,39 @@
+// @see https://css-tricks.com/snippets/sass/custom-scrollbars-mixin/
+
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
+  // For Google Chrome
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+
+  // For Internet Explorer
+  & {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+
+@mixin linkStyle($link-mixin-color: $text-underline-color) {
+  padding: 2px;
+  box-shadow: 0 0 0 $white, inset 0 -3px lighten($link-mixin-color, 10%);
+  position: relative;
+  transition-duration: 0.2s;
+  transition-property: box-shadow, color, border-radius;
+
+  &:hover {
+    border-radius: 2px;
+    color: $link-mixin-color;
+    box-shadow: 1px 0 4px $white, inset 0 -1.375em 0 findLightColor($link-mixin-color);
+  }
+}
+
+@import "node_modules/bulma/sass/utilities/mixins.sass";

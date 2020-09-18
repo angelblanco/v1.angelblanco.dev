@@ -1,0 +1,118 @@
+/**
+ * GHColors theme by Avi Aryan (http://aviaryan.in)
+ * Inspired by Github syntax coloring
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #393a34;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  line-height: 1.2em;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection,
+pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection,
+code[class*="language-"] ::-moz-selection {
+  background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection,
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection {
+  background: #b3d4fc;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+  border: 1px solid #ddd;
+  background-color: white;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: 0.2em;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  background: #f8f8f8;
+  border: 1px solid #ddd;
+}
+
+.#{$prism-prefix}token.#{$prism-prefix}comment,
+.#{$prism-prefix}token.#{$prism-prefix}prolog,
+.#{$prism-prefix}token.#{$prism-prefix}doctype,
+.#{$prism-prefix}token.#{$prism-prefix}cdata {
+  color: #998;
+  font-style: italic;
+}
+
+.#{$prism-prefix}token.#{$prism-prefix}namespace {
+  opacity: 0.7;
+}
+
+.#{$prism-prefix}token.#{$prism-prefix}string,
+.#{$prism-prefix}token.#{$prism-prefix}attr-value {
+  color: #e3116c;
+}
+
+.#{$prism-prefix}token.#{$prism-prefix}punctuation,
+.#{$prism-prefix}token.#{$prism-prefix}operator {
+  color: #393a34; /* no highlight */
+}
+
+.#{$prism-prefix}token.#{$prism-prefix}entity,
+.#{$prism-prefix}token.#{$prism-prefix}url,
+.#{$prism-prefix}token.#{$prism-prefix}symbol,
+.#{$prism-prefix}token.#{$prism-prefix}number,
+.#{$prism-prefix}token.#{$prism-prefix}boolean,
+.#{$prism-prefix}token.#{$prism-prefix}variable,
+.#{$prism-prefix}token.#{$prism-prefix}constant,
+.#{$prism-prefix}token.#{$prism-prefix}property,
+.#{$prism-prefix}token.#{$prism-prefix}regex,
+.#{$prism-prefix}token.#{$prism-prefix}inserted {
+  color: #36acaa;
+}
+
+.#{$prism-prefix}token.#{$prism-prefix}atrule,
+.#{$prism-prefix}token.#{$prism-prefix}keyword,
+.#{$prism-prefix}token.#{$prism-prefix}attr-name,
+.language-autohotkey .#{$prism-prefix}token.#{$prism-prefix}selector {
+  color: #00a4db;
+}
+
+.#{$prism-prefix}token.#{$prism-prefix}function,
+.#{$prism-prefix}token.#{$prism-prefix}deleted,
+.language-autohotkey .#{$prism-prefix}token.#{$prism-prefix}tag {
+  color: #9a050f;
+}
+
+.#{$prism-prefix}token.#{$prism-prefix}tag,
+.#{$prism-prefix}token.#{$prism-prefix}selector,
+.language-autohotkey .#{$prism-prefix}token.#{$prism-prefix}keyword {
+  color: #00009f;
+}
+
+.#{$prism-prefix}token.#{$prism-prefix}important,
+.#{$prism-prefix}token.#{$prism-prefix}function,
+.#{$prism-prefix}token.#{$prism-prefix}bold {
+  font-weight: bold;
+}
+
+.#{$prism-prefix}token.#{$prism-prefix}italic {
+  font-style: italic;
+}

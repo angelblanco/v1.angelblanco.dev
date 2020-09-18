@@ -1,0 +1,40 @@
+i.dot {
+  height: 10px;
+  width: 10px;
+  margin-right: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  //background-color: #2d2d2b;
+
+  &.is-20 {
+    height: 20px;
+    width: 20px;
+    margin-right: 20px;
+  }
+}
+
+@each $tag, $color in $tags {
+  .fa-#{$tag} {
+    color: $color;
+  }
+
+  .tag.is-light.#{$tag} {
+    @if (map-get($tags-darker, $tag)) {
+      color: darken($color, map-get($tags-darker, $tag));
+    }
+
+    @else {
+      color: $color;
+    }
+
+    background-color: findlightcolor($color);
+  }
+
+  i.dot.#{$tag} {
+    background-color: $color;
+  }
+
+  .text-#{$tag} {
+    color: $color;
+  }
+}

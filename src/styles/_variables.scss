@@ -1,0 +1,105 @@
+// Default variables overrided with themes.
+$family-sans-serif: null;
+$family-monospace: null;
+$title-family: null;
+$title-line-height: null;
+$title-weight: 700;
+$title-letter-spacing: 0;
+$content-letter-spacing: 0;
+$content-parragraph-line-height: 1.6;
+$content-paragraph-spacing: 2rem;
+
+// Theming alternatives
+$source-sans-body-theme: true;
+$source-sans-title-theme: true;
+$open-sans-title-theme: false;
+$inter-body-theme: false;
+$zilla-slab-body-theme: false;
+
+// Code theming
+$code-theme-roboto-mono: true;
+
+// - Block for overriding bulma inital variables
+// Fonts overrides
+@if $source-sans-body-theme {
+  $family-sans-serif: "Source Sans Pro", "Roboto", BlinkMacSystemFont, -apple-system, "Segoe UI", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
+  $content-letter-spacing: -0.03rem;
+  $content-paragraph-spacing: 2rem;
+}
+
+@else if $inter-body-theme {
+  $family-sans-serif: 'Inter', sans-serif;
+}
+
+@else if $zilla-slab-body-theme {
+  $family-sans-serif: 'Zilla Slab', serif;
+}
+
+@if $code-theme-roboto-mono {
+  $family-monospace: "Roboto Mono", monospace !default;
+}
+
+// Titles
+@if $source-sans-title-theme {
+  $title-family: "Source Sans Pro", sans-serif;
+  $title-line-height: 1.2em;
+  $title-weight: 700;
+  $title-letter-spacing: -0.05rem;
+}
+
+@if $open-sans-title-theme {
+  $title-family:  'Open Sans', sans-serif;
+  $title-line-height: 1.2em;
+  $title-weight: 700;
+  $title-letter-spacing: -1px;
+}
+
+// Code varsP
+$badgeTipColor: #42b983;
+$badgeWarningColor: darken(#ffe564, 35%);
+$badgeErrorColor: #da5961;
+$prism-prefix: "hl--";
+$code-line-height: 1.8;
+$tablet: 768px; // Ipad portrait
+
+// Preload initial variables
+@import "node_modules/bulma/sass/utilities/initial-variables";
+
+// -- Block for overriding derived-variables
+$link: $black;
+
+// Load derived variables
+@import "node_modules/bulma/sass/utilities/functions.sass";
+@import "node_modules/bulma/sass/utilities/derived-variables";
+
+// -- Custom variables or indivudal bulma files variables
+// $content-blockquote-border-left: 1.3rem solid $grey-darker;
+// $content-blockquote-background-color: initial;
+
+$text-underline-color: $info;
+
+$tags: (
+  "docker": #006cb1,
+  "node": #80bd01,
+  "node-js": #80bd01,
+  "js": #f2d73c,
+  "php": #7478ae,
+  "vuejs": #3fb37f,
+  "vue": #3fb37f,
+  "laravel": #ef3b2d,
+  "primary": $primary,
+  "info": $info,
+  "danger": $danger,
+  "twitter": #4caff1,
+  "facebook": #3b5998,
+  "linkedin": #0e76a8,
+  "linkedin-in": #0e76a8,
+  "github": #24292e,
+  "svelte": #ff450a,
+);
+
+$tags-darker: (
+  "js": 20%,
+  "node": 5%,
+);
