@@ -7,7 +7,7 @@
     "blog": "node ./blog",
     "dev": "sapper dev",
     "build": "sapper build --legacy",
-    "export": "sapper export --legacy",
+    "export": "sapper export --legacy --entry '/ /404'",
     "export:production": "yarn export --host='angelblanco.dev' dist",
     "sirv:production": "sirv dist",
     "sirv": "sirv __sapper__/export ",
