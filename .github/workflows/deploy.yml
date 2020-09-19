@@ -47,8 +47,8 @@ jobs:
           echo DISQUS_USER="${{ secrets.DISQUS_USER }}" >> .env
           echo PROJECT_GITHUB_URL="${{ secrets.PROJECT_GITHUB_URL }}" >> .env
 
-      - name: Cypress test
-        run: docker 
+      - name: Cypress test in docker image
+        run: yarn docker:cypres
 
       - name: Docker build for export
         run: yarn docker:build
@@ -61,7 +61,9 @@ jobs:
           id=$(docker create angelblanco.dev:latest)
           docker cp $id:/home/node/app/dist ./dist
           docker rm -v $id
-          tree dist
+
+      - name: Inspect dist folder
+        run: tree dist
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.6.1

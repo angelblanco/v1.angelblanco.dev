@@ -18,7 +18,8 @@
     "scss:lint": "stylelint 'src/**/*.scss'",
     "scss:fix": "stylelint 'src/**/*.scss' --fix",
     "docker:build": "docker build -t angelblanco.dev .",
-    "docker:sirv": "docker run -i -t -p 8081:8081 angelblanco.dev:latest && echo 'Running on http://localhost:8081//'"
+    "docker:sirv": "docker run -i -t -p 8081:8081 angelblanco.dev:latest && echo 'Running on http://localhost:8081//'",
+    "docker:cypress": "docker build . -f Cypress.Dockerfile -t cypress-tests"
   },
   "dependencies": {
     "commander": "^6.1.0",
