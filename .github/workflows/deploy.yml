@@ -33,8 +33,8 @@ jobs:
 
       - name: Apt installs
         run: |
-          apt update
-          apt install tree
+          sudo apt update
+          sudo apt install tree
 
       - name: Creates .env file
         run: |
