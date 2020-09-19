@@ -13,6 +13,9 @@ RUN yarn blog verify:articles
 # Export for production
 RUN yarn export:production
 
+# Github error page workaround
+RUN cp dist/404/index.html dist/404.html
+
 EXPOSE 8081
 
 CMD ["yarn", "sirv:production", "--port", "8081" , "--host", "0.0.0.0"]

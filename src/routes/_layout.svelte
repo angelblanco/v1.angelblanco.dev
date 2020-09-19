@@ -1,10 +1,7 @@
 <script>
-  import { fade } from "svelte/transition";
-  import { onMount } from "svelte";
   import "../components/FontAwesome";
   import Nav from "../components/Nav.svelte";
   import GoogleAnalytics from "../components/GoogleAnalytics.svelte";
-  import NProgress from "../components/NProgress.svelte";
   import Footer from "../components/Footer.svelte";
   import BackToTop from "../components/BackToTop.svelte";
   import { title, ogTitle, ogDescription, getOgUrl, ogImageUrl } from "../stores/meta";
@@ -25,13 +22,15 @@
   <title>{$title}</title>
 
   <!-- Open graphs meta -->
-  <meta property="og:title" content={$ogTitle} />
-  <meta property="og:description" content={$ogDescription} />
+  <meta property="og:title" content="{$ogTitle}" />
+  <meta property="og:description" content="{$ogDescription}" />
+  <meta property="og:url" content="{$ogUrl}">
+  <meta property="og:image" content="{$ogImageUrl}">
   <meta property="og:locale" content="en_US">
 
   <!-- Twitter meta -->
-  <meta property="twitter:title" content={$ogTitle} />
-  <meta property="twitter:description" content={$ogDescription} />
+  <meta property="twitter:title" content="{$ogTitle}" />
+  <meta property="twitter:description" content="{$ogDescription}" />
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@{process.env.TWITTER_USER}">
   <meta name="twitter:creator" content="@{process.env.TWITTER_USER}">

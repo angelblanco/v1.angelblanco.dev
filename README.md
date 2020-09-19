@@ -13,4 +13,3 @@ For customization you can copy the default `.env.example` and fit it to your nee
 You can always reach me on [Github](https://github.com/angelblanco) or at my [Twitter](https://twitter.com/angelblancodev).
 
 :wave::wave:
-

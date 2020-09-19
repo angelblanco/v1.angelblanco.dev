@@ -23,7 +23,7 @@
   export let page;
   export let path;
   export let tagSlug;
-  $: uriForPage = (page) => page <= 1 ? `/articles/tag/${tagSlug}` : `/articles/tag/${tagSlug}?page=${page}`;
+  $: uriForPage = (page) => page <= 1 ? `/tag/${tagSlug}` : `/tag/${tagSlug}?page=${page}`;
 
   $: {
     const tag = getTag(tagSlug);

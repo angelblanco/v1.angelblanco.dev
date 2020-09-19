@@ -22,6 +22,7 @@
       script.async = true;
       script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}&l=${dataLayerName}`;
       script.charset = "utf-8";
+      script.setAttribute("id", scriptId);
 
       head.appendChild(script);
 
@@ -36,13 +37,26 @@
     }
 
     window.dataLayer = window.dataLayer || [];
-    window.gtag = function() {
+    window.gtag = function () {
       window.dataLayer.push(arguments);
     };
     gtag("js", new Date());
     gtag("config", measurementId);
 
-    await addGoogleAnalyticsScript();
+    try {
+      await addGoogleAnalyticsScript();
+    } catch (err) {
+      console.error("gtag failure");
+
+      const s = window.document.getElementById(scriptId);
+
+      if (s) {
+        s.remove();
+      }
+
+      return;
+    }
+
     mounted = true;
   });
 
