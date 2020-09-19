@@ -12,5 +12,5 @@ export default () => [
     env('DISQUS_USER'),
     env('TWITTER_USER'),
     env('TINY_LETTER_USER'),
-    env('GITHUB_URL'),
+    env('PROJECT_GITHUB_URL'),
 ];

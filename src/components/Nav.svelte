@@ -103,7 +103,7 @@
 
       <a
         on:click={closeHamburger}
-        href="{process.env.GITHUB_URL}"
+        href="{process.env.PROJECT_GITHUB_URL}"
         target="__blank"
         class="navbar-item">
         <span class="icon is-hidden-touch">
