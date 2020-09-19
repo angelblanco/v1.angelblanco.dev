@@ -31,10 +31,31 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: Start of action
-        run: echo Start building!
+      - name: Apt installs
+        run: |
+          apt update
+          apt install tree
 
-      # Runs a set of commands using the runners shell
+      - name: Creates .env file
+        run: |
+          touch .env
+          echo APP_BASE_URL="${{ secrets.APP_BASE_URL }}" >> .env
+          echo APP_BASE_TITLE="${{ secrets.APP_BASE_TITLE }}" >> .env
+          echo GOOGLE_ANALYTICS_MEASUREMENT_ID="${{ secrets.GOOGLE_ANALYTICS_MEASUREMENT_ID }}" >> .env
+          echo TWITTER_USER="${{ secrets.TWITTER_USER }}" >> .env
+          echo TINY_LETTER_USER="${{ secrets.TINY_LETTER_USER }}" >> .env
+          echo DISQUS_USER="${{ secrets.DISQUS_USER }}" >> .env
+          echo PROJECT_GITHUB_URL="${{ secrets.PROJECT_GITHUB_URL }}" >> .env
+
       - name: Docker build
         run: yarn docker:build
+
+      - name: Removes .env file
+        run: rm .env
+
+      - name: Copies build from docker image
+        run: |
+          id=$(docker create angelblanco.dev:latest)
+          docker cp $id:/home/node/app/dist ./dist
+          docker rm -v $id
+          tree dist
