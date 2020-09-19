@@ -6,7 +6,7 @@ published: false # This is not an article
 ## Sobre mí
 Soy Ingeniero Informático y vivo en Salamanca, España. Me apasiona trabajar en proyectos web y arquitecturas de software escalables donde suelo centrarme en el diseño del backend.
 
-Tengo experiencia trabajando con tecnologías open source cómo: `PHP`, `Laravel`, `Vue Js`, `Mongo DB`, `SQL`, `Redis`, `Docker`, `Node JS` y `Webpack`, entre otros. En el pasado trabajé con `Swift` desarrollando aplicaciones para `iOS`.
+Tengo experiencia trabajando con tecnologías cómo: `PHP`, `Laravel`, `Vue Js`, `Mongo DB`, `SQL`, `Redis`, `Docker`, `Node JS` y `Webpack`, entre otros. En el pasado trabajé con `Swift` desarrollando aplicaciones para `iOS`.
 
 > Trabajo en [Beonprice](https://beonprice.com/product) como arquitecto de software desde febrero de 2017.
 > Actualmente compagino el desarrollo  de soluciones web basadas en Vue JS y Laravel con el diseño y desarrollo  de microservicios con Kubernetes.

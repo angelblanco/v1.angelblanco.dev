@@ -8,7 +8,9 @@
     const res = await this.fetch(`/api/about`);
     const data = await res.json();
 
-    const isAllowedLang = allowedLangs.some(lang => lang.locale === params.aboutLang);
+    const isAllowedLang = allowedLangs.some(
+      (lang) => lang.locale === params.aboutLang
+    );
 
     const translation = data[params.aboutLang];
 
@@ -25,18 +27,29 @@
   export let allowedLangs;
   export let translation;
   import Content from "../../components/Content.svelte";
+  import Head from "../../components/Head.svelte";
   import { setTitle, setOgDescription } from "../../stores/meta";
 
-  $: {
-    if (lang === 'es') {
-      setTitle('Sobre mí!');
-      setOgDescription('Hola! Échale un vistazo a mi perfil de Ingeniero en Informática.');
+  setMeta();
+
+  function setMeta() {
+    if (lang === "es") {
+      setTitle("Sobre mí!");
+      setOgDescription(
+        "Hola! Échale un vistazo a mi perfil de Ingeniero en Informática."
+      );
     } else {
-      setTitle('About me!')
-      setOgDescription('Hello! Checkout my software engineer profile.');
+      setTitle("About me!");
+      setOgDescription("Hello! Checkout my software engineer profile.");
     }
   }
+
+  $: {
+    setMeta();
+  }
 </script>
+
+<Head />
 
 <section class="section reading-width">
   <div class="columns is-centered">

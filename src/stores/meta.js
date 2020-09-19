@@ -14,6 +14,8 @@ export const ogTitle = writable(defaults.ogTitle);
 export const ogDescription = writable(defaults.ogDescription);
 export const getOgUrl = () => canonical().url;
 export const ogImageUrl = writable(defaults.ogImageUrl);
+export const ogImageWidth = writable(1200);
+export const ogImageHeight = writable(630);
 
 export function setTitle(prefixTitle) {
     title.set(`${prefixTitle} - ${defaults.title}`);

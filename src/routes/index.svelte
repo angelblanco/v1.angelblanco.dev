@@ -18,6 +18,7 @@
   import Terminal from "../components/Terminal.svelte";
   import HomeQuickTags from "../components/HomeQuickTags.svelte";
   import ArticleResume from "../components/ArticleResume.svelte";
+  import Head from "../components/Head.svelte";
 
   export let articles;
   export let pages;
@@ -40,6 +41,8 @@
     margin-left: 0.5rem;
   }
 </style>
+
+<Head />
 
 <section class="section">
   <div class="container reading-width">

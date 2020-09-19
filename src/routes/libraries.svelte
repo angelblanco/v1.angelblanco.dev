@@ -20,6 +20,7 @@
 
 <script>
   import Content from "../components/Content.svelte";
+  import Head from "../components/Head.svelte";
   import { setTitle } from "../stores/meta";
   export let dependencies;
 
@@ -38,6 +39,8 @@
     }
   }
 </style>
+
+<Head />
 
 <section class="section reading-width">
   <Content>

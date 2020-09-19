@@ -16,6 +16,7 @@
 <script>
   import { onMount } from "svelte";
   import Content from "./../../components/Content.svelte";
+  import Head from "../../components/Head.svelte";
   import { documentOffset } from "./../../components/utils";
   import MediaArticleHead from "./../../components/MediaArticleHead.svelte";
   import ArticleSidebar from "./../../components/ArticleSidebar.svelte";
@@ -33,12 +34,7 @@
   let endOffset = null;
   let startOffset = null;
 
-  onMount(() => {
-    startOffset = documentOffset(articleSectionContainer).top;
-    endOffset = documentOffset(afterArticleContainer).top;
-  });
-
-  $: {
+  function setArticleMeta() {
     setArticle(article);
     setTitle(article.title);
     setOgDescription(article.description);
@@ -46,6 +42,17 @@
     if (article.shareImage) {
       setOgImageUrl(article.shareImage);
     }
+  }
+
+  setArticleMeta();
+
+  onMount(() => {
+    startOffset = documentOffset(articleSectionContainer).top;
+    endOffset = documentOffset(afterArticleContainer).top;
+  });
+
+  $: {
+    setArticleMeta();
   }
 </script>
 
@@ -61,6 +68,8 @@
     display: none;
   }
 </style>
+
+<Head />
 
 <svelte:head>
   <link rel="shortlink" href={article.shortLink} />

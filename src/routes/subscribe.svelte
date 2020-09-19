@@ -1,9 +1,12 @@
 <script>
   import TinyLetterSubscribeForm from "../components/TinyLetterSubscribeForm.svelte";
+  import Head from "../components/Head.svelte";
   import { setTitle } from "../stores/meta";
 
   setTitle("Newsletter");
 </script>
+
+<Head />
 
 <div class="section reading-width">
   <TinyLetterSubscribeForm>

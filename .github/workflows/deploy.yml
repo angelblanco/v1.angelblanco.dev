@@ -47,7 +47,10 @@ jobs:
           echo DISQUS_USER="${{ secrets.DISQUS_USER }}" >> .env
           echo PROJECT_GITHUB_URL="${{ secrets.PROJECT_GITHUB_URL }}" >> .env
 
-      - name: Docker build
+      - name: Cypress test
+        run: docker 
+
+      - name: Docker build for export
         run: yarn docker:build
 
       - name: Removes .env file

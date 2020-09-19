@@ -10,6 +10,7 @@
 
 <script>
   import ArticleResumeList from "../../components/ArticleResumeList.svelte";
+  import Head from "../../components/Head.svelte";
   import { setTitle, setOgDescription } from "../../stores/meta";
   export let articles;
   export let pages;
@@ -21,5 +22,7 @@
   setTitle('Latest articles');
   setOgDescription('Javacript, Laravel, Vue, Docker posts and much more.')
 </script>
+
+<Head />
 
 <ArticleResumeList {articles} {page} {uriForPage} {pages} {path} />

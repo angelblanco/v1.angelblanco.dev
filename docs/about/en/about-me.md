@@ -8,7 +8,8 @@ published: false # This is not an article
 I am a software engineer based in Salamanca, Spain. 
 I love to work on web technologies and software architectures, especially on the backend side of life.
 
-I am comfortable working with: `PHP`, `Laravel`, `Mongo DB`, `Docker`, `Node JS`, `Vue JS`, and `Webpack`. In the past, I've also worked with `Swift` as an `iOS` developer.
+I am comfortable working with: `PHP`, `Laravel`, `Vue Js`, `Mongo DB`, `SQL`, `Redis`, `Docker`, `Node JS`, and `Webpack`. 
+In the past, I've also worked with `Swift` as an `iOS` developer.
 
 > I work at [Beonprice](https://beonprice.com/product) as a software architect since February 2017. 
 > I mix the role of publishing new features to the web application with Vue JS and Laravel with the design of high availability microservices with Kubernetes.

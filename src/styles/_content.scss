@@ -45,15 +45,6 @@
       margin-bottom: $content-paragraph-spacing !important;
     }
 
-    // @include tablet {
-    //   margin-left: -3.1rem;
-    // }
-
-    // p {
-    //   font-family: $family-monospace;
-    //   font-size: 1rem;
-    // }
-
     & .terminal {
       margin: 0;
 
@@ -83,6 +74,11 @@
       margin-bottom: 1rem;
     }
   }
+
+  .button.is-medium {
+    white-space: normal;
+    height: auto;
+  }
 }
 
 .title,
@@ -97,12 +93,6 @@
   font-weight: $title-weight;
   letter-spacing: $title-letter-spacing;
 }
-
-// .content h1,
-// .title.is-1 {
-//   margin-top: 0.3em;
-//   margin-bottom: 1em;
-// }
 
 .has-text-weight-light {
   letter-spacing: $content-letter-spacing;

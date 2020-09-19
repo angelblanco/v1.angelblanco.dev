@@ -16,6 +16,7 @@
 
 <script>
   import ArticleResumeList from "../../components/ArticleResumeList.svelte";
+  import Head from "../../components/Head.svelte";
   import { getTag } from "../../components/TagManager";
   import { setTitle, setOgDescription } from "../../stores/meta";
   export let articles;
@@ -23,10 +24,9 @@
   export let page;
   export let path;
   export let tagSlug;
-  $: uriForPage = (page) => page <= 1 ? `/tag/${tagSlug}` : `/tag/${tagSlug}?page=${page}`;
-
-  $: {
-    const tag = getTag(tagSlug);
+  
+  function setMeta() {
+    const tag =  getTag(tagSlug);
 
     setTitle(`${tag.title}${tag.topic ? ' articles' : ''}`);
     
@@ -36,6 +36,16 @@
 
     setOgDescription(description);
   }
+
+  setMeta();
+
+  $: uriForPage = (page) => page <= 1 ? `/tag/${tagSlug}` : `/tag/${tagSlug}?page=${page}`;
+
+  $: {
+    setMeta();
+  }
 </script>
+
+<Head />
 
 <ArticleResumeList {articles} {page} {uriForPage} {pages} {path} />
