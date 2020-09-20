@@ -73,6 +73,11 @@
         background: $dark;
         z-index: -1;
         //margin: auto 0 auto -10%;
+
+        @include mobile() {
+          left: -10px;
+          right: -10px;
+        }
       }
     }
 
