@@ -48,7 +48,7 @@ jobs:
           echo PROJECT_GITHUB_URL="${{ secrets.PROJECT_GITHUB_URL }}" >> .env
 
       - name: Cypress test in docker image
-        run: yarn docker:cypres
+        run: yarn docker:cypress
 
       - name: Docker build for export
         run: yarn docker:build
