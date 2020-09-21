@@ -32,7 +32,7 @@ export const shareLinks = derived(article, ($article) => {
         twitter: {
             name: 'Twitter',
             icon: 'fa-twitter',
-            intent: `https://twitter.com/intent/tweet?url=${shareItems.encodedShortUrl}&text=${shareItems.encodedTitle}&via=${process.env.TWITTER_USER}`,
+            intent: `https://twitter.com/intent/tweet?url=${shareItems.encodedUrl}&text=${shareItems.encodedTitle}&via=${process.env.TWITTER_USER}`,
         },
         facebook: {
             name: 'Facebook',
@@ -42,7 +42,7 @@ export const shareLinks = derived(article, ($article) => {
         linkedin: {
             name: 'Linkedin',
             icon: 'fa-linkedin-in',
-            intent: `https://www.linkedin.com/shareArticle?mini=true&url=${shareItems.encodedUrl}&title=${shareItems.encodedTitle}`,
+            intent: `https://www.linkedin.com/sharing/share-offsite/?url=${shareItems.encodedUrl}`,
         },
     };
 });

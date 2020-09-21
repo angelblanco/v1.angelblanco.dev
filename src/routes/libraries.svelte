@@ -21,8 +21,11 @@
 <script>
   import Content from "../components/Content.svelte";
   import Head from "../components/Head.svelte";
-  import { setTitle } from "../stores/meta";
+  import { setTitle, getOgUrl } from "../stores/meta";
+
   export let dependencies;
+
+  const ogUrl = getOgUrl();
 
   setTitle("Libraries used in this blog");
 </script>
@@ -40,7 +43,7 @@
   }
 </style>
 
-<Head />
+<Head ogUrl={$ogUrl} />
 
 <section class="section reading-width">
   <Content>

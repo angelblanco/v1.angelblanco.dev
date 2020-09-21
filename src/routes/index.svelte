@@ -15,7 +15,7 @@
 </script>
 
 <script>
-  import Terminal from "../components/Terminal.svelte";
+  import { getOgUrl } from "../stores/meta";
   import HomeQuickTags from "../components/HomeQuickTags.svelte";
   import ArticleResume from "../components/ArticleResume.svelte";
   import Head from "../components/Head.svelte";
@@ -24,6 +24,8 @@
   export let pages;
   export let page;
   export let latestArticle;
+
+  const ogUrl = getOgUrl();
 
   $: hasNextPage = page < pages && pages >= 1;
 </script>
@@ -42,7 +44,7 @@
   }
 </style>
 
-<Head />
+<Head ogUrl={$ogUrl} />
 
 <section class="section">
   <div class="container reading-width">

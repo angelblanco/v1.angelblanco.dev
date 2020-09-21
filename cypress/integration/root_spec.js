@@ -1,6 +1,6 @@
 describe('Main page', () => {
 	beforeEach(() => {
-		cy.visit('/')
+		cy.visit('/');
 	});
 
 	it ('contains a primary notification that navigates to all articles', () => {

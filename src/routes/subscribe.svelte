@@ -1,12 +1,14 @@
 <script>
   import TinyLetterSubscribeForm from "../components/TinyLetterSubscribeForm.svelte";
   import Head from "../components/Head.svelte";
-  import { setTitle } from "../stores/meta";
+  import { setTitle, getOgUrl } from "../stores/meta";
 
   setTitle("Newsletter");
+
+  const ogUrl = getOgUrl();
 </script>
 
-<Head />
+<Head ogUrl={$ogUrl} />
 
 <div class="section reading-width">
   <TinyLetterSubscribeForm>

@@ -1,6 +1,6 @@
 describe('Navbar', () => {
     beforeEach(() => {
-        cy.visit('/')
+        cy.visit('/');
     });
 
     context('720p resolution', () => {

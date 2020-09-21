@@ -18,13 +18,15 @@
   import ArticleResumeList from "../../components/ArticleResumeList.svelte";
   import Head from "../../components/Head.svelte";
   import { getTag } from "../../components/TagManager";
-  import { setTitle, setOgDescription } from "../../stores/meta";
+  import { setTitle, setOgDescription, getOgUrl } from "../../stores/meta";
   export let articles;
   export let pages;
   export let page;
   export let path;
   export let tagSlug;
   
+  const ogUrl = getOgUrl();
+
   function setMeta() {
     const tag =  getTag(tagSlug);
 
@@ -46,6 +48,6 @@
   }
 </script>
 
-<Head />
+<Head ogUrl={$ogUrl} />
 
 <ArticleResumeList {articles} {page} {uriForPage} {pages} {path} />

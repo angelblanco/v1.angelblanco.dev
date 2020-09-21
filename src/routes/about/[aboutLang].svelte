@@ -28,7 +28,11 @@
   export let translation;
   import Content from "../../components/Content.svelte";
   import Head from "../../components/Head.svelte";
-  import { setTitle, setOgDescription } from "../../stores/meta";
+  import { setTitle, setOgDescription, getOgUrl } from "../../stores/meta";
+
+  const ogUrl = getOgUrl();
+
+  console.log($ogUrl);
 
   setMeta();
 
@@ -49,7 +53,7 @@
   }
 </script>
 
-<Head />
+<Head ogUrl={$ogUrl}/>
 
 <section class="section reading-width">
   <div class="columns is-centered">

@@ -1,9 +1,12 @@
 import trim from 'lodash/trim';
 import { stores as sapperStores } from "@sapper/app";
-import { derived } from 'svelte/store';
+import { derived, get } from 'svelte/store';
 
-export function getCanonicalUrlForPath(path) {
-    return `${process.env.APP_BASE_URL}/${trim(path, '/')}`;
+export function     getCanonicalUrlForPath(path) {
+    const base = trim(`${process.env.APP_BASE_URL}/${trim(path, '/')}`, '/');
+
+    // Github pages redirects to `/` by default and we need to trim the hole url for the base path.
+    return `${base}/`;
 }
 
 let stores = null;
