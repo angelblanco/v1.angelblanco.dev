@@ -1,7 +1,6 @@
 <script>
   import ArticleResume from "./ArticleResume.svelte";
   import ArticleMenu from "./ArticleMenu.svelte";
-  import { tags } from "./TagManager";
 
   export let articles;
   export let pages;
@@ -30,25 +29,19 @@
           class="pagination is-centered is-small"
           role="navigation"
           aria-label="pagination">
-          <a
-            href={uriForPage(page - 1)}
-            class="pagination-previous"
-            class:is-hidden={!hasPrevPage}>
-            <span class="icon">
-              <i class="fas fa-angle-double-left" />
-            </span>
-            Previous page
-          </a>
+          {#if hasPrevPage}
+            <a href={uriForPage(page - 1)} class="pagination-previous">
+              <span class="icon"> <i class="fas fa-angle-double-left" /> </span>
+              Previous page
+            </a>
+          {:else}<button class="pagination-previous is-hidden" />{/if}
 
-          <a
-            href={uriForPage(page + 1)}
-            class="pagination-next"
-            class:is-hidden={!hasNextPage}>
-            Next page
-            <span class="icon">
-              <i class="fas fa-angle-double-right" />
-            </span>
-          </a>
+          {#if hasNextPage}
+            <a href={uriForPage(page + 1)} class="pagination-next">
+              Next page <span class="icon"> <i
+                  class="fas fa-angle-double-right" /> </span>
+            </a>
+          {:else}<button class="pagination-next is-hidden" />{/if}
 
           <ul class="pagination-list" />
         </nav>

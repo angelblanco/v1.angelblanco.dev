@@ -1,5 +1,5 @@
 <script context="module">
-  export async function preload({ params, query }) {
+  export async function preload({ path }) {
     // the `slug` parameter is available because
     // this file is called [slug].svelte
     const res = await this.fetch(`/api/packages`);
@@ -11,6 +11,7 @@
           { title: "Dependencies", deps: dependencies },
           { title: "Dev dependencies", deps: devDependencies },
         ],
+        path,
       };
     } else {
       this.error(res.status);
@@ -19,14 +20,14 @@
 </script>
 
 <script>
+  export let dependencies;
+  export let path;
+
   import Content from "../components/Content.svelte";
   import Head from "../components/Head.svelte";
-  import { setTitle, getOgUrl } from "../stores/meta";
+  import { setTitle, setOgUrl } from "../stores/meta";
 
-  export let dependencies;
-
-  const ogUrl = getOgUrl();
-
+  setOgUrl(path);
   setTitle("Libraries used in this blog");
 </script>
 
@@ -43,7 +44,7 @@
   }
 </style>
 
-<Head ogUrl={$ogUrl} />
+<Head />
 
 <section class="section reading-width">
   <Content>

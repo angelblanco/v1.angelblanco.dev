@@ -1,6 +1,4 @@
 <script>
-  export let ogUrl;
-
   import {
     title,
     ogTitle,
@@ -8,6 +6,7 @@
     ogImageUrl,
     ogImageHeight,
     ogImageWidth,
+    ogUrl,
   } from "../stores/meta";
 </script>
 
@@ -15,7 +14,10 @@
   <title>{$title}</title>
 
   <!-- Open graphs meta -->
-  <meta property="og:url" content={ogUrl} />
+  {#if $ogUrl}
+    <meta property="og:url" content={$ogUrl} />
+  {/if}
+
   <meta property="og:title" content={$ogTitle} />
   <meta property="og:description" content={$ogDescription} />
   <meta property="og:image" content={$ogImageUrl} />
@@ -29,5 +31,5 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@{process.env.TWITTER_USER}" />
   <meta name="twitter:creator" content="@{process.env.TWITTER_USER}" />
-  <meta name="twitter:image" content="{$ogImageUrl}" />  
+  <meta name="twitter:image" content={$ogImageUrl} />
 </svelte:head>

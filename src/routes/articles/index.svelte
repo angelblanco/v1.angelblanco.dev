@@ -11,7 +11,7 @@
 <script>
   import ArticleResumeList from "../../components/ArticleResumeList.svelte";
   import Head from "../../components/Head.svelte";
-  import { setTitle, setOgDescription, getOgUrl } from "../../stores/meta";
+  import { setTitle, setOgDescription, setOgUrl } from "../../stores/meta";
   export let articles;
   export let pages;
   export let page;
@@ -19,12 +19,11 @@
   export let uriForPage = page =>
     page <= 1 ? "/articles" : `/articles?page=${page}`;
 
-  const ogUrl = getOgUrl();
-
   setTitle('Latest articles');
   setOgDescription('Javacript, Laravel, Vue, Docker posts and much more.')
+  setOgUrl('/articles');
 </script>
 
-<Head ogUrl={$ogUrl}/>
+<Head />
 
 <ArticleResumeList {articles} {page} {uriForPage} {pages} {path} />

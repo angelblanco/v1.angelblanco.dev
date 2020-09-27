@@ -4,7 +4,7 @@
     { locale: "es", title: "Spanish" },
   ];
 
-  export async function preload({ params, query }) {
+  export async function preload({ params, path }) {
     const res = await this.fetch(`/api/about`);
     const data = await res.json();
 
@@ -15,7 +15,7 @@
     const translation = data[params.aboutLang];
 
     if (res.status === 200 && isAllowedLang && translation) {
-      return { translation, lang: params.aboutLang, allowedLangs };
+      return { translation, lang: params.aboutLang, allowedLangs, path };
     } else {
       this.error(res.status, data.message);
     }
@@ -26,17 +26,16 @@
   export let lang;
   export let allowedLangs;
   export let translation;
+  export let path;
   import Content from "../../components/Content.svelte";
   import Head from "../../components/Head.svelte";
-  import { setTitle, setOgDescription, getOgUrl } from "../../stores/meta";
-
-  const ogUrl = getOgUrl();
-
-  console.log($ogUrl);
+  import { setTitle, setOgDescription, setOgUrl } from "../../stores/meta";
 
   setMeta();
 
   function setMeta() {
+    setOgUrl(path);
+
     if (lang === "es") {
       setTitle("Sobre mí!");
       setOgDescription(
@@ -53,7 +52,7 @@
   }
 </script>
 
-<Head ogUrl={$ogUrl}/>
+<Head />
 
 <section class="section reading-width">
   <div class="columns is-centered">

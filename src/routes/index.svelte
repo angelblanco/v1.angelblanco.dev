@@ -1,7 +1,5 @@
 <script context="module">
   export async function preload({ params, query, page }) {
-    const promises = [];
-
     // Fetch articles of page 1
     return this.fetch("/api/articles/all?page=1")
       .then((r) => r.json())
@@ -15,17 +13,16 @@
 </script>
 
 <script>
-  import { getOgUrl } from "../stores/meta";
   import HomeQuickTags from "../components/HomeQuickTags.svelte";
-  import ArticleResume from "../components/ArticleResume.svelte";
   import Head from "../components/Head.svelte";
-
+  import ArticleResume from "../components/ArticleResume.svelte";
+  import { setOgUrl } from "../stores/meta";
   export let articles;
   export let pages;
   export let page;
   export let latestArticle;
 
-  const ogUrl = getOgUrl();
+  setOgUrl("/");
 
   $: hasNextPage = page < pages && pages >= 1;
 </script>
@@ -44,7 +41,7 @@
   }
 </style>
 
-<Head ogUrl={$ogUrl} />
+<Head />
 
 <section class="section">
   <div class="container reading-width">

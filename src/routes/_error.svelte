@@ -1,5 +1,4 @@
 <script>
-  import Terminal from "../components/Terminal.svelte";
   import Whoops from "../components/Whoops/Whoops.svelte";
   import { setTitle }from "../stores/meta.js";
   export let status;

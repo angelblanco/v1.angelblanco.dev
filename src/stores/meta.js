@@ -7,6 +7,7 @@ export const defaults = {
     ogTitle: process.env.APP_BASE_TITLE,
     ogDescription: 'Web development posts',
     ogImageUrl: getCanonicalUrlForPath('/images/share-default.png'),
+    ogUrl: null,
 };
 
 export const title = writable(defaults.title);
@@ -16,6 +17,7 @@ export const getOgUrl = () => canonical().url;
 export const ogImageUrl = writable(defaults.ogImageUrl);
 export const ogImageWidth = writable(1200);
 export const ogImageHeight = writable(630);
+export const ogUrl = writable(defaults.ogUrl);
 
 export function setTitle(prefixTitle) {
     title.set(`${prefixTitle} - ${defaults.title}`);
@@ -41,4 +43,10 @@ export function setOgImageUrl(url) {
     }
 
     onDestroy(() => ogImageUrl.set(defaults.ogImageUrl));
+}
+
+export function setOgUrl(url) {
+    ogUrl.set(getCanonicalUrlForPath(url));
+
+    onDestroy(() => ogUrl.set(defaults.ogUrl));
 }

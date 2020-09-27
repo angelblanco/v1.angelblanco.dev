@@ -25,7 +25,7 @@
   import TableOfContent from "./../../components/TableOfContent.svelte";
   import DisqusComments from "./../../components/DisqusComments.svelte";
   import { setArticle } from "./../../stores/article";
-  import { setTitle, setOgDescription, setOgImageUrl, getOgUrl } from "./../../stores/meta";
+  import { setTitle, setOgDescription, setOgImageUrl, setOgUrl, ogUrl } from "./../../stores/meta";
   export let article;
   export let path;
 
@@ -34,12 +34,11 @@
   let endOffset = null;
   let startOffset = null;
 
-  const ogUrl = getOgUrl();
-
   function setArticleMeta() {
     setArticle(article);
     setTitle(article.title);
     setOgDescription(article.description);
+    setOgUrl(article.url);
 
     if (article.shareImage) {
       setOgImageUrl(article.shareImage);
@@ -71,7 +70,7 @@
   }
 </style>
 
-<Head ogUrl={$ogUrl} />
+<Head />
 
 <svelte:head>
   <link rel="shortlink" href={article.shortLink} />
