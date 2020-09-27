@@ -24,6 +24,7 @@
   <meta property="og:image:width" content={$ogImageWidth} />
   <meta property="og:image:height" content={$ogImageHeight} />
   <meta property="og:locale" content="en_US" />
+  <meta property="og:author" content="Ángel Blanco" />
 
   <!-- Twitter meta -->
   <meta name="twitter:title" content={$ogTitle} />
