@@ -7,8 +7,5 @@ COPY . .
 # Install the deps
 RUN yarn install
 
-# Cypress test could be done in the build we dont want to run any process and
-# will use it as a standalone builder/tester
-RUN yarn test
-
-CMD []
+# Run the tests
+CMD ["yarn", "test"]
