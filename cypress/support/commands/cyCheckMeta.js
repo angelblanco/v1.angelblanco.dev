@@ -1,6 +1,4 @@
 Cypress.Commands.add('checkMeta', () => {
-    const head = cy.get('head');
-
     [
         'og:title',
         'og:description',
@@ -10,9 +8,15 @@ Cypress.Commands.add('checkMeta', () => {
         'og:image:width',
         'og:image:height',
     ].forEach((ogAttr) => {
-        head.get(`meta[property="${ogAttr}"]`)
-            .should(($meta) => {
-                expect($meta.attr('content')).not.to.be.empty;
+        cy.get(`meta[property="${ogAttr}"][content]:not([content=""])`)
+            .then(($meta) => {
+                const content = Cypress.$($meta).attr('content');
+
+                expect(content).not.to.be.empty;
+
+                if (['og:url', 'og:image'].includes(ogAttr)) {
+                    cy.request(content.replace('https://angelblanco.dev', '/'));
+                }
             });
     });
 
@@ -23,9 +27,15 @@ Cypress.Commands.add('checkMeta', () => {
         'twitter:creator',
         'twitter:image',
     ].forEach((twitterAttr) => {
-        head.get(`meta[name="${twitterAttr}"]`)
-            .should(($meta) => {
-                expect($meta.attr('content')).not.to.be.empty;
+        cy.get(`meta[name="${twitterAttr}"][content]`)
+            .then(($meta) => {
+                const content = Cypress.$($meta).attr('content');
+
+                expect(content).not.to.be.empty;
+
+                if(['twitter:image'].includes(twitterAttr)) {
+                    cy.request(content.replace('https://angelblanco.dev', '/'));
+                }
             });
     });
 });

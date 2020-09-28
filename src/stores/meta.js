@@ -1,12 +1,13 @@
 import { writable } from 'svelte/store';
 import { onDestroy } from 'svelte';
-import canonical, { getCanonicalUrlForPath } from './canonical';
+import canonical, { getCanonicalUrlForPath, getCanonicalUrlForFile } from './canonical';
+import trim from 'lodash/trim';
 
 export const defaults = {
     title: process.env.APP_BASE_TITLE,
     ogTitle: process.env.APP_BASE_TITLE,
     ogDescription: 'Web development posts',
-    ogImageUrl: getCanonicalUrlForPath('/images/share-default.png'),
+    ogImageUrl: getCanonicalUrlForFile('/images/share-default.png'),
     ogUrl: null,
 };
 
@@ -39,7 +40,7 @@ export function setOgImageUrl(url) {
     if (url.includes('http')) {
         ogImageUrl.set(url);
     } else {
-        ogImageUrl.set(getCanonicalUrlForPath(url));
+        ogImageUrl.set(getCanonicalUrlForFile(url));
     }
 
     onDestroy(() => ogImageUrl.set(defaults.ogImageUrl));

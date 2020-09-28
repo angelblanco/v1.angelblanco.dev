@@ -78,7 +78,7 @@ export function extractDescription(meta, introHtml) {
 
     let description = '';
     document.body.textContent.split('. ').slice(0, 2).forEach((sentence) => {
-        if (description.length < 50) {
+        if (description.length < 100) {
             description = `${description} ${sentence}.`;
         }
     });
