@@ -2,7 +2,7 @@
 id: 1
 slug: auto
 date: "2020-09-17"
-tweet: '1284774803170304000'
+tweet: '1310714468469538822'
 note: true
 noTags: true
 title: "Welcome to my personal blog"

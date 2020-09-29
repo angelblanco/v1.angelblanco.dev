@@ -1,6 +1,7 @@
 ---
 id: 3
 date: '2020-09-19' 
+tweet: '1311017241203429377'
 title: 'Install docker and docker compose on Ubuntu 20.04'
 description: 'Learn to install docker and docker-compose with some easy copy-paste steps on the latest Ubuntu'
 intro: |

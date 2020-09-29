@@ -2,6 +2,7 @@
 id: 4
 title: "Simple Svelte back to top component"
 share_tweet: "Simple back to top component with @sveltejs"
+tweet: '1311017385768480768'
 date: "2020-09-26"
 description: "Learn how to create a back to top button in Svelte 3."
 intro: |
