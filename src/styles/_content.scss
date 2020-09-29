@@ -1,0 +1,107 @@
+@mixin applyContentStyle {
+  letter-spacing: $content-letter-spacing;
+
+  p {
+    line-height: $content-parragraph-line-height;
+  }
+
+  p,
+  ul,
+  li {
+    > a:not(.button) {
+      @include linkStyle();
+    }
+  }
+
+  :not(pre) > code {
+    font-family: $family-monospace;
+    background-color: $white-ter;
+    color: $red;
+    font-size: 0.9rem;
+    border-radius: 2px;
+    padding: 4px;
+  }
+
+  .terminal {
+    &:not(:last-child) {
+      margin-bottom: $content-paragraph-spacing !important;
+    }
+
+    .bar {
+      height: 0;
+    }
+
+    .body {
+      padding-top: 1.5rem;
+    }
+
+    &.gnome-terminal-image-container .body {
+      background-color: #2d3334;
+    }
+  }
+
+  blockquote {
+    &:not(:last-child) {
+      margin-bottom: $content-paragraph-spacing !important;
+    }
+
+    & .terminal {
+      margin: 0;
+
+      .btn {
+        visibility: hidden;
+      }
+
+      .bar-title {
+        visibility: hidden;
+      }
+
+      .body {
+        padding-top: 0;
+      }
+    }
+  }
+
+  pre {
+    font-size: 0.85rem;
+  }
+
+  .github-link-container,
+  .svelte-repl-link-container {
+    text-align: center;
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .button.is-medium {
+    white-space: normal;
+    height: auto;
+  }
+}
+
+.title,
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+  font-family: $title-family;
+  line-height: $title-line-height;
+  font-weight: $title-weight;
+  letter-spacing: $title-letter-spacing;
+}
+
+.has-text-weight-light {
+  letter-spacing: $content-letter-spacing;
+}
+
+.content {
+  @include applyContentStyle();
+}
+
+.title.is-6 {
+  letter-spacing: 0.03em;
+}

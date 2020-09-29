@@ -1,0 +1,11 @@
+@import "highlight";
+@import "icons";
+@import "terminal";
+@import "utils";
+
+// Content is the last to override some styles on content container
+@import "content";
+
+body {
+  text-rendering: geometricPrecision;
+}

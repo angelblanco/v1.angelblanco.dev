@@ -1,0 +1,135 @@
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #abb2bf;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection,
+pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection,
+code[class*="language-"] ::-moz-selection {
+  text-shadow: none;
+  background: #383e49;
+}
+
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection,
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection {
+  text-shadow: none;
+  background: #9aa2b1;
+}
+
+@media print {
+  code[class*="language-"],
+  pre[class*="language-"] {
+    text-shadow: none;
+  }
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: #282c34;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: 0.1em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+.#{$prism-prefix}token.#{$prism-prefix}comment,
+.#{$prism-prefix}token.#{$prism-prefix}prolog,
+.#{$prism-prefix}token.#{$prism-prefix}doctype,
+.#{$prism-prefix}token.#{$prism-prefix}cdata {
+  color: #5c6370;
+}
+
+.#{$prism-prefix}token.#{$prism-prefix}punctuation {
+  color: #abb2bf;
+}
+
+.#{$prism-prefix}token.#{$prism-prefix}selector,
+.#{$prism-prefix}token.#{$prism-prefix}tag {
+  color: #e06c75;
+}
+
+.#{$prism-prefix}token.#{$prism-prefix}property,
+.#{$prism-prefix}token.#{$prism-prefix}boolean,
+.#{$prism-prefix}token.#{$prism-prefix}number,
+.#{$prism-prefix}token.#{$prism-prefix}constant,
+.#{$prism-prefix}token.#{$prism-prefix}symbol,
+.#{$prism-prefix}token.#{$prism-prefix}attr-name,
+.#{$prism-prefix}token.#{$prism-prefix}deleted {
+  color: #d19a66;
+}
+
+.#{$prism-prefix}token.#{$prism-prefix}string,
+.#{$prism-prefix}token.#{$prism-prefix}char,
+.#{$prism-prefix}token.#{$prism-prefix}attr-value,
+.#{$prism-prefix}token.#{$prism-prefix}builtin,
+.#{$prism-prefix}token.#{$prism-prefix}inserted {
+  color: #98c379;
+}
+
+.#{$prism-prefix}token.#{$prism-prefix}operator,
+.#{$prism-prefix}token.#{$prism-prefix}entity,
+.#{$prism-prefix}token.#{$prism-prefix}url,
+.language-css .#{$prism-prefix}token.#{$prism-prefix}string,
+.style .#{$prism-prefix}token.#{$prism-prefix}string {
+  color: #56b6c2;
+}
+
+.#{$prism-prefix}token.#{$prism-prefix}atrule,
+.#{$prism-prefix}token.#{$prism-prefix}keyword {
+  color: #c678dd;
+}
+
+.#{$prism-prefix}token.#{$prism-prefix}function {
+  color: #61afef;
+}
+
+.#{$prism-prefix}token.#{$prism-prefix}regex,
+.#{$prism-prefix}token.#{$prism-prefix}important,
+.#{$prism-prefix}token.#{$prism-prefix}variable {
+  color: #c678dd;
+}
+
+.#{$prism-prefix}token.#{$prism-prefix}important,
+.#{$prism-prefix}token.#{$prism-prefix}bold {
+  font-weight: bold;
+}
+
+.#{$prism-prefix}token.#{$prism-prefix}italic {
+  font-style: italic;
+}
+
+.#{$prism-prefix}token.#{$prism-prefix}entity {
+  cursor: help;
+}

@@ -1,0 +1,6 @@
+__sapper__
+node_modules
+*.log
+src/node_modules
+Dockerfile
+dist

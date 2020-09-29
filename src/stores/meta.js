@@ -1,0 +1,53 @@
+import { writable } from 'svelte/store';
+import { onDestroy } from 'svelte';
+import canonical, { getCanonicalUrlForPath, getCanonicalUrlForFile } from './canonical';
+import trim from 'lodash/trim';
+
+export const defaults = {
+    title: process.env.APP_BASE_TITLE,
+    ogTitle: process.env.APP_BASE_TITLE,
+    ogDescription: 'Web development posts',
+    ogImageUrl: getCanonicalUrlForFile('/images/share-default.png'),
+    ogUrl: null,
+};
+
+export const title = writable(defaults.title);
+export const ogTitle = writable(defaults.ogTitle);
+export const ogDescription = writable(defaults.ogDescription);
+export const getOgUrl = () => canonical().url;
+export const ogImageUrl = writable(defaults.ogImageUrl);
+export const ogImageWidth = writable(1200);
+export const ogImageHeight = writable(630);
+export const ogUrl = writable(defaults.ogUrl);
+
+export function setTitle(prefixTitle) {
+    title.set(`${prefixTitle} - ${defaults.title}`);
+    ogTitle.set(prefixTitle);
+
+    onDestroy(() => {
+        title.set(defaults.title);
+        ogTitle.set(defaults.title);
+    });
+}
+
+export function setOgDescription(description) {
+    ogDescription.set(description);
+
+    onDestroy(() => ogDescription.set(defaults.ogDescription));
+}
+
+export function setOgImageUrl(url) {
+    if (url.includes('http')) {
+        ogImageUrl.set(url);
+    } else {
+        ogImageUrl.set(getCanonicalUrlForFile(url));
+    }
+
+    onDestroy(() => ogImageUrl.set(defaults.ogImageUrl));
+}
+
+export function setOgUrl(url) {
+    ogUrl.set(getCanonicalUrlForPath(url));
+
+    onDestroy(() => ogUrl.set(defaults.ogUrl));
+}

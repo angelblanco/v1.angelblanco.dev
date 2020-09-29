@@ -1,0 +1,39 @@
+// Max width centered container
+.reading-width {
+  // Readability width
+  max-width: 700px;
+  margin: auto;
+}
+
+// Fix for bulma media content displaying srollbar
+.media-content {
+  overflow: hidden;
+}
+
+.is-m-auto {
+  margin: auto !important;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.justify-center {
+  justify-content: center !important;
+}
+
+.has-decoration-underline {
+  text-decoration: underline !important;
+}
+
+@include tablet() {
+  .is-pulled-right-tablet {
+    float: right !important;
+  }
+}
+
+@media print {
+  .is-hidden-print {
+    display: none;
+  }
+}

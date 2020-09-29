@@ -1,14 +1,14 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Deploy to Github Pages
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
   push:
-    branches: [ develop ]
-  pull_request:
-    branches: [ develop ]
+    branches: [master]
+  # pull_request:
+  #   branches: [develop]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -17,15 +17,60 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
+    env:
+      APP_BASE_URL: ${{ secrets.APP_BASE_URL }}
+      APP_BASE_TITLE: ${{ secrets.APP_BASE_TITLE }}
+      GOOGLE_ANALYTICS_MEASUREMENT_ID: ${{ secrets.GOOGLE_ANALYTICS_MEASUREMENT_ID }}
+      TWITTER_USER: ${{ secrets.TWITTER_USER }}
+      TINY_LETTER_USER: ${{ secrets.TINY_LETTER_USER }}
+      DISQUS_USER: ${{ secrets.DISQUS_USER }}
+      PROJECT_GITHUB_URL: ${{ secrets.PROJECT_GITHUB_URL }}
+
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: Start of action
-        run: echo Start building!
+      - name: Apt installs
+        run: |
+          sudo apt update
+          sudo apt install tree
 
-      # Runs a set of commands using the runners shell
-      - name: Docker build
+      - name: Creates .env file
+        run: |
+          touch .env
+          echo APP_BASE_URL="${{ secrets.APP_BASE_URL }}" >> .env
+          echo APP_BASE_TITLE="${{ secrets.APP_BASE_TITLE }}" >> .env
+          echo GOOGLE_ANALYTICS_MEASUREMENT_ID="${{ secrets.GOOGLE_ANALYTICS_MEASUREMENT_ID }}" >> .env
+          echo TWITTER_USER="${{ secrets.TWITTER_USER }}" >> .env
+          echo TINY_LETTER_USER="${{ secrets.TINY_LETTER_USER }}" >> .env
+          echo DISQUS_USER="${{ secrets.DISQUS_USER }}" >> .env
+          echo PROJECT_GITHUB_URL="${{ secrets.PROJECT_GITHUB_URL }}" >> .env
+
+      - name: Cypress test in docker image
+        run: |
+          yarn docker:cypress:build
+          yarn docker:cypress:run
+
+      - name: Docker build for export
         run: yarn docker:build
+
+      - name: Removes .env file
+        run: rm .env
+
+      - name: Copies build from docker image
+        run: |
+          id=$(docker create angelblanco.dev:latest)
+          docker cp $id:/home/node/app/dist ./dist
+          docker rm -v $id
+
+      - name: Inspect dist folder
+        run: tree dist
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@3.6.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: dist
+          CLEAN: true
