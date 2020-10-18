@@ -4,9 +4,9 @@ name: Deploy to Github Pages
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
-on:
-  push:
-    branches: [master]
+on: push
+  # push:
+  #   branches: [master]
   # pull_request:
   #   branches: [develop]
 
@@ -69,6 +69,7 @@ jobs:
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.6.1
+        if: github.ref === 'refs/head/master'
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages

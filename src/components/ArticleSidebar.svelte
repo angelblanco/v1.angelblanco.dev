@@ -2,7 +2,6 @@
   import {
     documentScrollTop,
     copyToClipboard,
-    fullUrl,
     shareArticleText,
   } from "./utils";
   import { shareLinks } from "../stores/article";
