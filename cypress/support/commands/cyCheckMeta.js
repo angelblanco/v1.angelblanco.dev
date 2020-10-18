@@ -2,7 +2,6 @@ Cypress.Commands.add('checkMeta', () => {
     cy.title().should('not.be.empty');
 
     [
-        'description',
         'og:title',
         'og:description',
         'og:url',
@@ -24,6 +23,7 @@ Cypress.Commands.add('checkMeta', () => {
     });
 
     [
+        'description',
         'twitter:title',
         'twitter:card',
         'twitter:site',
