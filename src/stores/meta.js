@@ -1,12 +1,11 @@
 import { writable } from 'svelte/store';
 import { onDestroy } from 'svelte';
 import canonical, { getCanonicalUrlForPath, getCanonicalUrlForFile } from './canonical';
-import trim from 'lodash/trim';
 
 export const defaults = {
     title: process.env.APP_BASE_TITLE,
     ogTitle: process.env.APP_BASE_TITLE,
-    ogDescription: 'Web development posts',
+    ogDescription: 'A personal web development blog focused on Javascript, Vue, Svelte, PHP, Laravel, Docker, back-end, front-end, microservices, Linux, Zsh, and more.',
     ogImageUrl: getCanonicalUrlForFile('/images/share-default.png'),
     ogUrl: null,
 };
