@@ -2,7 +2,7 @@
   import { stores } from "@sapper/app";
   import { onMount } from "svelte";
 
-  export let measurementId = "UA-92522790-2"; // 'angeblanc.dev'
+  export let trackingId = "UA-92522790-2"; // 'angeblanc.dev'
   export let scriptId = "google-analytics-script";
   export let domain = "https://www.googletagmanager.com";
 
@@ -20,7 +20,7 @@
 
       const script = document.createElement("script");
       script.async = true;
-      script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}&l=${dataLayerName}`;
+      script.src = `${domain}/gtag/js?id=${trackingId}&l=${dataLayerName}`;
       script.charset = "utf-8";
       script.setAttribute("id", scriptId);
 
@@ -41,7 +41,7 @@
       window.dataLayer.push(arguments);
     };
     gtag("js", new Date());
-    gtag("config", measurementId);
+    gtag("config", trackingId);
 
     try {
       await addGoogleAnalyticsScript();
@@ -65,7 +65,7 @@
     const page_path = $page.path;
 
     if (mounted && window.gtag) {
-      gtag("config", measurementId, { page_path });
+      gtag("config", trackingId, { page_path });
     }
   }
 </script>

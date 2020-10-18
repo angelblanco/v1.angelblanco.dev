@@ -9,6 +9,7 @@ import frontMatter from 'front-matter';
 import MarkdownIt from 'markdown-it';
 import chalk from 'chalk';
 import highlight from './lib/highlight';
+import targetBlank from './lib/targetBlank';
 import readingTime from 'reading-time';
 import moment from 'moment';
 import jsdom from 'jsdom';
@@ -65,6 +66,8 @@ export function createMarkdownItInstance(options = {}) {
         .use(markdowContainer);
 
     containers.forEach(registerContainer => registerContainer(mdInstance, markdowContainer));
+
+    targetBlank(mdInstance);
 
     return mdInstance;
 }
