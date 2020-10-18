@@ -12,6 +12,7 @@
 
 <svelte:head>
   <title>{$title}</title>
+  <meta name="description" content="{$ogDescription}">
 
   <!-- Open graphs meta -->
   {#if $ogUrl}
