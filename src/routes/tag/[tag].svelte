@@ -1,6 +1,6 @@
 <script context="module">
   export function preload({ params, query, path }) {
-    return this.fetch(`/api/articles/tag/${params.tag}?page=${query.page || 1}`)
+    return this.fetch(`/api/articles/tag/${params.tag}/?page=${query.page || 1}`)
       .then((r) => r.json())
       .then(({ articles, pages, page }) => {
         return {
@@ -25,8 +25,8 @@
   export let path;
   export let tagSlug;
   
-  function setMeta() {
-    const tag =  getTag(tagSlug);
+  function setMeta(slug) {
+    const tag =  getTag(slug);
 
     setOgUrl(path);
     setTitle(`${tag.title}${tag.topic ? ' articles' : ''}`);
@@ -38,13 +38,11 @@
     setOgDescription(description);
   }
 
-  setMeta();
+  setMeta(tagSlug);
 
-  $: uriForPage = (page) => page <= 1 ? `/tag/${tagSlug}` : `/tag/${tagSlug}?page=${page}`;
+  $: uriForPage = (page) => page <= 1 ? `/tag/${tagSlug}/` : `/tag/${tagSlug}/?page=${page}`;
 
-  $: {
-    setMeta();
-  }
+  $: setMeta(tagSlug);
 </script>
 
 <Head />

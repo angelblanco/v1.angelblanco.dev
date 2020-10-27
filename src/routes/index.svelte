@@ -53,7 +53,7 @@
         <div class="column is-hidden-print">
           <div class="is-clearfix">
             <a
-              href="/articles"
+              href="/articles/"
               class="is-pulled-right-tablet button is-danger is-small">
               See the latest articles
             </a>
@@ -71,7 +71,7 @@
     </div>
 
     <a
-      href="/articles"
+      href="/articles/"
       class="button all-articles w-100 is-5 is-large is-outlined is-primary
         is-hidden-print">
       See all the articles
@@ -87,7 +87,7 @@
     {#if hasNextPage}
       <div class="container">
         <a
-          href="/articles?page=2"
+          href="/articles/?page=2"
           class="button next-page is-5 is-small is-outlined is-pulled-right">
           Next page <span class="icon is-pulled-right"> <i
               class="fas fa-angle-double-right" /> </span>

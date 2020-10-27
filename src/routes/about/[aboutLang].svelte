@@ -71,7 +71,7 @@
       {#each allowedLangs as allowedLang}
         <a
           rel="preload"
-          href={`/about/${allowedLang.locale}`}
+          href={`/about/${allowedLang.locale}/`}
           class="button is-rounded is-small"
           class:is-active={lang === allowedLang.locale}
           class:is-primary={lang === allowedLang.locale}>{allowedLang.title}</a>

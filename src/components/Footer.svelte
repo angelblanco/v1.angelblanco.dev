@@ -112,7 +112,7 @@
 
   <div class="has-text-centered">
     <p class="has-text-grey-light is-family-monospace">
-      Personal website of <a href="/about" class="has-text-grey-dark">Ángel
+      Personal website of <a href="/about/" class="has-text-grey-dark">Ángel
         Blanco</a>
     </p>
 
@@ -143,7 +143,7 @@
         </div>
 
         <p class="has-text-grey-light is-family-monospace is-size-7">
-          And all of <a class="has-decoration-underline has-text-grey-dark" href="/libraries" rel="preload">these...</a>
+          And all of <a class="has-decoration-underline has-text-grey-dark" href="/libraries/" rel="preload">these...</a>
         </p>
       </div>
     </div>

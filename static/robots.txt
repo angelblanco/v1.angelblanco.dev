@@ -1,2 +1,6 @@
 User-agent: *
-Disallow:
+
+Sitemap: https://angelblanco.dev/sitemap.xml
+
+Disallow: /404
+Disallow: /404/

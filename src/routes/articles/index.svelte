@@ -17,11 +17,11 @@
   export let page;
   export let path;
   export let uriForPage = page =>
-    page <= 1 ? "/articles" : `/articles?page=${page}`;
-
+    page <= 1 ? "/articles/" : `/articles/?page=${page}`;
+    
   setTitle('Latest articles');
   setOgDescription('Javacript, Laravel, Vue, Docker posts and much more.')
-  setOgUrl('/articles');
+  setOgUrl('/articles/');
 </script>
 
 <Head />

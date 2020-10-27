@@ -25,7 +25,7 @@
 <article class="media">
   <figure class="media-left">
     <a 
-      href="/about"
+      href="/about/"
       rel="prefecth"
       class="image is-64x64">
       <img class="is-rounded" src="/images/me-128x128.jpeg" alt="user" />
@@ -35,7 +35,7 @@
   <div class="media-content">
     <div class="container">
       <p>
-        <a href="/about" rel="prefetch">
+        <a href="/about/" rel="prefetch">
           <strong>Ángel Blanco</strong>
         </a>
         

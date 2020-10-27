@@ -25,7 +25,7 @@
   import TableOfContent from "./../../components/TableOfContent.svelte";
   import DisqusComments from "./../../components/DisqusComments.svelte";
   import { setArticle } from "./../../stores/article";
-  import { setTitle, setOgDescription, setOgImageUrl, setOgUrl, ogUrl } from "./../../stores/meta";
+  import { setTitle, setOgDescription, setOgImageUrl, setOgUrl } from "./../../stores/meta";
   export let article;
   export let path;
 
@@ -65,16 +65,18 @@
     pointer-events: none;
   }
 
-  a.shortLink {
-    display: none;
-  }
+  // Uncomment to have short
+  // a.shortLink {
+  //   display: none;
+  // }
 </style>
 
 <Head />
 
+<!-- Uncomment to have shortlinks 
 <svelte:head>
   <link rel="shortlink" href={article.shortLink} />
-</svelte:head>
+</svelte:head> -->
 
 <section class="section reading-width pb-0">
   <MediaArticleHead {article} />
@@ -103,4 +105,6 @@
 
 <div bind:this={afterArticleContainer} class="afterArticleContainer" />
 
+<!-- Uncomment to have shortlinks
 <a href={article.shortLink} class="shortLink">{article.title}</a>
+ -->
