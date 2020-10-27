@@ -1,5 +1,4 @@
 <script>
-  import nprogress from "nprogress";
   import { onMount } from "svelte";
   import { documentScrollTop } from "./utils";
 
@@ -43,7 +42,7 @@
 
   $: barStyle = [
     `margin-left: ${toBarPerc(progress)}%`,
-    `transition: all ${speed}ms ${easing}`
+    `transition: all ${speed}ms ${easing}`,
   ].join(";");
 
   $: nProgressStyle = `transition: opacity ${speed}ms ${easing}`;
@@ -78,7 +77,8 @@
 
 <svelte:window
   on:scroll={setProgressByScroll}
-  on:resize={setProgressByScroll} />
+  on:resize={setProgressByScroll}
+  on:touchmove={setProgressByScroll} />
 
 <div class="nprogress" class:hidden style={nProgressStyle}>
   <div class="bar" style={barStyle} class:complete />
