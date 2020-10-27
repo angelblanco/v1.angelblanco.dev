@@ -1,9 +1,9 @@
 describe('Article', () => {
     const sharedTests = () => {
         it('contains media with tags', () => {
-            cy.get('.media .media-content a').should('have.attr', 'href', '/about');
+            cy.get('.media .media-content a').should('have.attr', 'href', '/about/');
 
-            cy.get('.media .media-left a').should('have.attr', 'href', '/about');
+            cy.get('.media .media-left a').should('have.attr', 'href', '/about/');
 
             cy.get('.media .tags a.tag')
                 .should(($tags) => {

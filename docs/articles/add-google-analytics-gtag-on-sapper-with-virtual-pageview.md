@@ -1,37 +1,33 @@
 ---
 id: 5
-title: "Guide to add Google Analytics' gtag to a Sapper project"
+title: "Add Google Analytics' gtag to a Sapper project"
 share_tweet: "Add Google Analytics' gtag to sapper with @sveltejs"
 tweet: ''
-date: "2020-10-18"
+date: "2020-10-24"
 description: "Step by step guide to create a component that tracks your sapper application every time the user changes its URL with virtual page views."
 intro: |
-    Adding Google Analytics support to a web application that changes the URL on the client-side could be tricky. It's not as simple as
-    adding tracking to a server-side render application that refreshes the scripts on every page hit.
+    Adding Google Analytics support to a single page application that changes the URL on the client-side could be tricky. It's not as simple as adding tracking to a server-side rendered application that refreshes its scripts on every page hit.
 
-    To get the real flow of a user across your website, you need to track all the URL changes that happen when the user follows a svelte link. Let's simplify the tracking of the pageview with sapper with a self-made
-    component without any third party library! 
+    To get the real flow of a user across your Sapper website, you need to track all the URL changes that happen when the user follows a Svelte link. Let's simplify the tracking of the pageview event on Sapper with a component without using any third party library! 
 tags: ['svelte', 'js', 'blog']
 ---
 
 ## In-depth tutorial
-> If you have a tracking id and want to skip the reading, please go directly to 
+
+In this first part of the tutorial, I will try to explain how to approach the inclusion of any third party script with a custom component. Note that sometimes including it on your `template.html` will have you covered.
+
+> If you have a tracking id and want to skip this reading, please go directly to 
 > [Google Analytics Svelte component](#google-analytics-svelte-component).
 
 ### Before start steps
 
-First of all, you need to register your domain on [Google Analytics](https://analytics.google.com/). Following all the desired steps, you will have access to a tracking id. The number we should have will look like `UA-000000-2`. Don't worry
-if you miss it, you will have access to it on the Admin section of your property.
+First of all, you need to register your domain on [Google Analytics](https://analytics.google.com/). Following all the desired steps, you will have access to a tracking id. The number we should have will look like `UA-000000-2`. Don't worry, if you lose it you will have access to it on the Admin section of your property.
 
 ### Insert the google script on the page with vanilla JS
 
-We cannot inject a script with `src` on our svelte component template. Even if we could
-do so, it will not be as great as having all the control in your component. It's necessary
-to create a script element with a unique identifier and mount it to the document body.
+We cannot inject a script with `src` on our Svelte component template. Even if we could do so, it will not be as great as having all the control in your component. So what we are going to create a script element with Javascript, assigning it a unique identifier and mount it to the end of the document body.
 
-As sapper ships with ES6 support out of the box and promises are supported, we will create a function that resolves or rejects based on the script execution. This way
-we can perform actions on error like removing the script on connection issues or when
-an adblocker is disabling `gtag`.
+As sapper ships with ES6 support out of the box and promises are supported, we will create one that resolves or rejects based on the script execution. This way, we can perform actions on error like removing the script on connection issues or when an adblocker is disabling `gtag`.
 
 
 ```javascript
@@ -65,12 +61,9 @@ async function addGoogleAnalyticsScript(dataLayerName = "dataLayer") {
 ### Track the first hit of your web page
 
 Google Analytics tracking will happen on the client-side. That means that we must prepare our component tracking to happen only when mounted. 
-Duet to it, we will use a flag `mounted` that will tell if Google Analytics script has mounted successfully.
+Due to it, we will use a flag `mounted` that will tell if Google Analytics script has mounted successfully in a previous URL.
 
-On failure, we will remove the script just in case you want to create some retrying
-mechanism. Note that by default Sapper applications ship with a [Service Worker](https://developer.mozilla.org/es/docs/Web/API/Service_Worker_API)
-that will have you covered in some cases when the client loses its internet
-connection. In this case, we are logging the error and removing the script.
+On failure, we will remove the script just in case you want to create some retrying mechanism. Note that by default, Sapper applications ship with a [Service Worker](https://developer.mozilla.org/es/docs/Web/API/Service_Worker_API) that will have you covered in some cases when the client loses its internet connection. In this case, we are logging the error and removing the script.
 
 ```javascript
 import { onMount } from "svelte";
@@ -109,8 +102,7 @@ onMount(async () => {
 });
 ```
 
-
-### Detecting page changes on your single page application
+### Detecting page changes on your Sapper single page application
 
 The library used to track on Google Analytics is called google tag manager (gtag). During the registration process on GA, you have seen a script that you could inject on your `template.html` of your sapper application. However, if you do that
 you won't register pageview events when the user follows a sapper link.
@@ -171,7 +163,7 @@ Combining all the previous parts of the post, we will have a  complete svelte co
   const { page } = stores();
 
   // Adding google tag manager will fail for example if the user is running 
-  // and ad blocker. Using a promise we have the hability to handle that case.
+  // and ad blocker. This Promise can handle that case.
   async function addGoogleAnalyticsScript(dataLayerName = "dataLayer") {
     return new Promise((resolve, reject) => {
       const head = document.head || document.getElementsByTagName("head")[0];
@@ -195,7 +187,7 @@ Combining all the previous parts of the post, we will have a  complete svelte co
   }
 
   onMount(async () => {
-    // We add the script only once even when two components are rendered.
+    // We add the script only once even when the component rendered twice.
     if (window.document.getElementById(scriptId)) {
       return;
     }

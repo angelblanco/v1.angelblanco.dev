@@ -69,7 +69,7 @@ const availableTags = [
   blogTag,
 ]
   .map(item => ({ ...item, tag: fixedTagName(item.tag) , topic: item.topic !== false }))
-  .map(item => ({ ...item, url: `/tag/${item.tag}` }));
+  .map(item => ({ ...item, url: `/tag/${item.tag}/` }));
 
 
 export function getTag(tag) {
@@ -90,7 +90,7 @@ export const sidebarMenu = [
     items: [
       {
         title: 'Latest articlest',
-        url: '/articles',
+        url: '/articles/',
         tag: 'info',
       },
       ...tags.filter(isArticleSectionTag),
@@ -123,7 +123,7 @@ export const sidebarMenu = [
     items: [
       {
         title: 'Newsletter',
-        url: '/subscribe',
+        url: '/subscribe/',
         tag: 'info',
       },
     ],

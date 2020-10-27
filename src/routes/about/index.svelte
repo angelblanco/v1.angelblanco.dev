@@ -1,5 +1,5 @@
 <script context="module">
 	export async function preload() {
-        return this.redirect(302, '/about/en');
+        return this.redirect(302, '/about/en/');
 	}
 </script>
