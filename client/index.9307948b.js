@@ -1,0 +1,1 @@
+import{S as t,i as s,s as e}from"./client.fd899e00.js";async function r(){return this.redirect(302,"/about/en/")}export default class extends t{constructor(t){super(),s(this,t,null,null,e,{})}}export{r as preload};
