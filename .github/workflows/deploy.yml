@@ -27,6 +27,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: Show branch
+        run: echo ${{ github.ref }}
+
       - name: Apt installs
         run: |
           sudo apt update
@@ -65,7 +68,7 @@ jobs:
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.6.1
-        if: github.ref == 'refs/head/master'
+        if: github.ref == 'refs/heads/master'
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
