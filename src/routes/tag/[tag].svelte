@@ -1,6 +1,6 @@
 <script context="module">
   export function preload({ params, query, path }) {
-    return this.fetch(`/api/articles/tag/${params.tag}/?page=${query.page || 1}`)
+    return this.fetch(`/api/articles/tag/${params.tag}?page=${query.page || 1}`)
       .then((r) => r.json())
       .then(({ articles, pages, page }) => {
         return {
@@ -40,7 +40,7 @@
 
   setMeta(tagSlug);
 
-  $: uriForPage = (page) => page <= 1 ? `/tag/${tagSlug}/` : `/tag/${tagSlug}/?page=${page}`;
+  $: uriForPage = (page) => page <= 1 ? `/tag/${tagSlug}/` : `/tag/${tagSlug}?page=${page}`;
 
   $: setMeta(tagSlug);
 </script>
