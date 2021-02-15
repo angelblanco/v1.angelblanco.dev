@@ -5,5 +5,5 @@ yarn-error.log
 /cypress/screenshots/
 /__sapper__/
 dist
-
+.idea
 .env
