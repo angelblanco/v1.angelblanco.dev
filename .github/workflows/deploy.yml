@@ -67,7 +67,7 @@ jobs:
         run: tree dist
 
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@3.6.1
+        uses: JamesIves/github-pages-deploy-action@4.0.0
         if: github.ref == 'refs/heads/master'
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
