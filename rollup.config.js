@@ -23,7 +23,7 @@ const onwarn = (warning, onwarn) =>
 	(warning.code === 'MISSING_EXPORT' && /'preload'/.test(warning.message)) ||
 	(warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message)) ||
 	onwarn(warning)
-	
+
 const dedupe = importee => importee === 'svelte' || importee.startsWith('svelte/');
 
 const aliasOptions = {
@@ -52,6 +52,7 @@ export default {
 
 		plugins: [
 			replace({
+				preventAssignment: true,
 				'process.browser': true,
 				'process.env.NODE_ENV': JSON.stringify(mode),
 				...envVars,
@@ -106,6 +107,7 @@ export default {
 		output: config.server.output(),
 		plugins: [
 			replace({
+				preventAssignment: true,
 				'process.browser': false,
 				'process.env.NODE_ENV': JSON.stringify(mode),
 				...envVars,
@@ -143,6 +145,7 @@ export default {
 		plugins: [
 			resolve(),
 			replace({
+				preventAssignment: true,
 				'process.browser': true,
 				'process.env.NODE_ENV': JSON.stringify(mode),
 				...envVars,
