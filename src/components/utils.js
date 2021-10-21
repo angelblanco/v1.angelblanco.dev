@@ -1,6 +1,5 @@
 import { onMount } from 'svelte';
 import { onDestroy } from 'svelte';
-import trimStart from 'lodash/trimStart';
 import { getCanonicalUrlForPath } from '../stores/canonical';
 /**
  * Scrolls to the given node by id if present.

@@ -1,5 +1,5 @@
 <script>
-  import isArray from "lodash/isArray";
+  import isArray from "lodash/isArray.js";
   export let duration = 4500;
   export let erasingDuration = 1000;
   export let delay = 2000;

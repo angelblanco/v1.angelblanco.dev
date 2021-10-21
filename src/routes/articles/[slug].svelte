@@ -11,10 +11,7 @@
       return { props: { article: data, path } };
     }
 
-    return {
-      error: new Error("data.message"),
-      status: res.status,
-    };
+    // Fallthrough route
   }
 </script>
 

@@ -1,20 +1,24 @@
-const waitPort = require('wait-port');
-const { exec } = require('child_process');
-const dotenv = require('dotenv');
-const isUrl = require('is-url');
-const { sed } = require('shelljs');
-const trimEnd = require('lodash/trimEnd');
+import waitPort from 'wait-port';
+import { exec } from 'child_process';
+import dotenv from 'dotenv';
+import isUrl from 'is-url';
+import { sed } from 'shelljs';
+import trimEnd from 'lodash/trimEnd.js';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const currentDir = dirname(fileURLToPath(import.meta.url));
 
 const options = {
   protocol: 'http',
   host: '127.0.0.1',
   port: 5000,
-  cwd: __dirname,
+  cwd: currentDir,
   timeout: 300000,
-  siteMapFile: `${__dirname}/static/sitemap.xml`,
+  siteMapFile: `${currentDir}/static/sitemap.xml`,
 };
 
-dotenv.config({ path: `${__dirname}/.env` });
+dotenv.config({ path: `${currentDir}/.env` });
 const appRealUrl = trimEnd(process.env.VITE_APP_BASE_URL, '/');
 
 if (!appRealUrl || !isUrl(appRealUrl)) {

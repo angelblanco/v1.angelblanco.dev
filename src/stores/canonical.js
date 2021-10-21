@@ -1,4 +1,4 @@
-import trim from 'lodash/trim';
+import trim from 'lodash/trim.js';
 import { getStores } from "$app/stores";
 import { derived } from 'svelte/store';
 

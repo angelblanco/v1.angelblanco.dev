@@ -1,7 +1,7 @@
 <script context="module">
   export async function load({ fetch }) {
     // Fetch articles of page 1
-    return fetch("/api/articles/all?page=1")
+    return fetch("/api/articles/all/1")
       .then((r) => r.json())
       .then(({ articles, pages, page }) => ({
         props: {
@@ -77,7 +77,7 @@
     {#if hasNextPage}
       <div class="container">
         <a
-          href="/articles/?page=2"
+          href="/articles/2"
           class="button next-page is-5 is-small is-outlined is-pulled-right"
         >
           Next page <span class="icon is-pulled-right">

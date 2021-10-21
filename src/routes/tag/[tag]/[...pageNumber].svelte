@@ -1,8 +1,10 @@
 <script context="module">
   export function load({ page, fetch }) {
-    const { params, query, path } = page;
+    const { params, path } = page;
 
-    return fetch(`/api/articles/tag/${params.tag}?page=${query.page || 1}`)
+    const pageNumber = params.pageNumber || 1;
+
+    return fetch(`/api/articles/tag/${params.tag}/${pageNumber}`)
       .then((r) => r.json())
       .then(({ articles, pages, page }) => {
         return {
@@ -19,10 +21,10 @@
 </script>
 
 <script>
-  import ArticleResumeList from "../../components/ArticleResumeList.svelte";
-  import Head from "../../components/Head.svelte";
-  import { getTag } from "../../components/TagManager";
-  import { setTitle, setOgDescription, setOgUrl } from "../../stores/meta";
+  import ArticleResumeList from "../../../components/ArticleResumeList.svelte";
+  import Head from "../../../components/Head.svelte";
+  import { getTag } from "../../../components/TagManager";
+  import { setTitle, setOgDescription, setOgUrl } from "../../../stores/meta";
   export let articles;
   export let pages;
   export let page;
@@ -31,7 +33,7 @@
 
   function setMeta(slug) {
     const tag = getTag(slug);
-  
+
     setOgUrl(path);
     setTitle(`${tag.title}${tag.topic ? " articles" : ""}`);
 
@@ -45,7 +47,7 @@
   setMeta(tagSlug);
 
   $: uriForPage = (page) =>
-    page <= 1 ? `/tag/${tagSlug}/` : `/tag/${tagSlug}?page=${page}`;
+    page <= 1 ? `/tag/${tagSlug}/` : `/tag/${tagSlug}/${page}`;
 
   $: setMeta(tagSlug);
 </script>

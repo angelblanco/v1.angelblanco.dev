@@ -1,11 +1,8 @@
-import { dirname, resolve } from 'path';
-import { fileURLToPath } from 'url';
+import { resolve } from 'path';
 
-const currentDir = dirname(fileURLToPath(import.meta.url));
-
-const docsPath = resolve(currentDir, '../../../docs');
+const docs = __docsLocation;
 
 export default {
-    docs: docsPath,
-    articles: resolve(docsPath, 'articles'),
+    docs,
+    articles: resolve(docs, 'articles'),
 };

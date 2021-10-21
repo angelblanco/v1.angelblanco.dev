@@ -5,6 +5,7 @@ yarn-error.log
 /cypress/screenshots/
 /__sapper__/
 dist
+build
 .idea
 .env
 .svelte-kit/
