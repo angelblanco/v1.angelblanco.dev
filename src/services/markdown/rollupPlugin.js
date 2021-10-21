@@ -3,17 +3,20 @@ import { preffixForResource, shortLinkTo } from '../shortner/index.js';
 import path from 'path';
 import fs from 'fs';
 import globby from 'globby';
-import kebabCase from 'lodash/kebabCase';
-import deburr from 'lodash/deburr';
+import kebabCase from 'lodash/kebabCase.js';
+import deburr from 'lodash/deburr.js';
 import frontMatter from 'front-matter';
 import MarkdownIt from 'markdown-it';
 import chalk from 'chalk';
-import highlight from './lib/highlight';
-import targetBlank from './lib/targetBlank';
+import highlight from './lib/highlight.js';
+import targetBlank from './lib/targetBlank.js';
 import readingTime from 'reading-time';
 import moment from 'moment';
 import jsdom from 'jsdom';
-import containers from './containers/all';
+import containers from './containers/all.js';
+import markdowContainer from 'markdown-it-container';
+import markdownItAnchor from "markdown-it-anchor";
+import markdownitEmoji from 'markdown-it-emoji';
 
 function warn(message) {
     console.log(chalk.yellow(message));
@@ -58,11 +61,10 @@ function validateMeta(meta, id) {
 export function createMarkdownItInstance(options = {}) {
     const finalOptions = { highlight, ...options };
 
-    const markdowContainer = require('markdown-it-container');
 
     const mdInstance = new MarkdownIt(finalOptions)
-        .use(require("markdown-it-anchor"))
-        .use(require('markdown-it-emoji'))
+        .use(markdownItAnchor)
+        .use(markdownitEmoji)
         .use(markdowContainer);
 
     containers.forEach(registerContainer => registerContainer(mdInstance, markdowContainer));

@@ -1,12 +1,12 @@
 <script>
   export let article;
-  export let user = process.env.DISQUS_USER;  
+  export let user = import.meta.env.DISQUS_USER;  
   import { onMount, onDestroy } from "svelte";
-  import { stores } from "@sapper/app";
+  import { getStores } from "$app/stores";
   import { getCanonicalUrlForPath } from '../stores/canonical';
 
   let scriptNode = null;
-  const { page } = stores();
+  const { page } = getStores();
 
   $: src = `https://${user}.disqus.com/embed.js`;
   $: pageUrl =  getCanonicalUrlForPath(article);

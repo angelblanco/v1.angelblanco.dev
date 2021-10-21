@@ -1,9 +1,11 @@
 <script context="module">
-  export function preload({ params, query, path }) {
-    return this.fetch(`/api/articles/all?page=${query.page || 1}`)
-      .then(r => r.json())
+  export function load({ page }) {
+    const { query, path } = page;
+
+    return fetch(`/api/articles/all?page=${query.page || 1}`)
+      .then((r) => r.json())
       .then(({ articles, pages, page }) => {
-        return { articles, pages, page, path };
+        return { props: { articles, pages, page, path } };
       });
   }
 </script>
@@ -16,12 +18,12 @@
   export let pages;
   export let page;
   export let path;
-  export let uriForPage = page =>
+  export let uriForPage = (page) =>
     page <= 1 ? "/articles/" : `/articles/?page=${page}`;
-    
-  setTitle('Latest articles');
-  setOgDescription('Javacript, Laravel, Vue, Docker posts and much more.')
-  setOgUrl('/articles/');
+
+  setTitle("Latest articles");
+  setOgDescription("Javacript, Laravel, Vue, Docker posts and much more.");
+  setOgUrl("/articles/");
 </script>
 
 <Head />

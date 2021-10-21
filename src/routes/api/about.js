@@ -1,7 +1,7 @@
 import { staticImportMarkdown } from './_utils';
 
 export async function get(req, res, next) {
-    const about = {
+    const body = {
         es: {
             aboutMe: (await staticImportMarkdown(() => import('../../../docs/about/es/about-me.md'))).html,
         },
@@ -10,5 +10,5 @@ export async function get(req, res, next) {
         } 
     };
 
-    return res.end(JSON.stringify(about));
+    return { body };
 };

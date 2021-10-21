@@ -1,8 +1,8 @@
 import { resourceForPreffix, pathForPreffix } from '../../../../services/shortner';
 import markdown from '../../../../services/markdown';
 
-export async function get(req, res, next) {
-    const { preffix, id } = req.params;
+export async function get({ params }) {
+    const { preffix, id } = params;
     let url = null;
 
     try {
@@ -21,7 +21,9 @@ export async function get(req, res, next) {
         res.statusCode = 404;
     }
 
-    res.end(JSON.stringify({
-        url,
-    }));
+    return {
+        body: {
+            url,
+        }
+    };
 }

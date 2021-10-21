@@ -1,13 +1,15 @@
 <script context="module">
-  export async function preload({ params, query, page }) {
+  export async function load({ fetch }) {
     // Fetch articles of page 1
-    return this.fetch("/api/articles/all?page=1")
+    return fetch("/api/articles/all?page=1")
       .then((r) => r.json())
       .then(({ articles, pages, page }) => ({
-        latestArticle: articles.splice(0, 1)[0] || null,
-        articles,
-        pages,
-        page,
+        props: {
+          latestArticle: articles.splice(0, 1)[0] || null,
+          articles,
+          pages,
+          page,
+        },
       }));
   }
 </script>
@@ -27,20 +29,6 @@
   $: hasNextPage = page < pages && pages >= 1;
 </script>
 
-<style lang="scss">
-  .box hr:last-child {
-    display: none;
-  }
-
-  .button.all-articles {
-    margin-bottom: 1.5rem;
-  }
-
-  .button.next-page .icon {
-    margin-left: 0.5rem;
-  }
-</style>
-
 <Head />
 
 <section class="section">
@@ -54,7 +42,8 @@
           <div class="is-clearfix">
             <a
               href="/articles/"
-              class="is-pulled-right-tablet button is-danger is-small">
+              class="is-pulled-right-tablet button is-danger is-small"
+            >
               See the latest articles
             </a>
           </div>
@@ -73,7 +62,8 @@
     <a
       href="/articles/"
       class="button all-articles w-100 is-5 is-large is-outlined is-primary
-        is-hidden-print">
+        is-hidden-print"
+    >
       See all the articles
     </a>
 
@@ -88,11 +78,27 @@
       <div class="container">
         <a
           href="/articles/?page=2"
-          class="button next-page is-5 is-small is-outlined is-pulled-right">
-          Next page <span class="icon is-pulled-right"> <i
-              class="fas fa-angle-double-right" /> </span>
+          class="button next-page is-5 is-small is-outlined is-pulled-right"
+        >
+          Next page <span class="icon is-pulled-right">
+            <i class="fas fa-angle-double-right" />
+          </span>
         </a>
       </div>
     {/if}
   </div>
 </section>
+
+<style lang="scss">
+  .box hr:last-child {
+    display: none;
+  }
+
+  .button.all-articles {
+    margin-bottom: 1.5rem;
+  }
+
+  .button.next-page .icon {
+    margin-left: 0.5rem;
+  }
+</style>

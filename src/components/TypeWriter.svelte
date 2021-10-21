@@ -20,7 +20,7 @@
 
   $: textArray = isArray(text) ? text : [text];
   $: currentText = textArray[index] || "";
-  $: maxSize = currentText.length - 1;
+  $: maxSize = currentText.length;
 
   async function moveText() {
     await stringLength.set(maxSize, {

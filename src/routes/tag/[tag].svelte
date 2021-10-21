@@ -1,14 +1,18 @@
 <script context="module">
-  export function preload({ params, query, path }) {
-    return this.fetch(`/api/articles/tag/${params.tag}?page=${query.page || 1}`)
+  export function load({ page, fetch }) {
+    const { params, query, path } = page;
+
+    return fetch(`/api/articles/tag/${params.tag}?page=${query.page || 1}`)
       .then((r) => r.json())
       .then(({ articles, pages, page }) => {
         return {
-          articles,
-          pages,
-          page,
-          path,
-          tagSlug: params.tag,
+          props: {
+            articles,
+            pages,
+            page,
+            path,
+            tagSlug: params.tag,
+          },
         };
       });
   }
@@ -24,23 +28,24 @@
   export let page;
   export let path;
   export let tagSlug;
-  
+
   function setMeta(slug) {
-    const tag =  getTag(slug);
+    const tag = getTag(slug);
 
     setOgUrl(path);
-    setTitle(`${tag.title}${tag.topic ? ' articles' : ''}`);
-    
-    const description = tag.topic 
+    setTitle(`${tag.title}${tag.topic ? " articles" : ""}`);
+
+    const description = tag.topic
       ? `Find the latest ${tag.title} blog posts.`
-      : `Search the latest "${tag.title}" of the blog`; 
+      : `Search the latest "${tag.title}" of the blog`;
 
     setOgDescription(description);
   }
 
   setMeta(tagSlug);
 
-  $: uriForPage = (page) => page <= 1 ? `/tag/${tagSlug}/` : `/tag/${tagSlug}?page=${page}`;
+  $: uriForPage = (page) =>
+    page <= 1 ? `/tag/${tagSlug}/` : `/tag/${tagSlug}?page=${page}`;
 
   $: setMeta(tagSlug);
 </script>

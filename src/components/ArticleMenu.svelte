@@ -1,6 +1,6 @@
 <script context="module">
-  export async function preload(page) {
-    return { path: page.path };
+  export async function load({ page }) {
+    return { props: { path: page.path } };
   }
 </script>
 

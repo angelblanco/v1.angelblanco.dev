@@ -1,20 +1,27 @@
 <script context="module">
-  export async function preload({ path }) {
+  export async function load({ fetch, page }) {
+    const { path } = page;
+
     // the `slug` parameter is available because
     // this file is called [slug].svelte
-    const res = await this.fetch(`/api/packages`);
+    const res = await fetch(`/api/packages`);
     const { dependencies, devDependencies } = await res.json();
 
     if (res.status === 200) {
       return {
-        dependencies: [
-          { title: "Dependencies", deps: dependencies },
-          { title: "Dev dependencies", deps: devDependencies },
-        ],
-        path,
+        props: {
+          dependencies: [
+            { title: "Dependencies", deps: dependencies },
+            { title: "Dev dependencies", deps: devDependencies },
+          ],
+          path,
+        }
       };
-    } else {
-      this.error(res.status);
+    }
+    
+    return {
+      status: res.status,
+      error: new Error('Library error'),
     }
   }
 </script>

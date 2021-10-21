@@ -1,5 +1,5 @@
 <script>
-  import { stores } from "@sapper/app";
+  import { getStores } from "$app/stores";
   import { onMount } from "svelte";
 
   export let trackingId = "UA-92522790-2"; // 'angeblanc.dev'
@@ -7,7 +7,7 @@
   export let domain = "https://www.googletagmanager.com";
 
   let mounted = false;
-  const { page } = stores();
+  const { page } = getStores();
 
   async function addGoogleAnalyticsScript(dataLayerName = "dataLayer") {
     return new Promise((resolve, reject) => {

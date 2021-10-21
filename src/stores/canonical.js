@@ -1,9 +1,9 @@
 import trim from 'lodash/trim';
-import { stores as sapperStores } from "@sapper/app";
+import { getStores } from "$app/stores";
 import { derived } from 'svelte/store';
 
 export function getCanonicalUrlForFile(file) {
-    return `${process.env.APP_BASE_URL}/${trim(file, '/')}`;
+    return `${import.meta.env.APP_BASE_URL}/${trim(file, '/')}`;
 }
 
 export function getCanonicalUrlForPath(path) {
@@ -14,7 +14,7 @@ export function getCanonicalUrlForPath(path) {
 }
 
 export default() => {
-    const { page } = sapperStores();
+    const { page } = getStores();
 
     return derived(page, $page => getCanonicalUrlForPath($page.path));
 } 

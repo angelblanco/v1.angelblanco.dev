@@ -1,7 +1,7 @@
 <script>
   export let id;
   export let extraClass = '';
-  export let account = process.env.TWITTER_USER;
+  export let account = import.meta.env.TWITTER_USER;
 
   $: url = `https://twitter.com/${account}/status/${id}`;
   $: linkClasses = `tweet-link ${extraClass}`;

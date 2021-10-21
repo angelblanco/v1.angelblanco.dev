@@ -1,6 +1,6 @@
 <script>
   import { isValidEmail } from "./utils";
-  export let user = process.env.TINY_LETTER_USER;
+  export let user = import.meta.env.TINY_LETTER_USER;
   export let popupWindow = "popupwindow";
   let form;
   let email = "";

@@ -32,7 +32,7 @@ export const shareLinks = derived(article, ($article) => {
         twitter: {
             name: 'Twitter',
             icon: 'fa-twitter',
-            intent: `https://twitter.com/intent/tweet?url=${shareItems.encodedUrl}&text=${shareItems.encodedTitle}&via=${process.env.TWITTER_USER}`,
+            intent: `https://twitter.com/intent/tweet?url=${shareItems.encodedUrl}&text=${shareItems.encodedTitle}&via=${import.meta.env.TWITTER_USER}`,
         },
         facebook: {
             name: 'Facebook',

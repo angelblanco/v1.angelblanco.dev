@@ -10,7 +10,7 @@ export default function (dir) {
             throw new Error(`The key "${key} is null please revise your .env file"`);
         }
 
-        return [`process.env.${key.trim()}`, JSON.stringify(value)];
+        return [`import.meta.env.${key.trim()}`, JSON.stringify(value)];
     });
 
     return Object.fromEntries(configEntries);

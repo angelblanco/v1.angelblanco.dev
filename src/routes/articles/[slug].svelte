@@ -1,15 +1,20 @@
 <script context="module">
-  export async function preload({ host, path, params, query }) {
+  export async function load({ page, fetch }) {
+    const { path, params } = page;
+
     // the `slug` parameter is available because
     // this file is called [slug].svelte
-    const res = await this.fetch(`/api/articles/${params.slug}`);
+    const res = await fetch(`/api/articles/${params.slug}`);
     const data = await res.json();
 
     if (res.status === 200) {
-      return { article: data, path };
-    } else {
-      this.error(res.status, data.message);
+      return { props: { article: data, path } };
     }
+
+    return {
+      error: new Error("data.message"),
+      status: res.status,
+    };
   }
 </script>
 
@@ -25,7 +30,12 @@
   import TableOfContent from "./../../components/TableOfContent.svelte";
   import DisqusComments from "./../../components/DisqusComments.svelte";
   import { setArticle } from "./../../stores/article";
-  import { setTitle, setOgDescription, setOgImageUrl, setOgUrl } from "./../../stores/meta";
+  import {
+    setTitle,
+    setOgDescription,
+    setOgImageUrl,
+    setOgUrl,
+  } from "./../../stores/meta";
   export let article;
   export let path;
 
@@ -56,20 +66,6 @@
     setArticleMeta();
   }
 </script>
-
-<style lang="scss">
-  .afterArticleContainer {
-    position: relative;
-    top: -3.5rem; // - .section padding
-    visibility: hidden;
-    pointer-events: none;
-  }
-
-  // Uncomment to have short
-  // a.shortLink {
-  //   display: none;
-  // }
-</style>
 
 <Head />
 
@@ -108,3 +104,17 @@
 <!-- Uncomment to have shortlinks
 <a href={article.shortLink} class="shortLink">{article.title}</a>
  -->
+
+<style lang="scss">
+  .afterArticleContainer {
+    position: relative;
+    top: -3.5rem; // - .section padding
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  // Uncomment to have short
+  // a.shortLink {
+  //   display: none;
+  // }
+</style>

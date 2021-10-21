@@ -1,8 +1,8 @@
 <script>
   import Terminal from "../Terminal.svelte";
   import TypeWriter from "../TypeWriter.svelte";
-  import whoops from "./whoops.txt";
-  import thatsA404 from "./thatsA404.txt";
+  import whoops from "./whoops.txt?raw";
+  import thatsA404 from "./thatsA404.txt?raw";
 
   const text = [whoops, thatsA404];
 </script>

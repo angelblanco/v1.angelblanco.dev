@@ -3,8 +3,8 @@ import { onDestroy } from 'svelte';
 import canonical, { getCanonicalUrlForPath, getCanonicalUrlForFile } from './canonical';
 
 export const defaults = {
-    title: process.env.APP_BASE_TITLE,
-    ogTitle: process.env.APP_BASE_TITLE,
+    title: import.meta.env.APP_BASE_TITLE,
+    ogTitle: import.meta.env.APP_BASE_TITLE,
     ogDescription: 'A personal web development blog focused on Javascript, Vue, Svelte, PHP, Laravel, Docker, back-end, front-end, microservices, Linux, Zsh, and more.',
     ogImageUrl: getCanonicalUrlForFile('/images/share-default.png'),
     ogUrl: null,

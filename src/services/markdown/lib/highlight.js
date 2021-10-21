@@ -1,6 +1,6 @@
 import prism from 'prismjs';
-import 'prismjs/plugins/custom-class/prism-custom-class';
-const loadLanguages = require('prismjs/components/index')
+import 'prismjs/plugins/custom-class/prism-custom-class.js';
+import loadLanguages from 'prismjs/components/index.js';
 import chalk from 'chalk';
 import escapeHtml from 'escape-html';
 

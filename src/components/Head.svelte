@@ -31,7 +31,7 @@
   <meta name="twitter:title" content={$ogTitle} />
   <meta name="twitter:description" content={$ogDescription} />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@{process.env.TWITTER_USER}" />
-  <meta name="twitter:creator" content="@{process.env.TWITTER_USER}" />
+  <meta name="twitter:site" content="@{import.meta.env.TWITTER_USER}" />
+  <meta name="twitter:creator" content="@{import.meta.env.TWITTER_USER}" />
   <meta name="twitter:image" content={$ogImageUrl} />
 </svelte:head>

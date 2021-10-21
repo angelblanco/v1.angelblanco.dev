@@ -1,11 +1,12 @@
 <script context="module">
-  const allowedLangs = [
-    { locale: "en", title: "English" },
-    { locale: "es", title: "Spanish" },
-  ];
+  export async function load({ page, fetch }) {
+    const allowedLangs = [
+      { locale: "en", title: "English" },
+      { locale: "es", title: "Spanish" },
+    ];
 
-  export async function preload({ params, path }) {
-    const res = await this.fetch(`/api/about`);
+    const { params, path } = page;
+    const res = await fetch(`/api/about`);
     const data = await res.json();
 
     const isAllowedLang = allowedLangs.some(
@@ -15,10 +16,15 @@
     const translation = data[params.aboutLang];
 
     if (res.status === 200 && isAllowedLang && translation) {
-      return { translation, lang: params.aboutLang, allowedLangs, path };
-    } else {
-      this.error(res.status, data.message);
+      return {
+        props: { translation, lang: params.aboutLang, allowedLangs, path },
+      };
     }
+
+    return {
+      status: res.status,
+      error: new Error(data.message),
+    };
   }
 </script>
 
@@ -61,7 +67,8 @@
         <img
           class="is-rounded"
           src="/images/me-650x650.jpeg"
-          alt="It's me, Ángel!" />
+          alt="It's me, Ángel!"
+        />
       </figure>
     </div>
   </div>
@@ -74,7 +81,8 @@
           href={`/about/${allowedLang.locale}/`}
           class="button is-rounded is-small"
           class:is-active={lang === allowedLang.locale}
-          class:is-primary={lang === allowedLang.locale}>{allowedLang.title}</a>
+          class:is-primary={lang === allowedLang.locale}>{allowedLang.title}</a
+        >
       {/each}
     </div>
 
