@@ -1,6 +1,5 @@
 <script>
   import TinyLetterSubscribeForm from "./TinyLetterSubscribeForm.svelte";
-  import { onMount } from "svelte";
   import { shareLinks } from "../stores/article";
 
   $: shareIcons =

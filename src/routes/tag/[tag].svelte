@@ -31,7 +31,7 @@
 
   function setMeta(slug) {
     const tag = getTag(slug);
-
+  
     setOgUrl(path);
     setTitle(`${tag.title}${tag.topic ? " articles" : ""}`);
 

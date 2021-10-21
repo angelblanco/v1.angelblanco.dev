@@ -1,6 +1,6 @@
 import markdown from '../../../services/markdown';
 
-export async function get(params) {
+export async function get({ params }) {
 	const { slug } = params;
 
 	const article = await markdown.articles.getBySlug(slug);

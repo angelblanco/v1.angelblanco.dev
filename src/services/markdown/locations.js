@@ -7,5 +7,5 @@ const docsPath = resolve(currentDir, '../../../docs');
 
 export default {
     docs: docsPath,
-    articles: path.resolve(docsPath, 'articles'),
+    articles: resolve(docsPath, 'articles'),
 };

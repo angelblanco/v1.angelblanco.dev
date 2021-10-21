@@ -90,13 +90,13 @@
 
   <Content extraClass="articleBody" html={article.html} />
 
-  <ArticleFooter {article} />
+  <ArticleFooter />
 </section>
 
 <section class="section reading-width is-hidden-print" id="comments">
   <h3 class="title is-3">Comments</h3>
 
-  <DisqusComments />
+  <DisqusComments {article} />
 </section>
 
 <div bind:this={afterArticleContainer} class="afterArticleContainer" />
@@ -104,7 +104,6 @@
 <!-- Uncomment to have shortlinks
 <a href={article.shortLink} class="shortLink">{article.title}</a>
  -->
-
 <style lang="scss">
   .afterArticleContainer {
     position: relative;
