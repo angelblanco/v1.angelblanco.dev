@@ -2,7 +2,7 @@
   import { getStores } from "$app/stores";
   import { onMount } from "svelte";
 
-  export let trackingId = import.meta.env.GOOGLE_ANALYTICS_MEASUREMENT_ID; // 'angeblanc.dev'
+  export let trackingId = import.meta.env.VITE_GOOGLE_ANALYTICS_MEASUREMENT_ID; // 'angeblanc.dev'
   export let scriptId = "google-analytics-script";
   export let domain = "https://www.googletagmanager.com";
 

@@ -64,7 +64,7 @@
         <img
           class="is-rounded"
           src="/images/me-128x128.jpeg"
-          alt="{import.meta.env.APP_BASE_TITLE}" />
+          alt="{import.meta.env.VITE_APP_BASE_TITLE}" />
       </div>
       <img alt="logo" src="/logo.png" width="160" height="24" />
     </a>
@@ -103,7 +103,7 @@
 
       <a
         on:click={closeHamburger}
-        href="{import.meta.env.PROJECT_GITHUB_URL}"
+        href="{import.meta.env.VITE_PROJECT_GITHUB_URL}"
         target="__blank"
         class="navbar-item">
         <span class="icon is-hidden-touch">

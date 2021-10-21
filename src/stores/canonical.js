@@ -3,7 +3,7 @@ import { getStores } from "$app/stores";
 import { derived } from 'svelte/store';
 
 export function getCanonicalUrlForFile(file) {
-    return `${import.meta.env.APP_BASE_URL}/${trim(file, '/')}`;
+    return `${import.meta.env.VITE_APP_BASE_URL}/${trim(file, '/')}`;
 }
 
 export function getCanonicalUrlForPath(path) {

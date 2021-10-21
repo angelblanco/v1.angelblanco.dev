@@ -15,7 +15,7 @@ const options = {
 };
 
 dotenv.config({ path: `${__dirname}/.env` });
-const appRealUrl = trimEnd(process.env.APP_BASE_URL, '/');
+const appRealUrl = trimEnd(process.env.VITE_APP_BASE_URL, '/');
 
 if (!appRealUrl || !isUrl(appRealUrl)) {
   throw new Error('The app url must be set on your dot env file');

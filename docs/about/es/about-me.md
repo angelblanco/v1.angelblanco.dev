@@ -15,7 +15,7 @@ Al margen de los ordenadores me encanta tocar rock & blues :guitar:.
 
 ## Acerca de este blog
 
-Este blog está escrito en Javascript usando [Sapper](https://sapper.svelte.dev/) y [Svelte](https://svelte.dev/). No dudes en echarle un ojo al código fuente, alojado en mi [Github](https://github.com/angelblanco). 
+Este blog está escrito en Javascript usando [Svelte Kit](https://kit.svelte.dev/). No dudes en echarle un ojo al código fuente, alojado en mi [Github](https://github.com/angelblanco). 
 
 
 ## Contáctame

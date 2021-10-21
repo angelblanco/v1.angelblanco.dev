@@ -1,6 +1,6 @@
 {
   "name": "angelblanco-dev-blog",
-  "description": "My blog, built on sapper",
+  "description": "My personal blog, built with svelte kit",
   "private": true,
   "version": "0.0.1",
   "type": "module",

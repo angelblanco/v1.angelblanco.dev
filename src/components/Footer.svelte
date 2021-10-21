@@ -2,7 +2,7 @@
   import { interval } from "./utils";
 
   const libraries = [
-    { tag: "framework", title: "sapper", link: "https://sapper.svelte.dev/" },
+    { tag: "framework", title: "svelte-kit", link: "https://kit.svelte.dev/" },
     { tag: "css", title: "bulma", link: "https://bulma.io/" },
     { tag: "js", title: "svelte", link: "https://svelte.dev/" },
     { tag: "bundler", title: "rollup", link: "https://rollupjs.org/" },

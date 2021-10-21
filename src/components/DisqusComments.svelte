@@ -1,6 +1,6 @@
 <script>
   export let article;
-  export let user = import.meta.env.DISQUS_USER;  
+  export let user = import.meta.env.VITE_DISQUS_USER;  
   import { onMount, onDestroy } from "svelte";
   import { getStores } from "$app/stores";
   import { getCanonicalUrlForPath } from '../stores/canonical';

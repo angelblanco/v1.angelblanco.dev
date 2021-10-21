@@ -18,7 +18,7 @@ One of my main hobbies aside computers is playing rock & blues :guitar:.
 
 ## About this blog
 
-This blog is written in Javascript using [Sapper](https://sapper.svelte.dev/) and [Svelte](https://svelte.dev/). Feel free to check out the code on my [Github](https://github.com/angelblanco).  
+This blog is written in Javascript using [Svelte Kit](https://kit.svelte.dev/). Feel free to check out the code on my [Github](https://github.com/angelblanco).  
 
 ## Reach me
 

@@ -19,7 +19,7 @@
 
       <p class="subtitle">
         If you consider that this in an unexpected error I will appreciate if
-        you reach me on <a href="https://twitter.com/{import.meta.env.TWITTER_USER}">Twitter.</a>
+        you reach me on <a href="https://twitter.com/{import.meta.env.VITE_TWITTER_USER}">Twitter.</a>
       </p>
 
       <Whoops />
