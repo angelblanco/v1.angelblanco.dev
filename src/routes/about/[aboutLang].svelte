@@ -1,8 +1,8 @@
 <script context="module">
   export async function load({ page, fetch }) {
     const allowedLangs = [
-      { locale: "en", title: "English" },
-      { locale: "es", title: "Spanish" },
+      { locale: 'en', title: 'English' },
+      { locale: 'es', title: 'Spanish' },
     ];
 
     const { params, path } = page;
@@ -33,23 +33,23 @@
   export let allowedLangs;
   export let translation;
   export let path;
-  import Content from "../../components/Content.svelte";
-  import Head from "../../components/Head.svelte";
-  import { setTitle, setOgDescription, setOgUrl } from "../../stores/meta";
+  import Content from '../../components/Content.svelte';
+  import Head from '../../components/Head.svelte';
+  import { setTitle, setOgDescription, setOgUrl } from '../../stores/meta';
 
   setMeta();
 
   function setMeta() {
     setOgUrl(path);
 
-    if (lang === "es") {
-      setTitle("Sobre mí!");
+    if (lang === 'es') {
+      setTitle('Sobre mí!');
       setOgDescription(
-        "Hola! Échale un vistazo a mi perfil de Ingeniero en Informática."
+        'Hola! Échale un vistazo a mi perfil de Ingeniero en Informática.'
       );
     } else {
-      setTitle("About me!");
-      setOgDescription("Hello! Checkout my software engineer profile.");
+      setTitle('About me!');
+      setOgDescription('Hello! Checkout my software engineer profile.');
     }
   }
 

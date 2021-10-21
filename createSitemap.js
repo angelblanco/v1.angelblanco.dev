@@ -27,7 +27,7 @@ if (!appRealUrl || !isUrl(appRealUrl)) {
 
 const url = `${options.protocol}://${options.host}:${options.port}`;
 
-const server = exec('yarn export:production && yarn sirv:production');
+const server = exec('yarn build && yarn preview');
 
 const main = async () => {
   const open = await waitPort(options);
@@ -48,7 +48,7 @@ const main = async () => {
 
     generator.on('add', (url) => {
       if (!url.endsWith('/')) {
-        throw new Error('A sitemap url is not canonical: ' + url );
+        throw new Error('A sitemap url is not canonical: ' + url);
       }
 
       console.log(`+ ${url}`);

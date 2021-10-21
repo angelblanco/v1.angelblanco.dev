@@ -1,28 +1,10 @@
 <script>
   export let toc = [];
-  export let path = ""; // The current article path
+  export let path = ''; // The current article path
   export const anchorHref = (anchor) => `${path}${anchor}`;
 
   $: visible = toc.length > 0;
 </script>
-
-<style lang="scss">
-  .toc {
-    a span.anchor {
-      display: none;
-      margin-left: -16px;
-    }
-
-    a:hover:not(.button) {
-      font-weight: $weight-semibold;
-      background-color: $white;
-
-      span.anchor {
-        display: initial;
-      }
-    }
-  }
-</style>
 
 {#if visible}
   <div class="box toc">
@@ -58,3 +40,21 @@
     </div>
   </div>
 {/if}
+
+<style lang="scss">
+  .toc {
+    a span.anchor {
+      display: none;
+      margin-left: -16px;
+    }
+
+    a:hover:not(.button) {
+      font-weight: $weight-semibold;
+      background-color: $white;
+
+      span.anchor {
+        display: initial;
+      }
+    }
+  }
+</style>

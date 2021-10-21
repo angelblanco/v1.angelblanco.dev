@@ -1,12 +1,12 @@
 ---
 id: 4
-title: "Simple Svelte back to top component"
-share_tweet: "Simple back to top component with @sveltejs"
+title: 'Simple Svelte back to top component'
+share_tweet: 'Simple back to top component with @sveltejs'
 tweet: '1311017385768480768'
-date: "2020-09-26"
-description: "Learn how to create a back to top button in Svelte 3."
+date: '2020-09-26'
+description: 'Learn how to create a back to top button in Svelte 3.'
 intro: |
-    Creating a button that returns the user to the top the page is a simple task that could be easily achieved with any javascript framework and some basic styling. Learning how to build this kind of simple components could be a good quick start for Svelte 3.
+  Creating a button that returns the user to the top the page is a simple task that could be easily achieved with any javascript framework and some basic styling. Learning how to build this kind of simple components could be a good quick start for Svelte 3.
 tags: ['svelte', 'js', 'blog']
 ---
 
@@ -23,11 +23,11 @@ To achieve our goal we must fulfil 3 steps:
 
 ### Positioning the icon
 
-irst of all, we will create a new File `BackToTop.svelte` that will contain our component. 
-We can put a fixed icon with 20px of distance from the bottom right corner using some styling and a simple div.  
+irst of all, we will create a new File `BackToTop.svelte` that will contain our component.
+We can put a fixed icon with 20px of distance from the bottom right corner using some styling and a simple div.
 
-If you know ES6 and HTML you will know most of the concepts of Svelte itself. This will 
-also let you incorporate vanilla js libraries without too much overhead 
+If you know ES6 and HTML you will know most of the concepts of Svelte itself. This will
+also let you incorporate vanilla js libraries without too much overhead
 
 ```html
 <style>
@@ -44,12 +44,11 @@ also let you incorporate vanilla js libraries without too much overhead
   }
 </style>
 
-<div class="back-to-top">
-	Back to top
-</div>
-``` 
+<div class="back-to-top">Back to top</div>
+```
 
 ### How to go top
+
 Once our button is rendered, we must handle click event with a function that goes all the way up. In order to go the top of the any page we can simply scroll in to view the document body.
 
 ```js
@@ -69,6 +68,7 @@ Once our button is rendered, we must handle click event with a function that goe
 It doesn't make sense for the component to be visible when the user hasn't scrolled a single pixel. So we export a prop with the necessary number of pixels to show or hide the button. Additionally we can use an internal variable to tell if the button is hidden or not.
 
 Please notice the `class:hidden` syntax sugar for this kind of class flags use cases. Personally I think its a great improvement from other frameworks in components that could have lots of states based on booleans like butons: secondary, disabled, clicked, etc.
+
 ```html
 <script>
   export let showOnPx = 150;
@@ -91,9 +91,9 @@ Please notice the `class:hidden` syntax sugar for this kind of class flags use c
   }
 </script>
 
-<svelte:window on:scroll={handleOnScroll} />
+<svelte:window on:scroll="{handleOnScroll}" />
 
-<div class="back-to-top" on:click={goTop} class:hidden>Back to top</div>
+<div class="back-to-top" on:click="{goTop}" class:hidden>Back to top</div>
 ```
 
 ## Final component
@@ -101,15 +101,16 @@ Please notice the `class:hidden` syntax sugar for this kind of class flags use c
 Summing up we have a black button that returns the user to the top of the page and hides or show itself at a certain pixel when the user scrolls the page.
 
 With this concept you migth apply some additions:
+
 - Style the button with an icon.
 - Hide and change the position of the button media query.
 
 I've build the back top top component for my blog using bulma and fontawesome.
 
-Considering building your own back to top, [checkout the demo!]( https://svelte.dev/repl/cb199730e83f41beb484ff522c64bec1?version=3.22.2)
+Considering building your own back to top, [checkout the demo!](https://svelte.dev/repl/cb199730e83f41beb484ff522c64bec1?version=3.22.2)
 
 ```html
- <script>
+<script>
   export let showOnPx = 150;
   let hidden = true;
 
@@ -153,7 +154,7 @@ Considering building your own back to top, [checkout the demo!]( https://svelte.
   }
 </style>
 
-<svelte:window on:scroll={handleOnScroll} />
+<svelte:window on:scroll="{handleOnScroll}" />
 
-<div class="back-to-top" on:click={goTop} class:hidden>Back to top</div>
+<div class="back-to-top" on:click="{goTop}" class:hidden>Back to top</div>
 ```

@@ -1,20 +1,20 @@
 <script>
   export let article;
-  export let user = import.meta.env.VITE_DISQUS_USER;  
-  import { onMount, onDestroy } from "svelte";
-  import { getStores } from "$app/stores";
+  export let user = import.meta.env.VITE_DISQUS_USER;
+  import { onMount, onDestroy } from 'svelte';
+  import { getStores } from '$app/stores';
   import { getCanonicalUrlForPath } from '../stores/canonical';
 
   let scriptNode = null;
   const { page } = getStores();
 
   $: src = `https://${user}.disqus.com/embed.js`;
-  $: pageUrl =  getCanonicalUrlForPath(article);
+  $: pageUrl = getCanonicalUrlForPath(article);
 
   onMount(() => {
-    scriptNode = document.createElement("script");
+    scriptNode = document.createElement('script');
     scriptNode.src = src;
-    scriptNode.setAttribute("data-timestamp", `${new Date()}`);
+    scriptNode.setAttribute('data-timestamp', `${new Date()}`);
     document.body.appendChild(scriptNode);
 
     window.disquss_config = function () {
@@ -31,4 +31,4 @@
   });
 </script>
 
-<div id="disqus_thread"/>
+<div id="disqus_thread" />

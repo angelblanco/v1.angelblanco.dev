@@ -1,7 +1,8 @@
-FROM cypress/base:12
+FROM cypress/base:14
 
 # Copy the app
 WORKDIR /home/node/app
+
 COPY . .
 
 # Install the deps

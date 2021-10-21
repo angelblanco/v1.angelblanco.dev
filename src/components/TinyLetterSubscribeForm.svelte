@@ -1,9 +1,9 @@
 <script>
-  import { isValidEmail } from "./utils";
+  import { isValidEmail } from './utils';
   export let user = import.meta.env.VITE_TINY_LETTER_USER;
-  export let popupWindow = "popupwindow";
+  export let popupWindow = 'popupwindow';
   let form;
-  let email = "";
+  let email = '';
   let isEmailInDanger = false;
 
   $: url = `https://tinyletter.com/${user}`;
@@ -18,7 +18,7 @@
     window.open(
       `https://tinyletter.com/${user}`,
       popupWindow,
-      "scrollbars=yes,width=800,height=600"
+      'scrollbars=yes,width=800,height=600'
     );
 
     form.submit();
@@ -32,14 +32,6 @@
   }
 </script>
 
-<style lang="scss">
-  .tiny-letter .column {
-    @include tablet() {
-      max-width: 550px;
-    }
-  }
-</style>
-
 <div class="columns is-centered mt-3 tiny-letter">
   <div class="column">
     <div class="box tiny-letter pb-5">
@@ -48,8 +40,8 @@
 
         <slot>
           <p>
-            Keep up to date with the latest web development posts, at most once a
-            week.
+            Keep up to date with the latest web development posts, at most once
+            a week.
           </p>
         </slot>
       </div>
@@ -59,7 +51,8 @@
         bind:this={form}
         action={url}
         target={popupWindow}
-        method="post">
+        method="post"
+      >
         <div class="field has-addons">
           <div class="control is-expanded">
             <input
@@ -70,7 +63,8 @@
               on:input={setEmail}
               value={email}
               id="tlemail"
-              name="email" />
+              name="email"
+            />
           </div>
 
           <div class="control">
@@ -91,10 +85,19 @@
         <a
           href="https://tinyletter.com"
           class="has-text-grey-light is-pulled-right"
-          target="_blank">
+          target="_blank"
+        >
           powered by TinyLetter
         </a>
       </div>
     </div>
   </div>
 </div>
+
+<style lang="scss">
+  .tiny-letter .column {
+    @include tablet() {
+      max-width: 550px;
+    }
+  }
+</style>

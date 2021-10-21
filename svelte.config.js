@@ -6,13 +6,14 @@ import { fileURLToPath } from 'url';
 import replace from '@rollup/plugin-replace';
 const docLocation = fileURLToPath(new URL('./docs/articles', import.meta.url));
 
-const pathToScss = scss => fileURLToPath(new URL(`./src/styles/${scss}`, import.meta.url));
+const pathToScss = (scss) =>
+  fileURLToPath(new URL(`./src/styles/${scss}`, import.meta.url));
 
 const scssPreppendData = [
   fs.readFileSync(pathToScss('_variables.scss', 'utf8')),
   fs.readFileSync(pathToScss('_mixins.scss', 'utf8')),
   fs.readFileSync(pathToScss('_fonts.scss', 'utf8')),
-].join("\n");
+].join('\n');
 
 export default {
   // options passed to svelte.preprocess (https://svelte.dev/docs#svelte_preprocess)
@@ -24,16 +25,15 @@ export default {
     vite: () => ({
       plugins: [
         markdownIt({
-          docLocation
+          docLocation,
         }),
         replace({
           __docsLocation: JSON.stringify(docLocation),
           preventAssignment: true,
-        })
+        }),
       ],
     }),
   },
-
 
   preprocess: preprocess({ scss: { prependData: scssPreppendData } }),
 };

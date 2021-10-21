@@ -23,6 +23,14 @@
   }
 </script>
 
+<svelte:window on:scroll={handleOnScroll} />
+
+<div class="back-to-top is-hidden-print" on:click={goTop} class:hidden>
+  <span class="icon is-large">
+    <i class="fas fa-chevron-up fa-2x" />
+  </span>
+</div>
+
 <style lang="scss">
   .back-to-top {
     opacity: 1;
@@ -51,11 +59,3 @@
     }
   }
 </style>
-
-<svelte:window on:scroll={handleOnScroll} />
-
-<div class="back-to-top is-hidden-print" on:click={goTop} class:hidden>
-  <span class="icon is-large">
-    <i class="fas fa-chevron-up fa-2x" />
-  </span>
-</div>

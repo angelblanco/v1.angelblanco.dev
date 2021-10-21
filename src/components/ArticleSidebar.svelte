@@ -3,9 +3,9 @@
     documentScrollTop,
     copyToClipboard,
     shareArticleText,
-  } from "./utils";
-  import { shareLinks } from "../stores/article";
-  import { onMount } from "svelte";
+  } from './utils';
+  import { shareLinks } from '../stores/article';
+  import { onMount } from 'svelte';
   export let article;
   export let startOffset = 500;
 
@@ -23,10 +23,10 @@
       ? []
       : Object.entries($shareLinks).map(([, value]) => value);
 
-  let shareButtonText = "Share to clipboard";
+  let shareButtonText = 'Share to clipboard';
 
   let copied = false;
-  let shareButtonClass = "";
+  let shareButtonClass = '';
   async function clickShareButton() {
     const setShareButtonTextTmp = async (buttonText, buttonClass) => {
       copied = true;
@@ -35,7 +35,7 @@
       shareButtonText = buttonText;
 
       await new Promise((resolve) => setTimeout(resolve, 500));
-      shareButtonClass = "";
+      shareButtonClass = '';
       shareButtonText = prevShareButtonText;
       copied = false;
     };
@@ -47,24 +47,70 @@
 
       copyToClipboard(shareArticleText(article));
 
-      return setShareButtonTextTmp("Copied to clipboard!", "copied is-success");
+      return setShareButtonTextTmp('Copied to clipboard!', 'copied is-success');
     } catch (err) {
       console.error(err);
 
-      return setShareButtonTextTmp("Error", "copied is-error").finally(
+      return setShareButtonTextTmp('Error', 'copied is-error').finally(
         () => (copied = false)
       ); // Just in case
     }
   }
 
   function clickCommentButton() {
-    const comments = document.getElementById("comments");
+    const comments = document.getElementById('comments');
 
     if (comments) {
-      comments.scrollIntoView({ behavior: "smooth" });
+      comments.scrollIntoView({ behavior: 'smooth' });
     }
   }
 </script>
+
+<svelte:window on:scroll={handleOnScroll} />
+
+<div class="article-sidebar-overlay" class:hidden>
+  <div class="section reading-width">
+    <div class="sidebar">
+      <div class="social-icons has-text-align-left">
+        {#each shareEntries as shareEntry}
+          <div class="is-clearfix">
+            <a
+              href={shareEntry.intent}
+              target="__blank"
+              class="button is-small"
+            >
+              <span class="icon is-small">
+                <i class="fab {shareEntry.icon}" />
+              </span>
+              <span>Share on {shareEntry.name}</span>
+            </a>
+          </div>
+        {/each}
+
+        <div class="is-clearfix">
+          <button class="button is-small" on:click={clickCommentButton}>
+            <span class="icon is-small"> <i class="fas fa-comments" /> </span>
+            <span>Go Comments</span>
+          </button>
+        </div>
+
+        <div class="is-clearfix">
+          <button
+            class="button is-small {shareButtonClass}"
+            on:click={clickShareButton}
+          >
+            {#if !shareButtonClass}
+              <span class="icon is-small">
+                <i class="fas fa-share-alt" />
+              </span>
+            {/if}
+            <span>{shareButtonText}</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <style lang="scss">
   .article-sidebar-overlay {
@@ -125,47 +171,3 @@
     }
   }
 </style>
-
-<svelte:window on:scroll={handleOnScroll} />
-
-<div class="article-sidebar-overlay" class:hidden>
-  <div class="section reading-width">
-    <div class="sidebar">
-      <div class="social-icons has-text-align-left">
-        {#each shareEntries as shareEntry}
-          <div class="is-clearfix">
-            <a
-              href={shareEntry.intent}
-              target="__blank"
-              class="button is-small">
-              <span class="icon is-small">
-                <i class="fab {shareEntry.icon}" />
-              </span>
-              <span>Share on {shareEntry.name}</span>
-            </a>
-          </div>
-        {/each}
-
-        <div class="is-clearfix">
-          <button class="button is-small" on:click={clickCommentButton}>
-            <span class="icon is-small"> <i class="fas fa-comments" /> </span>
-            <span>Go Comments</span>
-          </button>
-        </div>
-
-        <div class="is-clearfix">
-          <button
-            class="button is-small {shareButtonClass}"
-            on:click={clickShareButton}>
-            {#if !shareButtonClass}
-              <span class="icon is-small">
-                <i class="fas fa-share-alt" />
-              </span>
-            {/if}
-            <span>{shareButtonText}</span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>

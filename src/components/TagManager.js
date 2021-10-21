@@ -1,4 +1,4 @@
-const fixedTagName = name => name.toLowerCase().trim().replace(' ', '-');
+const fixedTagName = (name) => name.toLowerCase().trim().replace(' ', '-');
 
 const blogTag = {
   title: 'Blog',
@@ -29,7 +29,7 @@ const availableTags = [
     title: 'Javascript',
     icon: 'fab fa-js',
     color: '#f2d73c',
-    tag: 'js'
+    tag: 'js',
   },
   {
     title: 'Svelte',
@@ -57,7 +57,7 @@ const availableTags = [
     title: 'Docker',
     icon: 'fab fa-docker',
     color: '#006cb1',
-    tag: 'docker'
+    tag: 'docker',
   },
   {
     title: 'Articles with Github code',
@@ -68,21 +68,24 @@ const availableTags = [
   },
   blogTag,
 ]
-  .map(item => ({ ...item, tag: fixedTagName(item.tag) , topic: item.topic !== false }))
-  .map(item => ({ ...item, url: `/tag/${item.tag}/` }));
-
+  .map((item) => ({
+    ...item,
+    tag: fixedTagName(item.tag),
+    topic: item.topic !== false,
+  }))
+  .map((item) => ({ ...item, url: `/tag/${item.tag}/` }));
 
 export function getTag(tag) {
   const fixedTag = fixedTagName(tag);
 
-  return availableTags.find(item => item.tag === fixedTag);
-};
+  return availableTags.find((item) => item.tag === fixedTag);
+}
 
 export const getTags = (names) => names.map(getTag);
 
-export const tags = availableTags.filter(tag => tag.tag !== 'blog');
+export const tags = availableTags.filter((tag) => tag.tag !== 'blog');
 
-const isArticleSectionTag = tag => tag.topic === false;
+const isArticleSectionTag = (tag) => tag.topic === false;
 
 export const sidebarMenu = [
   {
@@ -99,12 +102,12 @@ export const sidebarMenu = [
   {
     title: 'Topic',
     items: tags
-      .filter(tag => !isArticleSectionTag(tag))
+      .filter((tag) => !isArticleSectionTag(tag))
       .reduce((result, currTag) => {
         const currentTag = Object.assign({}, currTag);
 
         if (currentTag.parent) {
-          const parentTag = result.find(tag => tag.tag === currentTag.parent);
+          const parentTag = result.find((tag) => tag.tag === currentTag.parent);
 
           if (!parentTag.items) {
             parentTag.items = [];

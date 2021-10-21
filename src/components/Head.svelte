@@ -7,12 +7,12 @@
     ogImageHeight,
     ogImageWidth,
     ogUrl,
-  } from "../stores/meta";
+  } from '../stores/meta';
 </script>
 
 <svelte:head>
   <title>{$title}</title>
-  <meta name="description" content="{$ogDescription}">
+  <meta name="description" content={$ogDescription} />
 
   <!-- Open graphs meta -->
   {#if $ogUrl}

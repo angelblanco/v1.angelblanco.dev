@@ -1,5 +1,5 @@
 <script>
-  import { onMount } from "svelte";
+  import { onMount } from 'svelte';
 
   onMount(() => {
     const id = 'twitter-widgets';
@@ -9,14 +9,14 @@
       return;
     }
 
-    const scriptTag = document.createElement("script");
+    const scriptTag = document.createElement('script');
 
     scriptTag.id = id;
-    scriptTag.type = "text/javascript";
+    scriptTag.type = 'text/javascript';
     scriptTag.async = true;
-    scriptTag.charset = "utf-8";
-    scriptTag.src = "https://platform.twitter.com/widgets.js";
+    scriptTag.charset = 'utf-8';
+    scriptTag.src = 'https://platform.twitter.com/widgets.js';
 
-    document.getElementsByTagName("head")[0].appendChild(scriptTag);
+    document.getElementsByTagName('head')[0].appendChild(scriptTag);
   });
 </script>

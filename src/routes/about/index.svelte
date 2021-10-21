@@ -1,5 +1,5 @@
 <script context="module">
-	export async function load() {
-		return { status: 302, redirect: "/about/en/" };
-	}
+  export async function load() {
+    return { status: 302, redirect: '/about/en/' };
+  }
 </script>

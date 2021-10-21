@@ -27,7 +27,7 @@
     --space-x2: 20px;
   }
 
-  [data-theme="dark"] {
+  [data-theme='dark'] {
     --body-color: #ebf4f1;
     --bg: #091a28;
     --bg-secondary: #071521;
@@ -42,7 +42,7 @@
     --glow: 2px 2px 15px 0 #071521;
   }
 
-  [data-theme="sepia"] {
+  [data-theme='sepia'] {
     --body-color: #433422;
     --bg: #f1e7d0;
     --dark-bg: #111;
@@ -68,7 +68,7 @@ h4 {
 pre,
 code {
   // font-family: Space Mono, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
-  font-feature-settings: "liga" 0;
+  font-feature-settings: 'liga' 0;
   border-radius: 3px;
   line-height: 1.5;
   direction: ltr;
@@ -117,7 +117,8 @@ pre {
   font-variant-ligatures: none;
 }
 
-.#{$prism-prefix}token.#{$prism-prefix}comment .#{$prism-prefix}token.#{$prism-prefix}prolog,
+.#{$prism-prefix}token.#{$prism-prefix}comment
+.#{$prism-prefix}token.#{$prism-prefix}prolog,
 .#{$prism-prefix}token.#{$prism-prefix}doctype,
 .#{$prism-prefix}token.#{$prism-prefix}cdata {
   color: #585858;

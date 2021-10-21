@@ -5,11 +5,50 @@
 </script>
 
 <script>
-  import { sidebarMenu } from "./TagManager";
-  export let path = "";
+  import { sidebarMenu } from './TagManager';
+  export let path = '';
 
-  $: isActiveUrl = url => path.includes(url);
+  $: isActiveUrl = (url) => path.includes(url);
 </script>
+
+<aside class="menu article-menu">
+  {#each sidebarMenu as menuEntry}
+    <p class="menu-label">{menuEntry.title}</p>
+
+    <ul class="menu-list">
+      {#each menuEntry.items as menuLink}
+        <li>
+          <a
+            rel="prefetch"
+            class={menuLink.tag}
+            class:is-active={isActiveUrl(menuLink.url)}
+            href={menuLink.url}
+          >
+            <i class="dot {menuLink.tag}" />
+            {menuLink.title}
+          </a>
+
+          {#if menuLink.items}
+            <ul>
+              {#each menuLink.items || [] as childLink}
+                <li>
+                  <a
+                    rel="prefetch"
+                    class={childLink.tag}
+                    class:is-active={isActiveUrl(childLink.url)}
+                    href={childLink.url}
+                  >
+                    {childLink.title}
+                  </a>
+                </li>
+              {/each}
+            </ul>
+          {/if}
+        </li>
+      {/each}
+    </ul>
+  {/each}
+</aside>
 
 <style lang="scss">
   $article-menu-transtion-lenght: 25px;
@@ -43,40 +82,3 @@
     }
   }
 </style>
-
-<aside class="menu article-menu">
-  {#each sidebarMenu as menuEntry}
-    <p class="menu-label">{menuEntry.title}</p>
-
-    <ul class="menu-list">
-      {#each menuEntry.items as menuLink}
-        <li>
-          <a
-            rel="prefetch"
-            class={menuLink.tag}
-            class:is-active={isActiveUrl(menuLink.url)}
-            href={menuLink.url}>
-            <i class="dot {menuLink.tag}" />
-            {menuLink.title}
-          </a>
-
-          {#if menuLink.items}
-            <ul>
-              {#each menuLink.items || [] as childLink}
-                <li>
-                  <a
-                    rel="prefetch"
-                    class={childLink.tag}
-                    class:is-active={isActiveUrl(childLink.url)}
-                    href={childLink.url}>
-                    {childLink.title}
-                  </a>
-                </li>
-              {/each}
-            </ul>
-          {/if}
-        </li>
-      {/each}
-    </ul>
-  {/each}
-</aside>

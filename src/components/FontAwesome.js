@@ -24,31 +24,30 @@ import { faNodeJs } from '@fortawesome/free-brands-svg-icons/faNodeJs.js';
 import { faDocker } from '@fortawesome/free-brands-svg-icons/faDocker.js';
 
 const icons = [
-    // Solid
-    faChevronUp,
-    faAngleDoubleLeft,
-    faAngleDoubleRight,
-    faHashtag,
-    faShareAlt,
-    faComments,
-    faHeart,
+  // Solid
+  faChevronUp,
+  faAngleDoubleLeft,
+  faAngleDoubleRight,
+  faHashtag,
+  faShareAlt,
+  faComments,
+  faHeart,
 
-    // Brands
-    faTwitter,
-    faFacebook,
-    faLinkedinIn,
-    faGithubAlt,
-    faGithub,
-    faVuejs,
-    faPhp,
-    faLaravel,
-    faJs,
-    faNodeJs,
-    faDocker,
-    faBomb,
+  // Brands
+  faTwitter,
+  faFacebook,
+  faLinkedinIn,
+  faGithubAlt,
+  faGithub,
+  faVuejs,
+  faPhp,
+  faLaravel,
+  faJs,
+  faNodeJs,
+  faDocker,
+  faBomb,
 ];
 
-icons.forEach(icon => library.add(icon));
+icons.forEach((icon) => library.add(icon));
 
 dom.watch();
-

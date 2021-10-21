@@ -1,7 +1,7 @@
 <script context="module">
   export async function load({ fetch }) {
     // Fetch articles of page 1
-    return fetch("/api/articles/all/1")
+    return fetch('/api/articles/all/1')
       .then((r) => r.json())
       .then(({ articles, pages, page }) => ({
         props: {
@@ -15,16 +15,16 @@
 </script>
 
 <script>
-  import HomeQuickTags from "../components/HomeQuickTags.svelte";
-  import Head from "../components/Head.svelte";
-  import ArticleResume from "../components/ArticleResume.svelte";
-  import { setOgUrl } from "../stores/meta";
+  import HomeQuickTags from '../components/HomeQuickTags.svelte';
+  import Head from '../components/Head.svelte';
+  import ArticleResume from '../components/ArticleResume.svelte';
+  import { setOgUrl } from '../stores/meta';
   export let articles;
   export let pages;
   export let page;
   export let latestArticle;
 
-  setOgUrl("/");
+  setOgUrl('/');
 
   $: hasNextPage = page < pages && pages >= 1;
 </script>

@@ -21,10 +21,10 @@
 </script>
 
 <script>
-  import ArticleResumeList from "../../../components/ArticleResumeList.svelte";
-  import Head from "../../../components/Head.svelte";
-  import { getTag } from "../../../components/TagManager";
-  import { setTitle, setOgDescription, setOgUrl } from "../../../stores/meta";
+  import ArticleResumeList from '../../../components/ArticleResumeList.svelte';
+  import Head from '../../../components/Head.svelte';
+  import { getTag } from '../../../components/TagManager';
+  import { setTitle, setOgDescription, setOgUrl } from '../../../stores/meta';
   export let articles;
   export let pages;
   export let page;
@@ -35,7 +35,7 @@
     const tag = getTag(slug);
 
     setOgUrl(path);
-    setTitle(`${tag.title}${tag.topic ? " articles" : ""}`);
+    setTitle(`${tag.title}${tag.topic ? ' articles' : ''}`);
 
     const description = tag.topic
       ? `Find the latest ${tag.title} blog posts.`
