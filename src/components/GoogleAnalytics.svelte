@@ -2,7 +2,7 @@
   import { getStores } from "$app/stores";
   import { onMount } from "svelte";
 
-  export let trackingId = "UA-92522790-2"; // 'angeblanc.dev'
+  export let trackingId = import.meta.env.GOOGLE_ANALYTICS_MEASUREMENT_ID; // 'angeblanc.dev'
   export let scriptId = "google-analytics-script";
   export let domain = "https://www.googletagmanager.com";
 
@@ -32,6 +32,11 @@
   }
 
   onMount(async () => {
+    // Local
+    if (trackingId === '') {
+      return;
+    }
+
     if (window.document.getElementById(scriptId)) {
       return;
     }

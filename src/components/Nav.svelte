@@ -90,14 +90,14 @@
         on:click={closeHamburger}
         rel="prefetch"
         class="navbar-item is-primary {segment === 'articles' || segment === 'tag' ? 'is-active' : ''}"
-        href="articles/">
+        href="/articles/">
         Articles
       </a>
       <a
         on:click={closeHamburger}
         rel="prefecth"
         class="navbar-item is-primary {segment === 'about' ? 'is-active' : ''}"
-        href="about/">
+        href="/about/">
         About
       </a>
 
