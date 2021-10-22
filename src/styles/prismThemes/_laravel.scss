@@ -3,8 +3,8 @@ $code_dark_red: #981d15;
 $code_blue: #0782b1;
 $code_dark_blue: #055472;
 
-code[class*="language-"],
-pre[class*="language-"] {
+code[class*='language-'],
+pre[class*='language-'] {
   color: $black;
   background: none;
   text-align: left;
@@ -21,31 +21,31 @@ pre[class*="language-"] {
   hyphens: none;
 }
 
-pre[class*="language-"]::selection,
-pre[class*="language-"] ::selection,
-code[class*="language-"]::selection,
-code[class*="language-"] ::selection {
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
   text-shadow: none;
   background: #b3d4fc;
 }
 
-pre[class*="language-"]::selection,
-pre[class*="language-"] ::selection,
-code[class*="language-"]::selection,
-code[class*="language-"] ::selection {
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
   text-shadow: none;
   background: #b3d4fc;
 }
 
 @media print {
-  code[class*="language-"],
-  pre[class*="language-"] {
+  code[class*='language-'],
+  pre[class*='language-'] {
     text-shadow: none;
   }
 }
 
 /* Code blocks */
-pre[class*="language-"] {
+pre[class*='language-'] {
   padding: 1em;
   margin: 0.5em 0 2em;
   overflow: auto;
@@ -53,8 +53,8 @@ pre[class*="language-"] {
   max-width: 100%;
 }
 
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
   background: #fbfbfd;
   box-shadow: 0 1px 1px rgb(0 0 0 / 7.5%);
   color: $code_red;
@@ -132,13 +132,13 @@ pre[class*="language-"] {
   cursor: help;
 }
 
-pre[class*="language-"].line-numbers {
+pre[class*='language-'].line-numbers {
   position: relative;
   padding-left: 3.8em;
   counter-reset: linenumber;
 }
 
-pre[class*="language-"].line-numbers > code {
+pre[class*='language-'].line-numbers > code {
   position: relative;
   white-space: inherit;
 }

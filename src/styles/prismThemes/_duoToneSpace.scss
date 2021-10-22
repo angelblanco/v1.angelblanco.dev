@@ -6,8 +6,8 @@ Conversion: Bram de Haan (http://atelierbram.github.io/Base2Tone-prism/output/pr
 Generated with Base16 Builder (https://github.com/base16-builder/base16-builder)
 */
 
-code[class*="language-"],
-pre[class*="language-"] {
+code[class*='language-'],
+pre[class*='language-'] {
   direction: ltr;
   text-align: left;
   white-space: pre;
@@ -24,35 +24,35 @@ pre[class*="language-"] {
   color: #767693;
 }
 
-pre > code[class*="language-"] {
+pre > code[class*='language-'] {
   font-size: 1em;
 }
 
-pre[class*="language-"]::selection,
-pre[class*="language-"] ::selection,
-code[class*="language-"]::selection,
-code[class*="language-"] ::selection {
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
   text-shadow: none;
   background: #5151e6;
 }
 
-pre[class*="language-"]::selection,
-pre[class*="language-"] ::selection,
-code[class*="language-"]::selection,
-code[class*="language-"] ::selection {
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
   text-shadow: none;
   background: #5151e6;
 }
 
 /* Code blocks */
-pre[class*="language-"] {
+pre[class*='language-'] {
   padding: 1em;
   margin: 0.5em 0;
   overflow: auto;
 }
 
 /* Inline code */
-:not(pre) > code[class*="language-"] {
+:not(pre) > code[class*='language-'] {
   padding: 0.1em;
   border-radius: 0.3em;
 }
@@ -166,16 +166,14 @@ pre > code.highlight {
 */
 .line-highlight {
   background: rgb(221 103 44 / 20%);
-  background:
-    linear-gradient(
-      left,
-      rgb(221 103 44 / 20%) 70%,
-      rgb(221 103 44 / 0%)
-    );
-  background:
-    linear-gradient(
-      to right,
-      rgb(221 103 44 / 20%) 70%,
-      rgb(221 103 44 / 0%)
-    );
+  background: linear-gradient(
+    left,
+    rgb(221 103 44 / 20%) 70%,
+    rgb(221 103 44 / 0%)
+  );
+  background: linear-gradient(
+    to right,
+    rgb(221 103 44 / 20%) 70%,
+    rgb(221 103 44 / 0%)
+  );
 }

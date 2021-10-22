@@ -20,7 +20,7 @@ i.dot {
   }
 
   .tag.is-light.#{$tag} {
-    @if  map-get($tags-darker, $tag) {
+    @if map-get($tags-darker, $tag) {
       color: darken($color, map-get($tags-darker, $tag));
     } @else {
       color: $color;
