@@ -2,7 +2,7 @@ import { createFilter } from 'rollup-pluginutils';
 import { preffixForResource, shortLinkTo } from '../shortner/index.js';
 import path from 'path';
 import fs from 'fs';
-import globby from 'globby';
+import { globbySync } from 'globby';
 import kebabCase from 'lodash/kebabCase.js';
 import deburr from 'lodash/deburr.js';
 import frontMatter from 'front-matter';
@@ -232,9 +232,8 @@ export function markdownIt(options = {}) {
       // Watch for markdown changes
       this.addWatchFile(docLocation);
 
-      const dynamicImports = globby
-        .sync(docGlob, { cwd: docLocation })
-        .map((relative) => {
+      const dynamicImports = globbySync(docGlob, { cwd: docLocation }).map(
+        (relative) => {
           const absolutePath = path.resolve(docLocation, relative);
           const basename = path.basename(absolutePath, '.md');
 
@@ -244,7 +243,8 @@ export function markdownIt(options = {}) {
                         relative: '${relative}',
                         basename: '${basename}',
                     }`;
-        });
+        }
+      );
 
       const moduleCode = `export default [
                 ${dynamicImports.join(',' + '\n')}

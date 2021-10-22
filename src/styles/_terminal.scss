@@ -67,7 +67,7 @@ $terminal-bar-height: $terminal-btn-size * 3;
       &::after {
         @extend %btn;
 
-        content: ' ';
+        content: " ";
         position: absolute;
       }
 

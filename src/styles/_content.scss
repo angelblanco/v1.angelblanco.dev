@@ -9,7 +9,7 @@
   ul,
   li {
     > a:not(.button) {
-      @include linkStyle();
+      @include linkStyle;
     }
   }
 
@@ -99,7 +99,7 @@
 }
 
 .content {
-  @include applyContentStyle();
+  @include applyContentStyle;
 }
 
 .title.is-6 {

@@ -4,6 +4,7 @@ i.dot {
   margin-right: 10px;
   border-radius: 50%;
   display: inline-block;
+
   //background-color: #2d2d2b;
 
   &.is-20 {
@@ -19,11 +20,9 @@ i.dot {
   }
 
   .tag.is-light.#{$tag} {
-    @if (map-get($tags-darker, $tag)) {
+    @if  map-get($tags-darker, $tag) {
       color: darken($color, map-get($tags-darker, $tag));
-    }
-
-    @else {
+    } @else {
       color: $color;
     }
 

@@ -6,25 +6,21 @@
 
 // Source sans alternatives
 @if $source-sans-body-theme and $source-sans-title-theme {
-  @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,600,700&display=swap');
-}
-
-@else if $source-sans-body-theme {
-  @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,600&display=swap');
-}
-
-@else if $source-sans-title-theme {
-  @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:700&display=swap');
+  @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,600,700&display=swap");
+} @else if $source-sans-body-theme {
+  @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,600&display=swap");
+} @else if $source-sans-title-theme {
+  @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:700&display=swap");
 }
 
 // Open sans
 @if $open-sans-title-theme {
-  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
+  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap");
 }
 
 // Zilla slab
 @if $zilla-slab-body-theme {
-  @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300;600&display=swap');
+  @import url("https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300;600&display=swap");
 }
 
 /**
@@ -33,5 +29,5 @@
  |-------------------------------------------------
  */
 @if $code-theme-roboto-mono {
-  @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap');
+  @import url("https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap");
 }
