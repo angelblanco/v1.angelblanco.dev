@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-const { program } = require('commander');
-const initCommands = require('./src/commands/index.js');
+import { program } from 'commander';
+import initCommands from './src/commands/index.js';
 
 async function main() {
     initCommands(program).forEach(command => command.setUp());

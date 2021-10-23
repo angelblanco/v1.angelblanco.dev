@@ -1,5 +1,5 @@
 <script>
-  import moment from 'moment';
+  import dayjs from '../bootstrap/dayjs.js';
   import Tags from './Tags.svelte';
   import TweetLink from './TweetLink.svelte';
 
@@ -7,9 +7,9 @@
   export let relativeTime = '';
 
   $: {
-    const date = moment(article.meta.date);
+    const date = dayjs(article.meta.date);
     relativeTime =
-      date.diff(moment(), 'days') < 7
+      date.diff(dayjs(), 'days') < 7
         ? `${date.format('YYYY-MM-DD')}`
         : date.fromNow();
   }

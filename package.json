@@ -5,7 +5,7 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "blog": "node ./blog",
+    "blog": "node ./blog.js",
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
     "preview": "svelte-kit preview",
@@ -26,9 +26,9 @@
   "dependencies": {
     "commander": "^8.3.0",
     "compression": "^1.7.1",
+    "dayjs": "^1.10.7",
     "inquirer": "^8.2.0",
     "lodash": "^4.17.20",
-    "moment": "^2.24.0",
     "reading-time": "^1.2.0"
   },
   "devDependencies": {

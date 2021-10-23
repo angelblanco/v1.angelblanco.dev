@@ -1,6 +1,6 @@
-const BaseCommand = require('./BaseCommand');
+import BaseCommand from './BaseCommand.js';
 
-module.exports = class VerifyArticlesCommand extends BaseCommand {
+export default class VerifyArticlesCommand extends BaseCommand {
   constructor(program) {
     super(program);
 
@@ -87,7 +87,7 @@ module.exports = class VerifyArticlesCommand extends BaseCommand {
       error('All articles must have an intro with at least 100 characters');
     }
 
-    const date = () => this.moment(attributes.date.trim(), 'YYYY-MM-DD');
+    const date = () => this.dayjs(attributes.date.trim(), 'YYYY-MM-DD');
 
     if (
       !attributes.date ||

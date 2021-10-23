@@ -11,7 +11,7 @@ import chalk from 'chalk';
 import highlight from './lib/highlight.js';
 import targetBlank from './lib/targetBlank.js';
 import readingTime from 'reading-time';
-import moment from 'moment';
+import dayjs from '../../bootstrap/dayjs.js';
 import jsdom from 'jsdom';
 import containers from './containers/all.js';
 import markdowContainer from 'markdown-it-container';
@@ -44,7 +44,7 @@ function validateMeta(meta, id) {
       warn(`The article has no associated tweet yet @ ${id}`);
     }
 
-    if (!meta.date || !moment.utc(meta.date).isValid()) {
+    if (!meta.date || !dayjs.utc(meta.date).isValid()) {
       throw new Error(`All published articles must have a date @ ${id}`);
     }
 
@@ -189,7 +189,7 @@ export function parseCode(code, id = '', md) {
       published: meta.published !== false, // When validated and not unpublished its asumed as published
       slug,
       titleSlug,
-      date: moment.utc(meta.date),
+      date: dayjs.utc(meta.date),
       readingStats: readingTime(data.body),
       tags: (meta.tags || ['blog']).map((tag) => tag.toLowerCase().trim()),
     },

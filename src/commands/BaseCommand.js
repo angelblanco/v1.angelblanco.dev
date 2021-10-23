@@ -1,13 +1,14 @@
-const chalk = require('chalk');
-const console = require('console');
-const inquirer = require('inquirer');
-const globby = require('globby');
-const path = require('path');
-const frontmatter = require('front-matter');
-const fs = require('fs').promises;
-const moment = require('moment');
+import chalk from 'chalk';
+import console from 'console';
+import inquirer from 'inquirer';
+import { globby } from 'globby';
+import path from 'path';
+import frontmatter from 'front-matter';
+import { promises as fs } from 'fs';
+import dayjs from '../bootstrap/dayjs.js';
+import { fileURLToPath } from 'url';
 
-module.exports = class BaseCommand {
+export default class BaseCommand {
   constructor(program) {
     this.program = program;
     this.programPatata = program;
@@ -18,7 +19,7 @@ module.exports = class BaseCommand {
     this.globby = globby;
     this.frontmatter = frontmatter;
     this.fs = fs;
-    this.moment = moment;
+    this.dayjs = dayjs;
 
     // Helping functions.
     this.log = this.console.log;
@@ -47,7 +48,11 @@ module.exports = class BaseCommand {
   }
 
   docPath(subPath = '') {
-    return this.path.resolve(__dirname, '../../docs', subPath);
+    return this.path.resolve(
+      path.dirname(fileURLToPath(import.meta.url)),
+      '../../docs',
+      subPath
+    );
   }
 
   articlePath(subPath = '') {

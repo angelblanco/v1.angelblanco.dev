@@ -1,4 +1,4 @@
-import moment from 'moment';
+import dayjs from '../../bootstrap/dayjs.js';
 import locations from './locations';
 import resolveFiles from './functions/resolveFiles';
 
@@ -67,7 +67,7 @@ const markdownResource = (location, baseUri) => {
     intro: article.intro,
     description: article.description,
     tags: article.meta.tags,
-    date: moment.utc(article.meta.date).format('LL'),
+    date: dayjs.utc(article.meta.date).format('LL'),
     readingTimeText: article.meta.readingStats.text,
     readingTimeMinutes: article.meta.readingStats.minutes,
     words: article.meta.readingStats.words,
@@ -132,7 +132,7 @@ const markdownResource = (location, baseUri) => {
       const articles = (await parsed())
         .filter((article) => article.meta.published)
         .sort((article1, article2) =>
-          moment.utc(article2.meta.date).diff(moment.utc(article1.meta.date))
+          dayjs.utc(article2.meta.date).diff(dayjs.utc(article1.meta.date))
         )
         .map(mapArticle);
 
