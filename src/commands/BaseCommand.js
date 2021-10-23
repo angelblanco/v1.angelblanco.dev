@@ -58,4 +58,4 @@ export default class BaseCommand {
   articlePath(subPath = '') {
     return this.path.resolve(this.docPath('articles'), subPath);
   }
-};
+}

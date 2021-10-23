@@ -145,4 +145,4 @@ export default class VerifyArticlesCommand extends BaseCommand {
       }
     });
   }
-};
+}

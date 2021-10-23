@@ -12,7 +12,7 @@
     "sitemap": "node createSitemap.js",
     "test": "run-p --race dev cy:run",
     "lint": "yarn js:lint && yarn scss:lint",
-    "fix": "yarn js:fix && yarn scss:fix",
+    "fix": "yarn js:fix",
     "js:lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
     "js:fix": "prettier --ignore-path .gitignore --write --plugin-search-dir=. .",
     "scss:lint": "stylelint 'src/**/*.scss'",

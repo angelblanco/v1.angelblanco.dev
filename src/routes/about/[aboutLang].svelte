@@ -74,7 +74,7 @@
   </div>
 
   <div>
-    <div class="buttons has-addons is-pulled-right mt-2">
+    <div class="buttons has-addons is-pulled-right mt-2 mb-0">
       {#each allowedLangs as allowedLang}
         <a
           rel="preload"
