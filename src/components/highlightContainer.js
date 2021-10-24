@@ -10,5 +10,5 @@ import 'prismjs/components/prism-sass';
 import 'prismjs/components/prism-scss';
 
 export function hightlightContainer(container) {
-    Prism.highlightAllUnder(container);
-};
+  Prism.highlightAllUnder(container);
+}

@@ -1,12 +1,11 @@
-const BaseCommand = require('./BaseCommand');
+import BaseCommand from './BaseCommand.js';
 
-module.exports = class CreatePostCommand extends BaseCommand {
-    register() {
-        return this.program
-            .command('create:post');
-    }
+export default class CreatePostCommand extends BaseCommand {
+  register() {
+    return this.program.command('create:post');
+  }
 
-    action() {
-        console.log('create post');
-    }
+  action() {
+    console.log('create post');
+  }
 }

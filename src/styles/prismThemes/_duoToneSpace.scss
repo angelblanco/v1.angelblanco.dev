@@ -6,53 +6,53 @@ Conversion: Bram de Haan (http://atelierbram.github.io/Base2Tone-prism/output/pr
 Generated with Base16 Builder (https://github.com/base16-builder/base16-builder)
 */
 
-code[class*="language-"],
-pre[class*="language-"] {
+code[class*='language-'],
+pre[class*='language-'] {
   direction: ltr;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
   tab-size: 4;
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
+  tab-size: 4;
+  tab-size: 4;
+  hyphens: none;
+  hyphens: none;
+  hyphens: none;
   hyphens: none;
   background: #24242e;
   color: #767693;
 }
 
-pre > code[class*="language-"] {
+pre > code[class*='language-'] {
   font-size: 1em;
 }
 
-pre[class*="language-"]::-moz-selection,
-pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection,
-code[class*="language-"] ::-moz-selection {
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
   text-shadow: none;
   background: #5151e6;
 }
 
-pre[class*="language-"]::selection,
-pre[class*="language-"] ::selection,
-code[class*="language-"]::selection,
-code[class*="language-"] ::selection {
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
   text-shadow: none;
   background: #5151e6;
 }
 
 /* Code blocks */
-pre[class*="language-"] {
+pre[class*='language-'] {
   padding: 1em;
   margin: 0.5em 0;
   overflow: auto;
 }
 
 /* Inline code */
-:not(pre) > code[class*="language-"] {
+:not(pre) > code[class*='language-'] {
   padding: 0.1em;
   border-radius: 0.3em;
 }
@@ -69,7 +69,7 @@ pre[class*="language-"] {
 }
 
 .#{$prism-prefix}token.#{$prism-prefix}namespace {
-  opacity: 0.7;
+  opacity: 70%;
 }
 
 .#{$prism-prefix}token.#{$prism-prefix}tag,
@@ -165,7 +165,15 @@ pre > code.highlight {
 * http://prismjs.com/plugins/line-highlight/
 */
 .line-highlight {
-  background: rgba(221, 103, 44, 0.2);
-  background: -webkit-linear-gradient(left, rgba(221, 103, 44, 0.2) 70%, rgba(221, 103, 44, 0));
-  background: linear-gradient(to right, rgba(221, 103, 44, 0.2) 70%, rgba(221, 103, 44, 0));
+  background: rgb(221 103 44 / 20%);
+  background: linear-gradient(
+    left,
+    rgb(221 103 44 / 20%) 70%,
+    rgb(221 103 44 / 0%)
+  );
+  background: linear-gradient(
+    to right,
+    rgb(221 103 44 / 20%) 70%,
+    rgb(221 103 44 / 0%)
+  );
 }

@@ -1,13 +1,13 @@
 <script>
-  import { getTag } from "./TagManager";
+  import { getTag } from './TagManager';
 
   export const homeQuickTags = [
     // "vue",
     // "laravel",
     // "php",
-    "js",
-    "node",
-    "docker"
+    'js',
+    'node',
+    'docker',
   ].map(getTag);
 
   export let columnMobile = 12;
@@ -15,8 +15,43 @@
   export let columnWideScreen = 2;
 </script>
 
+<div class="home-quick-tags columns is-multiline is-mobile">
+  {#each homeQuickTags as quickTag}
+    <div
+      class="column is-{columnMobile}-mobile is-{columnTablet}-tablet is-{columnWideScreen}-widescreen"
+    >
+      <div class="box grow-medium">
+        <a href={quickTag.url}>
+          <div class="media">
+            <div class="media-left">
+              <span class="icon is-large">
+                <i class={quickTag.icon} />
+              </span>
+            </div>
+
+            <div class="media-content is-m-auto">
+              <div class="is-clearfix">
+                <span class="tagTitle">
+                  {quickTag.title}
+                </span>
+
+                <span class="is-pulled-right">
+                  <i
+                    class="dot is-m-auto"
+                    style="background-color: {quickTag.color};"
+                  />
+                </span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  {/each}
+</div>
+
 <style lang="scss">
-  .home-quick-tags{
+  .home-quick-tags {
     font-size: 1.1rem;
 
     .icon {
@@ -31,44 +66,10 @@
       transform: scale(1.05);
     }
   }
-  
+
   .tagTitle {
     font-weight: $weight-light;
     color: $dark;
     letter-spacing: 0.05em;
   }
 </style>
-
-<div class="home-quick-tags columns is-multiline is-mobile">
-  {#each homeQuickTags as quickTag}
-    <div
-      class="column is-{columnMobile}-mobile is-{columnTablet}-tablet is-{columnWideScreen}-widescreen">
-      <div class="box grow-medium">
-        <a href={quickTag.url}>
-          <div class="media">
-            <div class="media-left">
-              <span class="icon is-large">
-                <i class="{quickTag.icon}" />            
-              </span>
-            </div>
-
-
-            <div class="media-content is-m-auto">
-              <div class="is-clearfix">
-                <span class="tagTitle">
-                  {quickTag.title}
-                </span>
-
-                <span class="is-pulled-right">
-                  <i
-                    class="dot is-m-auto"
-                    style="background-color: {quickTag.color};" />
-                </span>
-              </div>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-  {/each}
-</div>

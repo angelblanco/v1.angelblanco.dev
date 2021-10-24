@@ -1,19 +1,19 @@
 <script>
-  import { interval } from "./utils";
+  import { interval } from './utils';
 
   const libraries = [
-    { tag: "framework", title: "sapper", link: "https://sapper.svelte.dev/" },
-    { tag: "css", title: "bulma", link: "https://bulma.io/" },
-    { tag: "js", title: "svelte", link: "https://svelte.dev/" },
-    { tag: "bundler", title: "rollup", link: "https://rollupjs.org/" },
+    { tag: 'framework', title: 'svelte-kit', link: 'https://kit.svelte.dev/' },
+    { tag: 'css', title: 'bulma', link: 'https://bulma.io/' },
+    { tag: 'js', title: 'svelte', link: 'https://svelte.dev/' },
+    { tag: 'bundler', title: 'rollup', link: 'https://rollupjs.org/' },
     {
-      tag: "md",
-      title: "markdown-it",
-      link: "https://github.com/markdown-it/markdown-it",
+      tag: 'md',
+      title: 'markdown-it',
+      link: 'https://github.com/markdown-it/markdown-it',
     },
   ];
 
-  const flavours = ["info", "warning", "danger", "primary"];
+  const flavours = ['info', 'warning', 'danger', 'primary'];
   let flavourIndex = 0;
 
   $: flavour = flavours[flavourIndex];
@@ -23,6 +23,59 @@
     flavourIndex = flavours[flavourIndex + 1] ? flavourIndex + 1 : 0;
   }, 2000);
 </script>
+
+<footer class="footer {flavour}">
+  <hr class="footerRule is-hidden-print" />
+
+  <div class="has-text-centered">
+    <p class="has-text-grey-light is-family-monospace">
+      Personal website of <a href="/about/" class="has-text-grey-dark"
+        >Ángel Blanco</a
+      >
+    </p>
+
+    <p class="footer-github is-hidden-print">
+      <a
+        href="https://github.com/angelblanco/angelblanco.dev"
+        class="button is-small"
+        target="__blank"
+      >
+        <span class="icon"> <span class="fab fa-github" /> </span>
+
+        <span>Developed by Ángel Blanco hosted on Github</span>
+      </a>
+    </p>
+
+    <div class="libraries-box is-m-auto is-hidden-print">
+      <div class="box">
+        <p class="has-text-grey-light is-family-monospace">
+          This project <i class="fas fa-heart" /> this libraries
+        </p>
+
+        <div
+          class="field is-grouped is-grouped-multiline is-m-auto justify-center"
+        >
+          {#each libraries as library}
+            <div class="control">
+              <div class="tags has-addons">
+                <span class="tag is-dark">{library.tag}</span>
+                <a href={library.link} class="tag is-light">{library.title}</a>
+              </div>
+            </div>
+          {/each}
+        </div>
+
+        <p class="has-text-grey-light is-family-monospace is-size-7">
+          And all of <a
+            class="has-decoration-underline has-text-grey-dark"
+            href="/libraries/"
+            rel="preload">these...</a
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
 
 <style lang="scss">
   @mixin footerFlavour($class, $color) {
@@ -58,13 +111,13 @@
     }
 
     .libraries-box {
-      background-color:: white;
+      background-color: white;
       position: relative;
       max-width: 400px;
       z-index: 3;
 
       &::after {
-        content: "";
+        content: '';
         position: absolute;
         top: calc(50% - 3px);
         height: 6px;
@@ -101,51 +154,8 @@
     }
   }
 
-  @include footerFlavour("danger", $danger);
-  @include footerFlavour("info", $info);
-  @include footerFlavour("primary", $primary);
-  @include footerFlavour("warning", $warning);
+  @include footerFlavour('danger', $danger);
+  @include footerFlavour('info', $info);
+  @include footerFlavour('primary', $primary);
+  @include footerFlavour('warning', $warning);
 </style>
-
-<footer class="footer {flavour}">
-  <hr class="footerRule is-hidden-print" />
-
-  <div class="has-text-centered">
-    <p class="has-text-grey-light is-family-monospace">
-      Personal website of <a href="/about/" class="has-text-grey-dark">Ángel
-        Blanco</a>
-    </p>
-
-    <p class="footer-github is-hidden-print">
-      <a href="https://github.com/angelblanco/angelblanco.dev" class="button is-small" target="__blank">
-        <span class="icon"> <span class="fab fa-github" /> </span>
-
-        <span>Developed by Ángel Blanco hosted on Github</span>
-      </a>
-    </p>
-
-    <div class="libraries-box is-m-auto is-hidden-print">
-      <div class="box">
-        <p class="has-text-grey-light is-family-monospace">
-          This project <i class="fas fa-heart" /> this libraries
-        </p>
-
-        <div
-          class="field is-grouped is-grouped-multiline is-m-auto justify-center">
-          {#each libraries as library}
-            <div class="control">
-              <div class="tags has-addons">
-                <span class="tag is-dark">{library.tag}</span>
-                <a href={library.link} class="tag is-light">{library.title}</a>
-              </div>
-            </div>
-          {/each}
-        </div>
-
-        <p class="has-text-grey-light is-family-monospace is-size-7">
-          And all of <a class="has-decoration-underline has-text-grey-dark" href="/libraries/" rel="preload">these...</a>
-        </p>
-      </div>
-    </div>
-  </div>
-</footer>

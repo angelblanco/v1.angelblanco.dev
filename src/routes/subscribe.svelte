@@ -1,9 +1,9 @@
 <script>
-  import TinyLetterSubscribeForm from "../components/TinyLetterSubscribeForm.svelte";
-  import Head from "../components/Head.svelte";
-  import { setOgUrl, setTitle } from "../stores/meta";
+  import TinyLetterSubscribeForm from '../components/TinyLetterSubscribeForm.svelte';
+  import Head from '../components/Head.svelte';
+  import { setOgUrl, setTitle } from '../stores/meta';
 
-  setTitle("Newsletter");
+  setTitle('Newsletter');
   setOgUrl('/subscribe');
 </script>
 

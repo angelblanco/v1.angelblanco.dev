@@ -1,8 +1,7 @@
-const CreatePostCommand = require('./CreatePostCommand');
-const VerifyArticlesCommand = require('./VerifyArticlesCommand');
+import CreatePostCommand from './CreatePostCommand.js';
+import VerifyArticlesCommand from './VerifyArticlesCommand.js';
 
-module.exports = (program) => [
-    new CreatePostCommand(program),
-    new VerifyArticlesCommand(program),
+export default (program) => [
+  new CreatePostCommand(program),
+  new VerifyArticlesCommand(program),
 ];
-

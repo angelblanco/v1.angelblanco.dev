@@ -1,14 +1,14 @@
 <script>
-  import isArray from "lodash/isArray";
+  import isArray from 'lodash/isArray.js';
   export let duration = 4500;
   export let erasingDuration = 1000;
   export let delay = 2000;
   export let text = [];
 
-  import { tweened } from "svelte/motion";
-  import { cubicOut } from "svelte/easing";
-  import { onMount } from "svelte";
-  import { tick } from "svelte";
+  import { tweened } from 'svelte/motion';
+  import { cubicOut } from 'svelte/easing';
+  import { onMount } from 'svelte';
+  import { tick } from 'svelte';
 
   const stringLength = tweened(0, {
     duration,
@@ -19,8 +19,8 @@
   let index = 0;
 
   $: textArray = isArray(text) ? text : [text];
-  $: currentText = textArray[index] || "";
-  $: maxSize = currentText.length - 1;
+  $: currentText = textArray[index] || '';
+  $: maxSize = currentText.length;
 
   async function moveText() {
     await stringLength.set(maxSize, {

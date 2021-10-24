@@ -1,15 +1,14 @@
 <script>
-  import TinyLetterSubscribeForm from "./TinyLetterSubscribeForm.svelte";
-  import { onMount } from "svelte";
-  import { shareLinks } from "../stores/article";
+  import TinyLetterSubscribeForm from './TinyLetterSubscribeForm.svelte';
+  import { shareLinks } from '../stores/article';
 
   $: shareIcons =
     $shareLinks === null
       ? []
       : [
-          { class: "fa-twitter", url: $shareLinks.twitter.intent },
-          { class: "fa-facebook", url: $shareLinks.facebook.intent },
-          { class: "fa-linkedin-in", url: $shareLinks.linkedin.intent },
+          { class: 'fa-twitter', url: $shareLinks.twitter.intent },
+          { class: 'fa-facebook', url: $shareLinks.facebook.intent },
+          { class: 'fa-linkedin-in', url: $shareLinks.linkedin.intent },
         ];
 </script>
 

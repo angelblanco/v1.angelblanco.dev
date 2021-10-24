@@ -1,8 +1,8 @@
-import path from 'path';
+import { resolve } from 'path';
 
-const docsPath = path.resolve(__dirname, '../../../docs');
+const docs = __docsLocation;
 
 export default {
-    docs: docsPath,
-    articles: path.resolve(docsPath, 'articles'),
+  docs,
+  articles: resolve(docs, 'articles'),
 };

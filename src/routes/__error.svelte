@@ -1,11 +1,11 @@
 <script>
-  import Whoops from "../components/Whoops/Whoops.svelte";
-  import { setTitle }from "../stores/meta.js";
+  import Whoops from '../components/Whoops/Whoops.svelte';
+  import { setTitle } from '../stores/meta.js';
   export let status;
   export let error;
-  const dev = process.env.NODE_ENV === "development";
+  const dev = import.meta.env.NODE_ENV === 'development';
 
-  $: titlePreffix = dev ? status : "Error";
+  $: titlePreffix = dev ? status : 'Error';
 
   $: {
     setTitle(`${titlePreffix} Error`);
@@ -19,7 +19,10 @@
 
       <p class="subtitle">
         If you consider that this in an unexpected error I will appreciate if
-        you reach me on <a href="https://twitter.com/{process.env.TWITTER_USER}">Twitter.</a>
+        you reach me on <a
+          href="https://twitter.com/{import.meta.env.VITE_TWITTER_USER}"
+          >Twitter.</a
+        >
       </p>
 
       <Whoops />

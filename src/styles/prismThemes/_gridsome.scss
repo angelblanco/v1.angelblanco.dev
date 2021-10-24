@@ -1,17 +1,17 @@
 :root {
-  --body-color: hsla(0, 0%, 0%, 0.8);
+  --body-color: hsl(0deg 0% 0% / 80%);
   --primary-color: #00a672;
   --primary-color-dark: #00835c;
   --header-height: 58px;
   --bg: #fff;
   --bg-secondary: #f3f5f4;
-  --bg-transparent: rgba(255, 255, 255, 0.9);
+  --bg-transparent: rgb(255 255 255 / 90%);
   --bg-teritary: #f3f5f4;
   --dark-bg: #0d2538;
   --code-bg: #0e2233;
-  --select-color: rgba(212, 53, 159, 0.2);
+  --select-color: rgb(212 53 159 / 20%);
   --inline-code-text: #b32585;
-  --inline-code-bg: rgba(212, 53, 159, 0.03);
+  --inline-code-bg: rgb(212 53 159 / 3%);
   --border-color: #e2ecec;
   --border-color-darker: #cfe6e6;
   --mark-color: #fff8ec;
@@ -27,7 +27,7 @@
     --space-x2: 20px;
   }
 
-  [data-theme="dark"] {
+  [data-theme='dark'] {
     --body-color: #ebf4f1;
     --bg: #091a28;
     --bg-secondary: #071521;
@@ -36,13 +36,13 @@
     --border-color: #0d2538;
     --border-color-darker: #0d2538;
     --inline-code-text: #e24cb2;
-    --inline-code-bg: rgba(212, 53, 159, 0.1);
+    --inline-code-bg: rgb(212 53 159 / 10%);
     --primary-color: #00835c;
     --primary-color-dark: #00a672;
     --glow: 2px 2px 15px 0 #071521;
   }
 
-  [data-theme="sepia"] {
+  [data-theme='sepia'] {
     --body-color: #433422;
     --bg: #f1e7d0;
     --dark-bg: #111;
@@ -68,7 +68,7 @@ h4 {
 pre,
 code {
   // font-family: Space Mono, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
-  font-feature-settings: "liga" 0;
+  font-feature-settings: 'liga' 0;
   border-radius: 3px;
   line-height: 1.5;
   direction: ltr;
@@ -80,10 +80,10 @@ code {
   color: #d8d8d8;
 }
 
-pre::-moz-selection,
-pre ::-moz-selection,
-code::-moz-selection,
-code ::-moz-selection {
+pre::selection,
+pre ::selection,
+code::selection,
+code ::selection {
   text-shadow: none;
 }
 
@@ -117,7 +117,8 @@ pre {
   font-variant-ligatures: none;
 }
 
-.#{$prism-prefix}token.#{$prism-prefix}comment .#{$prism-prefix}token.#{$prism-prefix}prolog,
+.#{$prism-prefix}token.#{$prism-prefix}comment
+  .#{$prism-prefix}token.#{$prism-prefix}prolog,
 .#{$prism-prefix}token.#{$prism-prefix}doctype,
 .#{$prism-prefix}token.#{$prism-prefix}cdata {
   color: #585858;
@@ -132,7 +133,7 @@ pre {
 }
 
 .#{$prism-prefix}token.#{$prism-prefix}namespace {
-  opacity: 0.7;
+  opacity: 70%;
 }
 
 .#{$prism-prefix}token.#{$prism-prefix}operator {
@@ -188,7 +189,7 @@ pre {
   color: #e2777a;
 
   .#{$prism-prefix}token.#{$prism-prefix}punctuation {
-    color: rgba(#e2777a, 0.85);
+    color: rgb(#e2777a 0.85);
   }
 }
 

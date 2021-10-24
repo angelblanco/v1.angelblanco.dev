@@ -1,6 +1,10 @@
 // @see https://css-tricks.com/snippets/sass/custom-scrollbars-mixin/
 
-@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
+@mixin scrollbars(
+  $size,
+  $foreground-color,
+  $background-color: mix($foreground-color, white, 50%)
+) {
   // For Google Chrome
   &::-webkit-scrollbar {
     width: $size;
@@ -32,8 +36,9 @@
   &:hover {
     border-radius: 2px;
     color: $link-mixin-color;
-    box-shadow: 1px 0 4px $white, inset 0 -1.375em 0 findLightColor($link-mixin-color);
+    box-shadow: 1px 0 4px $white,
+      inset 0 -1.375em 0 findlightcolor($link-mixin-color);
   }
 }
 
-@import "node_modules/bulma/sass/utilities/mixins.sass";
+@import 'node_modules/bulma/sass/utilities/mixins.sass';

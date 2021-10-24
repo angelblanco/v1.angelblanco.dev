@@ -1,11 +1,11 @@
 <script>
-  import { onMount } from "svelte";
-  import { documentScrollTop } from "./utils";
+  import { onMount } from 'svelte';
+  import { documentScrollTop } from './utils';
 
   // Props
   export let startOffset = null; // The progres start on this pixel
   export let endOffset = null; // The progress ends on this pixel
-  export let easing = "linear";
+  export let easing = 'linear';
   export let speed = 300;
 
   // Internal variables
@@ -43,12 +43,22 @@
   $: barStyle = [
     `margin-left: ${toBarPerc(progress)}%`,
     `transition: all ${speed}ms ${easing}`,
-  ].join(";");
+  ].join(';');
 
   $: nProgressStyle = `transition: opacity ${speed}ms ${easing}`;
   $: hidden = lastScrollTop <= 0;
   $: complete = progress === 1;
 </script>
+
+<svelte:window
+  on:scroll={setProgressByScroll}
+  on:resize={setProgressByScroll}
+  on:touchmove={setProgressByScroll}
+/>
+
+<div class="nprogress" class:hidden style={nProgressStyle}>
+  <div class="bar" style={barStyle} class:complete />
+</div>
 
 <style lang="scss">
   .nprogress {
@@ -74,12 +84,3 @@
     }
   }
 </style>
-
-<svelte:window
-  on:scroll={setProgressByScroll}
-  on:resize={setProgressByScroll}
-  on:touchmove={setProgressByScroll} />
-
-<div class="nprogress" class:hidden style={nProgressStyle}>
-  <div class="bar" style={barStyle} class:complete />
-</div>

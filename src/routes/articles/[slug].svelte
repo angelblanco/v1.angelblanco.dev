@@ -1,31 +1,38 @@
 <script context="module">
-  export async function preload({ host, path, params, query }) {
+  export async function load({ page, fetch }) {
+    const { path, params } = page;
+
     // the `slug` parameter is available because
     // this file is called [slug].svelte
-    const res = await this.fetch(`/api/articles/${params.slug}`);
+    const res = await fetch(`/api/articles/${params.slug}`);
     const data = await res.json();
 
     if (res.status === 200) {
-      return { article: data, path };
-    } else {
-      this.error(res.status, data.message);
+      return { props: { article: data, path } };
     }
+
+    // Fallthrough route
   }
 </script>
 
 <script>
-  import { onMount } from "svelte";
-  import Content from "./../../components/Content.svelte";
-  import Head from "../../components/Head.svelte";
-  import { documentOffset } from "./../../components/utils";
-  import MediaArticleHead from "./../../components/MediaArticleHead.svelte";
-  import ArticleSidebar from "./../../components/ArticleSidebar.svelte";
-  import ArticleFooter from "./../../components/ArticleFooter.svelte";
-  import NProgress from "./../../components/NProgress.svelte";
-  import TableOfContent from "./../../components/TableOfContent.svelte";
-  import DisqusComments from "./../../components/DisqusComments.svelte";
-  import { setArticle } from "./../../stores/article";
-  import { setTitle, setOgDescription, setOgImageUrl, setOgUrl } from "./../../stores/meta";
+  import { onMount } from 'svelte';
+  import Content from './../../components/Content.svelte';
+  import Head from '../../components/Head.svelte';
+  import { documentOffset } from './../../components/utils';
+  import MediaArticleHead from './../../components/MediaArticleHead.svelte';
+  import ArticleSidebar from './../../components/ArticleSidebar.svelte';
+  import ArticleFooter from './../../components/ArticleFooter.svelte';
+  import NProgress from './../../components/NProgress.svelte';
+  import TableOfContent from './../../components/TableOfContent.svelte';
+  import DisqusComments from './../../components/DisqusComments.svelte';
+  import { setArticle } from './../../stores/article';
+  import {
+    setTitle,
+    setOgDescription,
+    setOgImageUrl,
+    setOgUrl,
+  } from './../../stores/meta';
   export let article;
   export let path;
 
@@ -57,20 +64,6 @@
   }
 </script>
 
-<style lang="scss">
-  .afterArticleContainer {
-    position: relative;
-    top: -3.5rem; // - .section padding
-    visibility: hidden;
-    pointer-events: none;
-  }
-
-  // Uncomment to have short
-  // a.shortLink {
-  //   display: none;
-  // }
-</style>
-
 <Head />
 
 <!-- Uncomment to have shortlinks 
@@ -94,13 +87,13 @@
 
   <Content extraClass="articleBody" html={article.html} />
 
-  <ArticleFooter {article} />
+  <ArticleFooter />
 </section>
 
 <section class="section reading-width is-hidden-print" id="comments">
   <h3 class="title is-3">Comments</h3>
 
-  <DisqusComments />
+  <DisqusComments {article} />
 </section>
 
 <div bind:this={afterArticleContainer} class="afterArticleContainer" />
@@ -108,3 +101,16 @@
 <!-- Uncomment to have shortlinks
 <a href={article.shortLink} class="shortLink">{article.title}</a>
  -->
+<style lang="scss">
+  .afterArticleContainer {
+    position: relative;
+    top: -3.5rem; // - .section padding
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  // Uncomment to have short
+  // a.shortLink {
+  //   display: none;
+  // }
+</style>

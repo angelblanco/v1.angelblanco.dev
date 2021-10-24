@@ -1,8 +1,9 @@
 <script>
-  export let title = "bash";
+  export let title = 'bash';
 </script>
 
-<pre class="terminal">
+<pre
+  class="terminal">
   <div class="bar">
     <div class="btn" />
     <div

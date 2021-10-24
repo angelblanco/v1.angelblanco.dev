@@ -1,9 +1,9 @@
-import githubLinkContainer from './githubLinkContainer';
-import gnomeTerminalImageContainer from './gnomeTerminalImageContainer';
-import svelteReplLinkContainer from './svelteReplLinkContainer';
+import githubLinkContainer from './githubLinkContainer.js';
+import gnomeTerminalImageContainer from './gnomeTerminalImageContainer.js';
+import svelteReplLinkContainer from './svelteReplLinkContainer.js';
 
 export default [
-    githubLinkContainer,
-    gnomeTerminalImageContainer,
-    svelteReplLinkContainer,
+  githubLinkContainer,
+  gnomeTerminalImageContainer,
+  svelteReplLinkContainer,
 ];

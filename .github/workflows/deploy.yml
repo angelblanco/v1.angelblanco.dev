@@ -14,13 +14,13 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      APP_BASE_URL: ${{ secrets.APP_BASE_URL }}
-      APP_BASE_TITLE: ${{ secrets.APP_BASE_TITLE }}
-      GOOGLE_ANALYTICS_MEASUREMENT_ID: ${{ secrets.GOOGLE_ANALYTICS_MEASUREMENT_ID }}
-      TWITTER_USER: ${{ secrets.TWITTER_USER }}
-      TINY_LETTER_USER: ${{ secrets.TINY_LETTER_USER }}
-      DISQUS_USER: ${{ secrets.DISQUS_USER }}
-      PROJECT_GITHUB_URL: ${{ secrets.PROJECT_GITHUB_URL }}
+      VITE_APP_BASE_URL: ${{ secrets.VITE_APP_BASE_URL }}
+      VITE_APP_BASE_TITLE: ${{ secrets.VITE_APP_BASE_TITLE }}
+      VITE_GOOGLE_ANALYTICS_MEASUREMENT_ID: ${{ secrets.VITE_GOOGLE_ANALYTICS_MEASUREMENT_ID }}
+      VITE_TWITTER_USER: ${{ secrets.VITE_TWITTER_USER }}
+      VITE_TINY_LETTER_USER: ${{ secrets.VITE_TINY_LETTER_USER }}
+      VITE_DISQUS_USER: ${{ secrets.VITE_DISQUS_USER }}
+      VITE_PROJECT_GITHUB_URL: ${{ secrets.VITE_PROJECT_GITHUB_URL }}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -38,13 +38,13 @@ jobs:
       - name: Creates .env file
         run: |
           touch .env
-          echo APP_BASE_URL="${{ secrets.APP_BASE_URL }}" >> .env
-          echo APP_BASE_TITLE="${{ secrets.APP_BASE_TITLE }}" >> .env
-          echo GOOGLE_ANALYTICS_MEASUREMENT_ID="${{ secrets.GOOGLE_ANALYTICS_MEASUREMENT_ID }}" >> .env
-          echo TWITTER_USER="${{ secrets.TWITTER_USER }}" >> .env
-          echo TINY_LETTER_USER="${{ secrets.TINY_LETTER_USER }}" >> .env
-          echo DISQUS_USER="${{ secrets.DISQUS_USER }}" >> .env
-          echo PROJECT_GITHUB_URL="${{ secrets.PROJECT_GITHUB_URL }}" >> .env
+          echo VITE_APP_BASE_URL="${{ secrets.VITE_APP_BASE_URL }}" >> .env
+          echo VITE_APP_BASE_TITLE="${{ secrets.VITE_APP_BASE_TITLE }}" >> .env
+          echo VITE_GOOGLE_ANALYTICS_MEASUREMENT_ID="${{ secrets.VITE_GOOGLE_ANALYTICS_MEASUREMENT_ID }}" >> .env
+          echo VITE_TWITTER_USER="${{ secrets.VITE_TWITTER_USER }}" >> .env
+          echo VITE_TINY_LETTER_USER="${{ secrets.VITE_TINY_LETTER_USER }}" >> .env
+          echo VITE_DISQUS_USER="${{ secrets.VITE_DISQUS_USER }}" >> .env
+          echo VITE_PROJECT_GITHUB_URL="${{ secrets.VITE_PROJECT_GITHUB_URL }}" >> .env
 
       - name: Cypress test in docker image
         run: |

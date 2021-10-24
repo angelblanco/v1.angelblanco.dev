@@ -1,8 +1,8 @@
 <script>
-  import Terminal from "../Terminal.svelte";
-  import TypeWriter from "../TypeWriter.svelte";
-  import whoops from "./whoops.txt";
-  import thatsA404 from "./thatsA404.txt";
+  import Terminal from '../Terminal.svelte';
+  import TypeWriter from '../TypeWriter.svelte';
+  import whoops from './whoops.txt?raw';
+  import thatsA404 from './thatsA404.txt?raw';
 
   const text = [whoops, thatsA404];
 </script>
@@ -14,12 +14,12 @@
 </div>
 
 <style lang="scss">
-.whoops :global(.terminal .body) {
+  .whoops :global(.terminal .body) {
     min-height: 170px;
     text-align: center;
 
     @include mobile() {
-        font-size: 0.5rem;
+      font-size: 0.5rem;
     }
-}
+  }
 </style>

@@ -58,14 +58,15 @@ $terminal-bar-height: $terminal-btn-size * 3;
 
       background: $terminal-minimize-btn-bg;
       position: relative;
-      margin-left: $terminal-btn-left-offset + $terminal-btn-size + $terminal-btn-inner-margin;
+      margin-left: $terminal-btn-left-offset + $terminal-btn-size +
+        $terminal-btn-inner-margin;
       top: $terminal-btn-size;
 
       &::before,
       &::after {
         @extend %btn;
 
-        content: " ";
+        content: ' ';
         position: absolute;
       }
 
@@ -108,7 +109,11 @@ $terminal-bar-height: $terminal-btn-size * 3;
     > * {
       padding: $terminal-btn-left-offset;
 
-      @include scrollbars(8px, lighten($terminal-bar-bg, 20%), $terminal-bar-bg);
+      @include scrollbars(
+        8px,
+        lighten($terminal-bar-bg, 20%),
+        $terminal-bar-bg
+      );
     }
 
     pre {

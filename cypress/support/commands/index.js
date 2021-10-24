@@ -24,5 +24,5 @@
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
-require('./cyCheckMeta');
-require('./cyCrawl');
+import './cyCheckMeta';
+import './cyCrawl';

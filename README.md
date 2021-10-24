@@ -1,6 +1,6 @@
 # My personal page angelblanco.dev
-This the project behind [angelblanco.dev](https://angelblanco.dev). It's built with [Sapper](https://sapper.svelte.dev/) and [Svelte](https://svelte.dev/).
 
+This the project behind [angelblanco.dev](https://angelblanco.dev). It's built with [Svelte Kit](https://kit.svelte.dev/).
 You can run the project in your local environment with:
 
 ```bash

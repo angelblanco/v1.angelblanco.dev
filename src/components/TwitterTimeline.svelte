@@ -1,5 +1,5 @@
 <script>
-  import TwitterWidgets from "./TwitterWidgets.svelte";
+  import TwitterWidgets from './TwitterWidgets.svelte';
 
   export let href;
   export let text;

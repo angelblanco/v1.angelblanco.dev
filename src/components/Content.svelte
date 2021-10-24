@@ -1,27 +1,28 @@
 <script>
-  import { copyToClipboard, on } from "./utils";
+  import { copyToClipboard, on } from './utils';
 
   let contentContainer;
-  export let html = "";
-  export let extraClass = "";
+  export let html = '';
+  export let extraClass = '';
 
   let copyCode = async ({ target }) => {
     try {
-      if (target.classList.contains("copied")) {
+      if (target.classList.contains('copied')) {
         return;
       }
 
-      const code = target.closest("pre.terminal").querySelector(".body pre")
-        .textContent;
+      const code = target
+        .closest('pre.terminal')
+        .querySelector('.body pre').textContent;
 
       copyToClipboard(code);
       const prevTextContent = target.textContent;
-      target.classList.add("copied");
-      target.textContent = "Copied";
+      target.classList.add('copied');
+      target.textContent = 'Copied';
 
       await new Promise((resolve) => setTimeout(resolve, 500));
       target.textContent = prevTextContent;
-      target.classList.remove("copied");
+      target.classList.remove('copied');
     } catch (err) {
       // Do nothing
     }
@@ -33,14 +34,14 @@
     event.stopPropagation();
     event.preventDefault();
 
-    const href = event.target.getAttribute("href");
+    const href = event.target.getAttribute('href');
     window.location.hash = '';
     window.location.hash = href;
     document.querySelector(href).scrollIntoView();
   }
 
-  on(".blog.content button.copy", "click", copyCode, () => contentContainer);
-  on('a[href^="#"]', "click", scrollIntoAnchor, () => contentContainer);
+  on('.blog.content button.copy', 'click', copyCode, () => contentContainer);
+  on('a[href^="#"]', 'click', scrollIntoAnchor, () => contentContainer);
 </script>
 
 <div class="content is-medium blog {extraClass}" bind:this={contentContainer}>

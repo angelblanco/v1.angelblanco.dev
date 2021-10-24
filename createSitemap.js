@@ -1,21 +1,25 @@
-const waitPort = require('wait-port');
-const { exec } = require('child_process');
-const dotenv = require('dotenv');
-const isUrl = require('is-url');
-const { sed } = require('shelljs');
-const trimEnd = require('lodash/trimEnd');
+import waitPort from 'wait-port';
+import { exec } from 'child_process';
+import dotenv from 'dotenv';
+import isUrl from 'is-url';
+import { sed } from 'shelljs';
+import trimEnd from 'lodash/trimEnd.js';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const currentDir = dirname(fileURLToPath(import.meta.url));
 
 const options = {
   protocol: 'http',
   host: '127.0.0.1',
   port: 5000,
-  cwd: __dirname,
+  cwd: currentDir,
   timeout: 300000,
-  siteMapFile: `${__dirname}/static/sitemap.xml`,
+  siteMapFile: `${currentDir}/static/sitemap.xml`,
 };
 
-dotenv.config({ path: `${__dirname}/.env` });
-const appRealUrl = trimEnd(process.env.APP_BASE_URL, '/');
+dotenv.config({ path: `${currentDir}/.env` });
+const appRealUrl = trimEnd(process.env.VITE_APP_BASE_URL, '/');
 
 if (!appRealUrl || !isUrl(appRealUrl)) {
   throw new Error('The app url must be set on your dot env file');
@@ -23,7 +27,7 @@ if (!appRealUrl || !isUrl(appRealUrl)) {
 
 const url = `${options.protocol}://${options.host}:${options.port}`;
 
-const server = exec('yarn export:production && yarn sirv:production');
+const server = exec('yarn build && yarn preview');
 
 const main = async () => {
   const open = await waitPort(options);
@@ -44,7 +48,7 @@ const main = async () => {
 
     generator.on('add', (url) => {
       if (!url.endsWith('/')) {
-        throw new Error('A sitemap url is not canonical: ' + url );
+        throw new Error('A sitemap url is not canonical: ' + url);
       }
 
       console.log(`+ ${url}`);
