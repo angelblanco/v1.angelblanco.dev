@@ -2,11 +2,12 @@ import { staticImportMarkdown } from './_utils';
 
 const langs = ['en', 'es'];
 const files = {
-  aboutMe: 'about-me.md',
+  aboutMe: 'about-me',
 };
 
 async function html(lang, aboutFile) {
-  const loadModule = () => import(`../../../docs/about/${lang}/${aboutFile}`);
+  const loadModule = () =>
+    import(`../../../docs/about/${lang}/${aboutFile}.md`);
 
   const file = await staticImportMarkdown(loadModule);
 

@@ -92,11 +92,10 @@
   </div>
 </section>
 
-
 <style lang="scss">
-@media print {
-  .lang-button {
-    display: none;
+  @media print {
+    .lang-button {
+      display: none;
+    }
   }
-}
 </style>
