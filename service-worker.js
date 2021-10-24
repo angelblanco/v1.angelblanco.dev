@@ -1,1 +1,97 @@
-!function(){"use strict";const e=1616532673276,t=`cache${e}`,s=["/client/client.7ad65b9c.js","/client/inject_styles.5607aec6.js","/client/index.9cc30f72.js","/client/Head.0f6b30e5.js","/client/ArticleResume.1bccaa3b.js","/client/Tags.a1ae7601.js","/client/libraries.a92b45c4.js","/client/Content.780f446a.js","/client/subscribe.22d54493.js","/client/TinyLetterSubscribeForm.1a41bbba.js","/client/_layout.ecdaad71.js","/client/index.2dde0f37.js","/client/ArticleResumeList.a9ae4b04.js","/client/[slug].88a925b2.js","/client/index.50186ac8.js","/client/[aboutLang].edd643f4.js","/client/_layout.cbde26eb.js","/client/[tag].db60b4f1.js","/client/[shortLink].7bb179c2.js"].concat(["/service-worker-index.html","/favicon.ico","/favicon.png","/images/me-128x128.jpeg","/images/me-650x650.jpeg","/images/me.jpeg","/images/share-default.png","/images/svelte.png","/logo-192.png","/logo-512.png","/logo.png","/manifest.json","/robots.txt","/sitemap.xml"]),n=new Set(s);self.addEventListener("install",(e=>{e.waitUntil(caches.open(t).then((e=>e.addAll(s))).then((()=>{self.skipWaiting()})))})),self.addEventListener("activate",(e=>{e.waitUntil(caches.keys().then((async e=>{for(const s of e)s!==t&&await caches.delete(s);self.clients.claim()})))})),self.addEventListener("fetch",(t=>{if("GET"!==t.request.method||t.request.headers.has("range"))return;const s=new URL(t.request.url);s.protocol.startsWith("http")&&(s.hostname===self.location.hostname&&s.port!==self.location.port||(s.host===self.location.host&&n.has(s.pathname)?t.respondWith(caches.match(t.request)):"only-if-cached"!==t.request.cache&&t.respondWith(caches.open(`offline${e}`).then((async e=>{try{const s=await fetch(t.request);return e.put(t.request,s.clone()),s}catch(s){const n=await e.match(t.request);if(n)return n;throw s}})))))}))}();
+const timestamp = 1635111720500;
+const build = [
+  "/_app/start-9bde49a6.js",
+  "/_app/assets/start-61d1577b.css",
+  "/_app/pages/__layout.svelte-569d61ee.js",
+  "/_app/assets/pages/__layout.svelte-09050466.css",
+  "/_app/pages/__error.svelte-56a26390.js",
+  "/_app/assets/pages/__error.svelte-e51d3d1c.css",
+  "/_app/pages/index.svelte-52cd7d40.js",
+  "/_app/assets/pages/index.svelte-1dc1bfd3.css",
+  "/_app/pages/libraries.svelte-915e5743.js",
+  "/_app/assets/pages/libraries.svelte-9750e4e4.css",
+  "/_app/pages/subscribe.svelte-f6d0ee02.js",
+  "/_app/pages/articles/__layout.svelte-bd0753d0.js",
+  "/_app/pages/articles/[slug].svelte-5a1462cd.js",
+  "/_app/assets/pages/articles/[slug].svelte-26e1d6ef.css",
+  "/_app/pages/articles/[...pageNumber].svelte-cebdb06b.js",
+  "/_app/pages/about/index.svelte-2316537c.js",
+  "/_app/pages/about/[aboutLang].svelte-cf264d7d.js",
+  "/_app/assets/pages/about/[aboutLang].svelte-a5f6e6e8.css",
+  "/_app/pages/tag/__layout.svelte-79e5e7c2.js",
+  "/_app/pages/tag/[tag]/[...pageNumber].svelte-c65e99d7.js",
+  "/_app/pages/go/[shortLink].svelte-6bc614eb.js",
+  "/_app/chunks/vendor-9f491de5.js",
+  "/_app/chunks/stores-1802c574.js",
+  "/_app/chunks/utils-e6afcf3f.js",
+  "/_app/chunks/canonical-4beebdc5.js",
+  "/_app/chunks/meta-57d94e2f.js",
+  "/_app/chunks/Head-c6b3857f.js",
+  "/_app/chunks/ArticleResume-32cc35c0.js",
+  "/_app/assets/ArticleResume-add4a638.css",
+  "/_app/chunks/Tags-2ef12a56.js",
+  "/_app/chunks/Content-e9ea0456.js",
+  "/_app/chunks/TinyLetterSubscribeForm-7f297a22.js",
+  "/_app/assets/TinyLetterSubscribeForm-6c58dc76.css",
+  "/_app/chunks/ArticleResumeList-7a2269b4.js",
+  "/_app/assets/ArticleResumeList-4d84972a.css"
+];
+const files = [
+  "/favicon.ico",
+  "/favicon.png",
+  "/images/me-128x128.jpeg",
+  "/images/me-650x650.jpeg",
+  "/images/me.jpeg",
+  "/images/share-default.png",
+  "/images/svelte.png",
+  "/logo-192.png",
+  "/logo-512.png",
+  "/logo.png",
+  "/manifest.json",
+  "/robots.txt",
+  "/sitemap.xml"
+];
+const ASSETS = `cache${timestamp}`;
+const to_cache = build.concat(files);
+const cached = new Set(to_cache);
+self.addEventListener("install", (event) => {
+  event.waitUntil(caches.open(ASSETS).then((cache) => cache.addAll(to_cache)).then(() => {
+    self.skipWaiting();
+  }));
+});
+self.addEventListener("activate", (event) => {
+  event.waitUntil(caches.keys().then(async (keys) => {
+    for (const key of keys) {
+      if (key !== ASSETS)
+        await caches.delete(key);
+    }
+    self.clients.claim();
+  }));
+});
+self.addEventListener("fetch", (event) => {
+  if (event.request.method !== "GET" || event.request.headers.has("range"))
+    return;
+  const url = new URL(event.request.url);
+  if (!url.protocol.startsWith("http"))
+    return;
+  if (url.hostname === self.location.hostname && url.port !== self.location.port)
+    return;
+  if (url.host === self.location.host && cached.has(url.pathname)) {
+    event.respondWith(caches.match(event.request));
+    return;
+  }
+  if (event.request.cache === "only-if-cached")
+    return;
+  event.respondWith(caches.open(`offline${timestamp}`).then(async (cache) => {
+    try {
+      const response = await fetch(event.request);
+      cache.put(event.request, response.clone());
+      return response;
+    } catch (err) {
+      const response = await cache.match(event.request);
+      if (response)
+        return response;
+      throw err;
+    }
+  }));
+});

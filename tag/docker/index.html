@@ -1,1 +1,216 @@
-<!doctype html> <html lang=en> <head> <meta charset=utf-8> <meta content="width=device-width,initial-scale=1" name=viewport> <meta content=#333333 name=theme-color> <base href=/ > <link href=manifest.json rel=manifest crossorigin=use-credentials> <link href=favicon.png rel=icon type=image/png> <title>Docker articles - Angel Blanco's blog</title><meta content="Find the latest Docker blog posts." data-svelte=svelte-1xb68rj name=description><meta content=https://angelblanco.dev/tag/docker/ data-svelte=svelte-1xb68rj property=og:url><meta content="Docker articles" data-svelte=svelte-1xb68rj property=og:title><meta content="Find the latest Docker blog posts." data-svelte=svelte-1xb68rj property=og:description><meta content=https://angelblanco.dev/images/share-default.png data-svelte=svelte-1xb68rj property=og:image><meta content=1200 data-svelte=svelte-1xb68rj property=og:image:width><meta content=630 data-svelte=svelte-1xb68rj property=og:image:height><meta content=en_US data-svelte=svelte-1xb68rj property=og:locale><meta content="Ángel Blanco" data-svelte=svelte-1xb68rj property=og:author><meta content="Docker articles" data-svelte=svelte-1xb68rj name=twitter:title><meta content="Find the latest Docker blog posts." data-svelte=svelte-1xb68rj name=twitter:description><meta content=summary_large_image data-svelte=svelte-1xb68rj name=twitter:card><meta content=@angelblancodev data-svelte=svelte-1xb68rj name=twitter:site><meta content=@angelblancodev data-svelte=svelte-1xb68rj name=twitter:creator><meta content=https://angelblanco.dev/images/share-default.png data-svelte=svelte-1xb68rj name=twitter:image> <script>__SAPPER__={baseUrl:"",preloaded:[void 0,{},(function(a,b){return {articles:[{id:3,type:"article",tweet:"1311017241203429377",slug:"install-docker-and-docker-compose-on-ubunt-20-04",url:"\u002Farticles\u002Finstall-docker-and-docker-compose-on-ubunt-20-04\u002F",title:"Install docker and docker compose on Ubuntu 20.04",intro:"\u003Cp\u003EWe are going to see how to install docker and docker compose on ubuntu 20.04 following the official documentation for your personal computer. Having docker installed on your local machine will let you have isolated containers (think of them as virtual machines) for each of your individual projects or scenarios.\u003C\u002Fp\u003E\n\u003Cp\u003EWith docker you can have a nginx, a php-fpm, a mysql database, a mongodb instance, a redis with just a git pull of your repo. All the developers that run the same code will also have the same endpoint versions of the software. Sounds right? Lets install it!.\u003C\u002Fp\u003E\n",description:"Learn to install docker and docker-compose with some easy copy-paste steps on the latest Ubuntu",tags:[a],date:"September 19, 2020",readingTimeText:"2 min read",readingTimeMinutes:1.86,words:372}],pages:b,page:b,path:"\u002Ftag\u002Fdocker\u002F",tagSlug:a}}("docker",1))]};if('serviceWorker' in navigator)navigator.serviceWorker.register('/service-worker.js');(function(){try{eval("async function x(){}");var main="/client/client.7ad65b9c.js"}catch(e){main="/client/legacy/client.3bbe8702.js"};var s=document.createElement("script");try{new Function("if(0)import('')")();s.src=main;s.type="module";s.crossOrigin="use-credentials";}catch(e){s.src="/client/shimport@2.0.4.js";s.setAttribute("data-main",main);}document.head.appendChild(s);}());</script> <link href=client/client-cf7cacb2.css rel=stylesheet><link href=client/ArticleResume-9ea258be.css rel=stylesheet><link href=client/ArticleResumeList-08c83bc7.css rel=stylesheet> <link href=/client/client.7ad65b9c.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/client-cf7cacb2.css rel=preload as=style><link href=/client/[tag].db60b4f1.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/ArticleResumeList.a9ae4b04.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/ArticleResume.1bccaa3b.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/Tags.a1ae7601.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/Head.0f6b30e5.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/inject_styles.5607aec6.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/ArticleResume-9ea258be.css rel=preload as=style><link href=/client/ArticleResumeList-08c83bc7.css rel=preload as=style></head> <body> <div id=sapper> <nav aria-label="main navigation" class="is-hidden-print container navbar" role=navigation><div class=navbar-brand><a class="navbar-item svelte-1qp23hj" href=/ ><div class="image is-24x24" style=margin-right:10px><img alt="Angel Blanco's blog" src=/images/me-128x128.jpeg class=is-rounded></div> <img alt=logo src=/logo.png height=24 width=160></a> <span class="burger navbar-burger" aria-expanded=false aria-label=menu data-target=navbarBasicExample role=button><span aria-hidden=true></span> <span aria-hidden=true></span> <span aria-hidden=true></span></span></div> <div class=navbar-menu><div class=navbar-end><a class="navbar-item svelte-1qp23hj is-primary is-active" href=articles/ rel=prefetch>Articles </a> <a class="navbar-item svelte-1qp23hj is-primary" href=about/ rel=prefecth>About </a> <a class="navbar-item svelte-1qp23hj" href=https://github.com/angelblanco target=__blank><span class="icon is-hidden-touch"><i class="fab fa-github-alt fa-lg"></i></span> <span class=is-hidden-desktop>Github</span></a></div></div></nav> <div class="is-hidden-print back-to-top hidden svelte-1d29tie"><span class="icon is-large"><i class="fas fa-2x fa-chevron-up svelte-1d29tie"></i></span></div> <main class=blog><div class=container> <section class="article-resume-list section"><div class=columns><div class="column is-3 is-hidden-mobile"><aside class="svelte-z253zj article-menu menu"><p class=menu-label>Articles</p> <ul class=menu-list><li class=svelte-z253zj><a class="svelte-z253zj info" href=/articles/ rel=prefetch><i class="svelte-z253zj dot info"></i> Latest articlest</a> <li class=svelte-z253zj><a class="svelte-z253zj github" href=/tag/github/ rel=prefetch><i class="svelte-z253zj dot github"></i> Articles with Github code</a> </li> </ul><p class=menu-label>Topic</p> <ul class=menu-list><li class=svelte-z253zj><a class="svelte-z253zj js" href=/tag/js/ rel=prefetch><i class="svelte-z253zj dot js"></i> Javascript</a> <ul><li class=svelte-z253zj><a class="svelte-z253zj svelte" href=/tag/svelte/ rel=prefetch>Svelte</a> <li class=svelte-z253zj><a class="svelte-z253zj node" href=/tag/node/ rel=prefetch>Node JS</a> </li> </ul> <li class=svelte-z253zj><a class="svelte-z253zj docker is-active" href=/tag/docker/ rel=prefetch><i class="svelte-z253zj dot docker"></i> Docker</a> </li> </ul><p class=menu-label>Others</p> <ul class=menu-list><li class=svelte-z253zj><a class="svelte-z253zj info" href=/subscribe/ rel=prefetch><i class="svelte-z253zj dot info"></i> Newsletter</a> </li> </ul></aside></div> <div class=column><div class=reading-width><div class=article-resume> <a class="is-block link is-3 title" href=/articles/install-docker-and-docker-compose-on-ubunt-20-04/ rel=prefetch>Install docker and docker compose on Ubuntu 20.04</a> <a class="has-text-grey-light is-size-7 date-subtitle is-block link" href=/articles/install-docker-and-docker-compose-on-ubunt-20-04/ rel=prefectch>September 19, 2020 · 2 min read</a> <a class="has-text-grey-dark content is-intro is-size-5 link" href=/articles/install-docker-and-docker-compose-on-ubunt-20-04/ ><p>We are going to see how to install docker and docker compose on ubuntu 20.04 following the official documentation for your personal computer. Having docker installed on your local machine will let you have isolated containers (think of them as virtual machines) for each of your individual projects or scenarios.</p> <p>With docker you can have a nginx, a php-fpm, a mysql database, a mongodb instance, a redis with just a git pull of your repo. All the developers that run the same code will also have the same endpoint versions of the software. Sounds right? Lets install it!.</p> </a> <div class="bottom-row is-clearfix"> <div class="tags is-block is-pulled-left"><a class="tag is-light docker" href=/tag/docker/ rel=prefetch>Docker</a></div> <div class="is-block is-pulled-right"><a class="is-small button is-info is-outlined read-more" href=/articles/install-docker-and-docker-compose-on-ubunt-20-04/ rel=prefetch>Read More </a></div></div></div> <hr> <nav aria-label=pagination class="is-small is-centered pagination" role=navigation><button class="is-hidden pagination-previous"></button> <button class="is-hidden pagination-next"></button> <ul class=pagination-list></ul></nav></div></div></div> <div class=is-hidden-tablet><aside class="svelte-z253zj article-menu menu"><p class=menu-label>Articles</p> <ul class=menu-list><li class=svelte-z253zj><a class="svelte-z253zj info" href=/articles/ rel=prefetch><i class="svelte-z253zj dot info"></i> Latest articlest</a> <li class=svelte-z253zj><a class="svelte-z253zj github" href=/tag/github/ rel=prefetch><i class="svelte-z253zj dot github"></i> Articles with Github code</a> </li> </ul><p class=menu-label>Topic</p> <ul class=menu-list><li class=svelte-z253zj><a class="svelte-z253zj js" href=/tag/js/ rel=prefetch><i class="svelte-z253zj dot js"></i> Javascript</a> <ul><li class=svelte-z253zj><a class="svelte-z253zj svelte" href=/tag/svelte/ rel=prefetch>Svelte</a> <li class=svelte-z253zj><a class="svelte-z253zj node" href=/tag/node/ rel=prefetch>Node JS</a> </li> </ul> <li class=svelte-z253zj><a class="svelte-z253zj docker is-active" href=/tag/docker/ rel=prefetch><i class="svelte-z253zj dot docker"></i> Docker</a> </li> </ul><p class=menu-label>Others</p> <ul class=menu-list><li class=svelte-z253zj><a class="svelte-z253zj info" href=/subscribe/ rel=prefetch><i class="svelte-z253zj dot info"></i> Newsletter</a> </li> </ul></aside></div></section></div></main> <footer class="svelte-1yghtac footer info"><hr class="svelte-1yghtac is-hidden-print footerRule"> <div class=has-text-centered><p class="svelte-1yghtac has-text-grey-light is-family-monospace">Personal website of <a class="svelte-1yghtac has-text-grey-dark" href=/about/ >Ángel Blanco</a></p> <p class="svelte-1yghtac is-hidden-print footer-github"><a class="svelte-1yghtac button is-small" href=https://github.com/angelblanco/angelblanco.dev target=__blank><span class=icon><span class="fab fa-github"></span></span> <span>Developed by Ángel Blanco hosted on Github</span></a></p> <div class="svelte-1yghtac is-hidden-print is-m-auto libraries-box"><div class=box><p class="svelte-1yghtac has-text-grey-light is-family-monospace">This project <i class="svelte-1yghtac fa-heart fas"></i> this libraries </p> <div class="field is-grouped is-grouped-multiline is-m-auto justify-center"><div class=control><div class="tags has-addons"><span class="tag is-dark">framework</span> <a class="svelte-1yghtac is-light tag" href=https://sapper.svelte.dev/ >sapper</a></div> </div><div class=control><div class="tags has-addons"><span class="tag is-dark">css</span> <a class="svelte-1yghtac is-light tag" href=https://bulma.io/ >bulma</a></div> </div><div class=control><div class="tags has-addons"><span class="tag is-dark">js</span> <a class="svelte-1yghtac is-light tag" href=https://svelte.dev/ >svelte</a></div> </div><div class=control><div class="tags has-addons"><span class="tag is-dark">bundler</span> <a class="svelte-1yghtac is-light tag" href=https://rollupjs.org/ >rollup</a></div> </div><div class=control><div class="tags has-addons"><span class="tag is-dark">md</span> <a class="svelte-1yghtac is-light tag" href=https://github.com/markdown-it/markdown-it>markdown-it</a></div> </div></div> <p class="svelte-1yghtac has-text-grey-light is-family-monospace is-size-7">And all of <a class="svelte-1yghtac has-text-grey-dark has-decoration-underline" href=/libraries/ rel=preload>these...</a></div></div></div></footer></div> 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="theme-color" content="#333333" />
+    <link rel="manifest" href="/manifest.json" crossorigin="use-credentials" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <title>Docker articles - Angel Blanco&#39;s blog</title><meta name="description" content="Find the latest Docker blog posts." data-svelte="svelte-aky1d0"><meta property="og:url" content="https://angelblanco.dev/tag/docker/" data-svelte="svelte-aky1d0"><meta property="og:title" content="Docker articles" data-svelte="svelte-aky1d0"><meta property="og:description" content="Find the latest Docker blog posts." data-svelte="svelte-aky1d0"><meta property="og:image" content="https://angelblanco.dev/images/share-default.png" data-svelte="svelte-aky1d0"><meta property="og:image:width" content="1200" data-svelte="svelte-aky1d0"><meta property="og:image:height" content="630" data-svelte="svelte-aky1d0"><meta property="og:locale" content="en_US" data-svelte="svelte-aky1d0"><meta property="og:author" content="Ángel Blanco" data-svelte="svelte-aky1d0"><meta name="twitter:title" content="Docker articles" data-svelte="svelte-aky1d0"><meta name="twitter:description" content="Find the latest Docker blog posts." data-svelte="svelte-aky1d0"><meta name="twitter:card" content="summary_large_image" data-svelte="svelte-aky1d0"><meta name="twitter:site" content="@angelblancodev" data-svelte="svelte-aky1d0"><meta name="twitter:creator" content="@angelblancodev" data-svelte="svelte-aky1d0"><meta name="twitter:image" content="https://angelblanco.dev/images/share-default.png" data-svelte="svelte-aky1d0">
+
+		
+
+		<link rel="modulepreload" href="/_app/start-9bde49a6.js">
+		<link rel="modulepreload" href="/_app/chunks/vendor-9f491de5.js">
+		<link rel="modulepreload" href="/_app/pages/__layout.svelte-569d61ee.js">
+		<link rel="modulepreload" href="/_app/chunks/stores-1802c574.js">
+		<link rel="modulepreload" href="/_app/chunks/utils-e6afcf3f.js">
+		<link rel="modulepreload" href="/_app/chunks/canonical-4beebdc5.js">
+		<link rel="modulepreload" href="/_app/pages/tag/__layout.svelte-79e5e7c2.js">
+		<link rel="modulepreload" href="/_app/pages/tag/[tag]/[...pageNumber].svelte-c65e99d7.js">
+		<link rel="modulepreload" href="/_app/chunks/ArticleResumeList-7a2269b4.js">
+		<link rel="modulepreload" href="/_app/chunks/ArticleResume-32cc35c0.js">
+		<link rel="modulepreload" href="/_app/chunks/Tags-2ef12a56.js">
+		<link rel="modulepreload" href="/_app/chunks/Head-c6b3857f.js">
+		<link rel="modulepreload" href="/_app/chunks/meta-57d94e2f.js">
+		<link rel="stylesheet" href="/_app/assets/start-61d1577b.css">
+		<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-09050466.css">
+		<link rel="stylesheet" href="/_app/assets/ArticleResumeList-4d84972a.css">
+		<link rel="stylesheet" href="/_app/assets/ArticleResume-add4a638.css">
+
+		<script type="module">
+			import { start } from "/_app/start-9bde49a6.js";
+			start({
+				target: document.body,
+				paths: {"base":"","assets":""},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "ignore",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/_app/pages/__layout.svelte-569d61ee.js"),
+						import("/_app/pages/tag/__layout.svelte-79e5e7c2.js"),
+						import("/_app/pages/tag/[tag]/[...pageNumber].svelte-c65e99d7.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "\u002Ftag\u002Fdocker\u002F",
+						query: new URLSearchParams(""),
+						params: {tag:"docker",pageNumber:""}
+					}
+				}
+			});
+		</script><script>
+			if ('serviceWorker' in navigator) {
+				navigator.serviceWorker.register('/service-worker.js');
+			}
+		</script>
+  </head>
+  <body>
+    
+
+
+
+<nav class="navbar container is-hidden-print" role="navigation" aria-label="main navigation"><div class="navbar-brand"><a class="navbar-item svelte-1czquah" href="/"><div class="image is-24x24" style="margin-right: 10px;"><img class="is-rounded" src="/images/me-128x128.jpeg" alt="Angel Blanco&#39;s blog"></div>
+      <img alt="logo" src="/logo.png" width="160" height="24"></a>
+
+    <span role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample"><span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span></span></div>
+
+  <div class="navbar-menu"><div class="navbar-end"><a rel="prefetch" class="navbar-item is-primary  svelte-1czquah" href="/articles/">Articles
+      </a>
+      <a rel="prefecth" class="navbar-item is-primary  svelte-1czquah" href="/about/">About
+      </a>
+
+      <a href="https://github.com/angelblanco/angelblanco.dev" target="__blank" class="navbar-item svelte-1czquah"><span class="icon is-hidden-touch"><i class="fab fa-github-alt fa-lg"></i></span>
+
+        <span class="is-hidden-desktop">Github</span></a></div></div>
+</nav>
+
+
+<div class="back-to-top is-hidden-print svelte-1d29tie hidden"><span class="icon is-large"><i class="fas fa-chevron-up fa-2x svelte-1d29tie"></i></span>
+</div>
+
+<main class="blog"><div class="container">
+
+<section class="section article-resume-list"><div class="columns"><div class="column is-3 is-hidden-mobile"><aside class="menu article-menu svelte-wvjg6h"><p class="menu-label">Articles</p>
+
+    <ul class="menu-list"><li class="svelte-wvjg6h"><a rel="prefetch" class="info svelte-wvjg6h" href="/articles/"><i class="dot info svelte-wvjg6h"></i>
+            Latest articlest</a>
+
+          
+        </li><li class="svelte-wvjg6h"><a rel="prefetch" class="github svelte-wvjg6h" href="/tag/github/"><i class="dot github svelte-wvjg6h"></i>
+            Articles with Github code</a>
+
+          
+        </li>
+    </ul><p class="menu-label">Topic</p>
+
+    <ul class="menu-list"><li class="svelte-wvjg6h"><a rel="prefetch" class="js svelte-wvjg6h" href="/tag/js/"><i class="dot js svelte-wvjg6h"></i>
+            Javascript</a>
+
+          <ul><li class="svelte-wvjg6h"><a rel="prefetch" class="svelte svelte-wvjg6h" href="/tag/svelte/">Svelte</a>
+                </li><li class="svelte-wvjg6h"><a rel="prefetch" class="node svelte-wvjg6h" href="/tag/node/">Node JS</a>
+                </li>
+            </ul>
+        </li><li class="svelte-wvjg6h"><a rel="prefetch" class="docker svelte-wvjg6h is-active" href="/tag/docker/"><i class="dot docker svelte-wvjg6h"></i>
+            Docker</a>
+
+          
+        </li>
+    </ul><p class="menu-label">Others</p>
+
+    <ul class="menu-list"><li class="svelte-wvjg6h"><a rel="prefetch" class="info svelte-wvjg6h" href="/subscribe/"><i class="dot info svelte-wvjg6h"></i>
+            Newsletter</a>
+
+          
+        </li>
+    </ul>
+</aside></div>
+
+    <div class="column"><div class="reading-width"><div class="article-resume">
+  <a rel="prefetch" class="link title is-3 is-block" href="/articles/install-docker-and-docker-compose-on-ubunt-20-04/">Install docker and docker compose on Ubuntu 20.04</a>
+
+  
+  <a rel="prefectch" href="/articles/install-docker-and-docker-compose-on-ubunt-20-04/" class="date-subtitle link is-block has-text-grey-light is-size-7">September 19, 2020 · 2 min read</a>
+
+  <a href="/articles/install-docker-and-docker-compose-on-ubunt-20-04/" class="content link is-intro has-text-grey-dark is-size-5"><!-- HTML_TAG_START --><p>We are going to see how to install docker and docker compose on ubuntu 20.04 following the official documentation for your personal computer. Having docker installed on your local machine will let you have isolated containers (think of them as virtual machines) for each of your individual projects or scenarios.</p>
+<p>With docker you can have a nginx, a php-fpm, a mysql database, a mongodb instance, a redis with just a git pull of your repo. All the developers that run the same code will also have the same endpoint versions of the software. Sounds right? Lets install it!.</p>
+<!-- HTML_TAG_END --></a>
+
+  <div class="bottom-row is-clearfix">
+    <div class="tags is-pulled-left is-block"><a rel="prefetch" href="/tag/docker/" class="tag is-light docker">Docker</a></div>
+    
+    <div class="is-pulled-right is-block"><a rel="prefetch" href="/articles/install-docker-and-docker-compose-on-ubunt-20-04/" class="button read-more is-info is-small is-outlined">Read More
+        </a></div></div>
+</div>
+          <hr>
+
+        <nav class="pagination is-centered is-small" role="navigation" aria-label="pagination"><button class="pagination-previous is-hidden"></button>
+
+          <button class="pagination-next is-hidden"></button>
+
+          <ul class="pagination-list"></ul></nav></div></div></div>
+
+  <div class="is-hidden-tablet"><aside class="menu article-menu svelte-wvjg6h"><p class="menu-label">Articles</p>
+
+    <ul class="menu-list"><li class="svelte-wvjg6h"><a rel="prefetch" class="info svelte-wvjg6h" href="/articles/"><i class="dot info svelte-wvjg6h"></i>
+            Latest articlest</a>
+
+          
+        </li><li class="svelte-wvjg6h"><a rel="prefetch" class="github svelte-wvjg6h" href="/tag/github/"><i class="dot github svelte-wvjg6h"></i>
+            Articles with Github code</a>
+
+          
+        </li>
+    </ul><p class="menu-label">Topic</p>
+
+    <ul class="menu-list"><li class="svelte-wvjg6h"><a rel="prefetch" class="js svelte-wvjg6h" href="/tag/js/"><i class="dot js svelte-wvjg6h"></i>
+            Javascript</a>
+
+          <ul><li class="svelte-wvjg6h"><a rel="prefetch" class="svelte svelte-wvjg6h" href="/tag/svelte/">Svelte</a>
+                </li><li class="svelte-wvjg6h"><a rel="prefetch" class="node svelte-wvjg6h" href="/tag/node/">Node JS</a>
+                </li>
+            </ul>
+        </li><li class="svelte-wvjg6h"><a rel="prefetch" class="docker svelte-wvjg6h is-active" href="/tag/docker/"><i class="dot docker svelte-wvjg6h"></i>
+            Docker</a>
+
+          
+        </li>
+    </ul><p class="menu-label">Others</p>
+
+    <ul class="menu-list"><li class="svelte-wvjg6h"><a rel="prefetch" class="info svelte-wvjg6h" href="/subscribe/"><i class="dot info svelte-wvjg6h"></i>
+            Newsletter</a>
+
+          
+        </li>
+    </ul>
+</aside></div></section></div></main>
+
+<footer class="footer info svelte-1vimzui"><hr class="footerRule is-hidden-print svelte-1vimzui">
+
+  <div class="has-text-centered"><p class="has-text-grey-light is-family-monospace svelte-1vimzui">Personal website of <a href="/about/" class="has-text-grey-dark svelte-1vimzui">Ángel Blanco</a></p>
+
+    <p class="footer-github is-hidden-print svelte-1vimzui"><a href="https://github.com/angelblanco/angelblanco.dev" class="button is-small svelte-1vimzui" target="__blank"><span class="icon"><span class="fab fa-github"></span></span>
+
+        <span>Developed by Ángel Blanco hosted on Github</span></a></p>
+
+    <div class="libraries-box is-m-auto is-hidden-print svelte-1vimzui"><div class="box"><p class="has-text-grey-light is-family-monospace svelte-1vimzui">This project <i class="fas fa-heart svelte-1vimzui"></i> this libraries
+        </p>
+
+        <div class="field is-grouped is-grouped-multiline is-m-auto justify-center"><div class="control"><div class="tags has-addons"><span class="tag is-dark">framework</span>
+                <a href="https://kit.svelte.dev/" class="tag is-light svelte-1vimzui">svelte-kit</a></div>
+            </div><div class="control"><div class="tags has-addons"><span class="tag is-dark">css</span>
+                <a href="https://bulma.io/" class="tag is-light svelte-1vimzui">bulma</a></div>
+            </div><div class="control"><div class="tags has-addons"><span class="tag is-dark">js</span>
+                <a href="https://svelte.dev/" class="tag is-light svelte-1vimzui">svelte</a></div>
+            </div><div class="control"><div class="tags has-addons"><span class="tag is-dark">bundler</span>
+                <a href="https://rollupjs.org/" class="tag is-light svelte-1vimzui">rollup</a></div>
+            </div><div class="control"><div class="tags has-addons"><span class="tag is-dark">md</span>
+                <a href="https://github.com/markdown-it/markdown-it" class="tag is-light svelte-1vimzui">markdown-it</a></div>
+            </div></div>
+
+        <p class="has-text-grey-light is-family-monospace is-size-7 svelte-1vimzui">And all of <a class="has-decoration-underline has-text-grey-dark svelte-1vimzui" href="/libraries/" rel="preload">these...</a></p></div></div></div>
+</footer>
+
+
+
+			<script type="application/json" data-type="svelte-data" data-url="/api/articles/tag/docker/1">{"status":200,"statusText":"","headers":{"content-type":"application/json; charset=utf-8"},"body":"{\"page\":1,\"pages\":1,\"pageSize\":5,\"articles\":[{\"id\":3,\"type\":\"article\",\"tweet\":\"1311017241203429377\",\"slug\":\"install-docker-and-docker-compose-on-ubunt-20-04\",\"url\":\"\u002Farticles\u002Finstall-docker-and-docker-compose-on-ubunt-20-04\u002F\",\"title\":\"Install docker and docker compose on Ubuntu 20.04\",\"intro\":\"\u003Cp\u003EWe are going to see how to install docker and docker compose on ubuntu 20.04 following the official documentation for your personal computer. Having docker installed on your local machine will let you have isolated containers (think of them as virtual machines) for each of your individual projects or scenarios.\u003C\u002Fp\u003E\\n\u003Cp\u003EWith docker you can have a nginx, a php-fpm, a mysql database, a mongodb instance, a redis with just a git pull of your repo. All the developers that run the same code will also have the same endpoint versions of the software. Sounds right? Lets install it!.\u003C\u002Fp\u003E\\n\",\"description\":\"Learn to install docker and docker-compose with some easy copy-paste steps on the latest Ubuntu\",\"tags\":[\"docker\"],\"date\":\"September 19, 2020\",\"readingTimeText\":\"2 min read\",\"readingTimeMinutes\":1.86,\"words\":372}]}"}</script>
+		
+  </body>
+</html>
