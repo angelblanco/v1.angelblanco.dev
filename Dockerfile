@@ -19,4 +19,4 @@ RUN touch dist/.nojekyll
 
 EXPOSE 8081
 
-CMD ["yarn", "preview", "--port", "8081" , "--host", "0.0.0.0"]
+CMD ["yarn", "sirv", "--port", "8081" , "--host", "0.0.0.0"]

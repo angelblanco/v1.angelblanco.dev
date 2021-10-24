@@ -1,4 +1,6 @@
 <script context="module">
+  import trimEnd from 'lodash/trimEnd.js';
+
   export async function load({ page, fetch }) {
     const allowedLangs = [
       { locale: 'en', title: 'English' },
@@ -9,21 +11,23 @@
     const res = await fetch(`/api/about`);
     const data = await res.json();
 
+    const lang = params.lang ? trimEnd(params.lang, '/') : 'en';
+
     const isAllowedLang = allowedLangs.some(
-      (lang) => lang.locale === params.aboutLang
+      (allowedLang) => allowedLang.locale === lang
     );
 
-    const translation = data[params.aboutLang];
+    const translation = data[lang];
 
     if (res.status === 200 && isAllowedLang && translation) {
       return {
-        props: { translation, lang: params.aboutLang, allowedLangs, path },
+        props: { translation, lang, allowedLangs, path },
       };
     }
 
     return {
-      status: res.status,
-      error: new Error(data.message),
+      status: 500,
+      error: new Error(`Unable to find locale ${lang}`),
     };
   }
 </script>

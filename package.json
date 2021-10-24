@@ -21,7 +21,8 @@
     "cy:open": "cypress open",
     "docker:build": "docker build -t angelblanco.dev .",
     "docker:cypress:build": "docker build . -f Cypress.Dockerfile -t cypress-tests",
-    "docker:cypress:run": "docker run --ipc=host cypress-tests"
+    "docker:cypress:run": "docker run --ipc=host cypress-tests",
+    "sirv": "sirv dist"
   },
   "dependencies": {
     "commander": "^8.3.0",
@@ -62,13 +63,14 @@
     "prismjs": "^1.17.1",
     "rollup-pluginutils": "^2.8.2",
     "shelljs": "^0.8.4",
+    "sirv-cli": "^1.0.14",
     "sitemap-generator": "^8.5.1",
     "stylelint": "^14.0.0",
     "stylelint-config-standard": "^23.0.0",
     "stylelint-config-standard-scss": "^2.0.0",
     "svelte": "^3.34.0",
     "svelte-preprocess": "^4.2.0",
-    "wait-port": "^0.2.9",
-    "urijs": "^1.19.7"
+    "urijs": "^1.19.7",
+    "wait-port": "^0.2.9"
   }
 }

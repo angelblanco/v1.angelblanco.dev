@@ -27,7 +27,7 @@ if (!appRealUrl || !isUrl(appRealUrl)) {
 
 const url = `${options.protocol}://${options.host}:${options.port}`;
 
-const server = exec('yarn build && yarn preview');
+const server = exec('yarn build && yarn sirv');
 
 const main = async () => {
   const open = await waitPort(options);
