@@ -74,7 +74,7 @@
   </div>
 
   <div>
-    <div class="buttons has-addons is-pulled-right mt-2 mb-0">
+    <div class="buttons has-addons is-pulled-right mt-2 mb-0 lang-button">
       {#each allowedLangs as allowedLang}
         <a
           rel="preload"
@@ -91,3 +91,12 @@
     </Content>
   </div>
 </section>
+
+
+<style lang="scss">
+@media print {
+  .lang-button {
+    display: none;
+  }
+}
+</style>
