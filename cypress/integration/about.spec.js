@@ -1,8 +1,12 @@
 describe('About ', () => {
   it('renders about page', () => {
-    cy.visit('/about');
-    cy.url().should('include', '/about/en/');
+    cy.visit('/about/');
+    cy.location('pathname').should('eq', '/about/');
+
     cy.contains('Spanish').click();
-    cy.url().should('include', '/about/es/');
+    cy.location('pathname').should('eq', '/about/es/')
+
+    cy.contains('English').click();
+    cy.location('pathname').should('eq', '/about/');
   });
 });

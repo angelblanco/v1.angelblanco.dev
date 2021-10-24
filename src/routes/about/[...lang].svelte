@@ -3,15 +3,15 @@
 
   export async function load({ page, fetch }) {
     const allowedLangs = [
-      { locale: 'en', title: 'English' },
-      { locale: 'es', title: 'Spanish' },
+      { locale: 'en', title: 'English', link: '/about/' },
+      { locale: 'es', title: 'Spanish', link: '/about/es/' },
     ];
 
     const { params, path } = page;
     const res = await fetch(`/api/about`);
     const data = await res.json();
 
-    const lang = params.lang ? trimEnd(params.lang, '/') : 'en';
+    const lang = trimEnd(params.lang || '', '/') || 'en';
 
     const isAllowedLang = allowedLangs.some(
       (allowedLang) => allowedLang.locale === lang
@@ -82,7 +82,7 @@
       {#each allowedLangs as allowedLang}
         <a
           rel="preload"
-          href={`/about/${allowedLang.locale}/`}
+          href={allowedLang.link}
           class="button is-rounded is-small"
           class:is-active={lang === allowedLang.locale}
           class:is-primary={lang === allowedLang.locale}>{allowedLang.title}</a
