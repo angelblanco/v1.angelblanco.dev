@@ -14,6 +14,9 @@ RUN yarn blog verify:articles
 # Build static for production
 RUN yarn build
 
+# Github error page workaround
+RUN cp dist/404/index.html dist/404.html
+
 # Disable jekyll procesing
 RUN touch dist/.nojekyll
 
