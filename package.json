@@ -30,7 +30,7 @@
     "dayjs": "^1.10.7",
     "html-minifier": "^4.0.0",
     "inquirer": "^8.2.0",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "reading-time": "^1.2.0"
   },
   "devDependencies": {
