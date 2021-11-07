@@ -14,6 +14,7 @@
 >
   <div class="navbar-brand">
     <a class="navbar-item" href="/">
+      <!-- 
       <div class="image is-24x24" style="margin-right: 10px;">
         <img
           class="is-rounded"
@@ -21,6 +22,7 @@
           alt={import.meta.env.VITE_APP_BASE_TITLE}
         />
       </div>
+       -->
       <img alt="logo" src="/logo.png" width="160" height="24" />
     </a>
 
@@ -50,7 +52,10 @@
           : ''}"
         href="/articles/"
       >
-        Articles
+        <span class="icon is-hidden-desktop">
+          <i class="fas fa-book fa-lg" />
+        </span>
+        <span>Articles</span>
       </a>
       <a
         on:click={closeHamburger}
@@ -58,7 +63,10 @@
         class="navbar-item is-primary {segment === 'about' ? 'is-active' : ''}"
         href="/about/"
       >
-        About
+        <span class="icon is-hidden-desktop">
+          <i class="fas fa-user fa-lg" />
+        </span>
+        <span>About</span>
       </a>
 
       <a
@@ -66,8 +74,9 @@
         href={import.meta.env.VITE_PROJECT_GITHUB_URL}
         target="__blank"
         class="navbar-item"
+        aria-label="My Github page"
       >
-        <span class="icon is-hidden-touch">
+        <span class="icon">
           <i class="fab fa-github-alt fa-lg" />
         </span>
 
@@ -79,6 +88,23 @@
 
 <style lang="scss">
   $nav-transition-duration: 0.2s;
+
+  @include touch() {
+    .navbar-menu .navbar-item {
+      padding: 1rem;
+      font-size: 1.3rem;
+      border-radius: 8px;
+      margin: 0 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      &:hover {
+        background-color: $primary-light;
+        color: $primary;
+      }
+    }
+  }
 
   @include desktop() {
     .navbar-item {

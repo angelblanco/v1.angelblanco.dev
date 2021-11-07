@@ -31,7 +31,10 @@
   <div class="bottom-row is-clearfix">
     <!-- Tags -->
     {#if withTags}
-      <Tags rootClass="is-pulled-left is-block" tags={article.tags} />
+      <Tags
+        rootClass="is-pulled-left is-block is-hidden-mobile"
+        tags={article.tags}
+      />
     {/if}
     <!-- Read More button -->
     {#if withReadMore}
@@ -39,7 +42,7 @@
         <a
           rel="prefetch"
           href={article.url}
-          class="button read-more is-info is-small is-outlined"
+          class="button read-more is-info is-outlined"
         >
           Read More
         </a>

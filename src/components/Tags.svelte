@@ -5,10 +5,13 @@
   $: articleTags = getTags(tags);
 </script>
 
-<div class={`tags ${rootClass}`}>
+<div class={`tags ${rootClass}`} aria-hidden="true">
   {#each articleTags as tag}
-    <a rel="prefetch" href={tag.url} class="tag is-light {tag.tag}"
-      >{tag.title}</a
+    <a
+      rel="prefetch"
+      href={tag.url}
+      class="tag is-light is-medium {tag.tag}"
+      aria-hidden="true">{tag.title}</a
     >
   {/each}
 </div>

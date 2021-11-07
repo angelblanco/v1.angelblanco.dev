@@ -9,6 +9,8 @@ import { faShareAlt } from '@fortawesome/free-solid-svg-icons/faShareAlt.js';
 import { faComments } from '@fortawesome/free-solid-svg-icons/faComments.js';
 import { faHeart } from '@fortawesome/free-solid-svg-icons/faHeart.js';
 import { faBomb } from '@fortawesome/free-solid-svg-icons/faBomb.js';
+import { faBook } from '@fortawesome/free-solid-svg-icons/faBook.js';
+import { faUser } from '@fortawesome/free-solid-svg-icons/faUser.js';
 
 // Tree shaking brand imports
 import { faTwitter } from '@fortawesome/free-brands-svg-icons/faTwitter.js';
@@ -32,6 +34,9 @@ const icons = [
   faShareAlt,
   faComments,
   faHeart,
+  faBomb,
+  faBook,
+  faUser,
 
   // Brands
   faTwitter,
@@ -45,7 +50,6 @@ const icons = [
   faJs,
   faNodeJs,
   faDocker,
-  faBomb,
 ];
 
 icons.forEach((icon) => library.add(icon));

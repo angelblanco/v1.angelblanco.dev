@@ -6,9 +6,21 @@
     $shareLinks === null
       ? []
       : [
-          { class: 'fa-twitter', url: $shareLinks.twitter.intent },
-          { class: 'fa-facebook', url: $shareLinks.facebook.intent },
-          { class: 'fa-linkedin-in', url: $shareLinks.linkedin.intent },
+          {
+            class: 'fa-twitter',
+            url: $shareLinks.twitter.intent,
+            label: 'Share on Twitter',
+          },
+          {
+            class: 'fa-facebook',
+            url: $shareLinks.facebook.intent,
+            label: 'Share on Facebook',
+          },
+          {
+            class: 'fa-linkedin-in',
+            url: $shareLinks.linkedin.intent,
+            label: 'Share on Linkedin',
+          },
         ];
 </script>
 
@@ -22,15 +34,30 @@
           Share
         </span>
       </div>
-      <div>
+      <div class="icons-container">
         {#each shareIcons as shareIcon}
-          <a href={shareIcon.url} target="__blank" class="icon is-medium">
-            <i class="fab fa-lg {shareIcon.class}" />
+          <a
+            href={shareIcon.url}
+            target="__blank"
+            class="icon is-large"
+            aria-label={shareIcon.label}
+          >
+            <i class="fab fa-2x {shareIcon.class}" />
           </a>
         {/each}
       </div>
     </div>
   </div>
 
+  <!-- 
   <TinyLetterSubscribeForm />
+   -->
 </div>
+
+<style lang="scss">
+  .icons-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+</style>

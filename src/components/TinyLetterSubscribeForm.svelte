@@ -36,7 +36,7 @@
   <div class="column">
     <div class="box tiny-letter pb-5">
       <div class="content">
-        <h4>Subscribe to the newsletter 🚀</h4>
+        <div class="title is-4">Subscribe to the newsletter 🚀</div>
 
         <slot>
           <p>

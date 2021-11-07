@@ -17,24 +17,32 @@
 
 <article class="media">
   <figure class="media-left">
-    <a href="/about/" rel="prefecth" class="image is-64x64">
-      <img class="is-rounded" src="/images/me-128x128.jpeg" alt="user" />
+    <a
+      href="/about/"
+      rel="prefecth"
+      class="image is-64x64"
+      aria-label="Abot the author"
+    >
+      <img
+        class="is-rounded"
+        src="/images/me-128x128.jpeg"
+        alt="user"
+        width="128"
+        height="128"
+      />
     </a>
   </figure>
 
   <div class="media-content">
-    <div class="container">
-      <p>
-        <a href="/about/" rel="prefetch">
-          <strong>Ángel Blanco</strong>
-        </a>
+    <div class="media-title-container">
+      <span> Ángel Blanco </span>
 
-        <span class="date-subtitle has-text-grey-light is-size-7">
-          {relativeTime} · {article.readingTimeText}
-        </span>
-      </p>
-
-      <p>Tagged in:</p>
+      <span
+        class="date-subtitle has-text-grey-light"
+        aria-label="Written at {relativeTime}. Estimated {article.readingTimeText}"
+      >
+        {relativeTime} · {article.readingTimeText}
+      </span>
     </div>
 
     <Tags tags={article.tags} />
@@ -50,8 +58,9 @@
 </article>
 
 <style lang="scss">
-  .date-subtitle {
-    letter-spacing: 0.05em;
-    margin-left: 5px;
+  .media-title-container {
+    margin-bottom: 0.5rem;
+    display: flex;
+    gap: 1rem;
   }
 </style>

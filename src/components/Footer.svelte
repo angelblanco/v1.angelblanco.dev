@@ -24,7 +24,7 @@
   }, 2000);
 </script>
 
-<footer class="footer {flavour}">
+<footer class="footer {flavour}" aria-hidden="true">
   <hr class="footerRule is-hidden-print" />
 
   <div class="has-text-centered">
@@ -37,7 +37,7 @@
     <p class="footer-github is-hidden-print">
       <a
         href="https://github.com/angelblanco/angelblanco.dev"
-        class="button is-small"
+        class="button"
         target="__blank"
       >
         <span class="icon"> <span class="fab fa-github" /> </span>
