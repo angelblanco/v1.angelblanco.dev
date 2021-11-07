@@ -1,7 +1,5 @@
 <script>
   export let toc = [];
-  export let path = ''; // The current article path
-  export const anchorHref = (anchor) => `${path}${anchor}`;
 
   $: visible = toc.length > 0;
 </script>
@@ -13,10 +11,7 @@
       <ul class="menu-list">
         {#each toc as tocItemLevel1}
           <li>
-            <a href={anchorHref(tocItemLevel1.anchor)}>
-              <span class="anchor icon is-small has-text-info">
-                <i class="fas fa-hashtag" />
-              </span>
+            <a href={tocItemLevel1.anchor}>
               {tocItemLevel1.title}
             </a>
 
@@ -24,10 +19,7 @@
               <ul>
                 {#each tocItemLevel1.children as tocItemLevel2}
                   <li>
-                    <a href={anchorHref(tocItemLevel1.anchor)}>
-                      <span class="anchor icon is-small has-text-info">
-                        <i class="fas fa-hashtag" />
-                      </span>
+                    <a href={tocItemLevel2.anchor}>
                       {tocItemLevel2.title}
                     </a>
                   </li>
@@ -43,18 +35,25 @@
 
 <style lang="scss">
   .toc {
-    a span.anchor {
-      display: none;
-      margin-left: -16px;
+    @include touch {
+      font-size: 1.25rem;
+
+      .menu-label,
+      a,
+      p {
+        font-size: 1.25rem;
+      }
+    }
+
+    .menu-label {
+      font-weight: $weight-bold;
+      letter-spacing: 0.03em;
     }
 
     a:hover:not(.button) {
-      font-weight: $weight-semibold;
-      background-color: $white;
-
-      span.anchor {
-        display: initial;
-      }
+      color: $info;
+      background-color: $info-light;
+      border-radius: 1em;
     }
   }
 </style>

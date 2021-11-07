@@ -1,5 +1,6 @@
 <script>
   export let id;
+  export let label = '';
   export let extraClass = '';
   export let account = import.meta.env.VITE_TWITTER_USER;
 
@@ -7,6 +8,6 @@
   $: linkClasses = `tweet-link ${extraClass}`;
 </script>
 
-<a href={url} target="__blank" class={linkClasses}>
+<a href={url} target="__blank" class={linkClasses} aria-label={label}>
   <slot />
 </a>

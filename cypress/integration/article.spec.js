@@ -1,18 +1,18 @@
 describe('Article', () => {
   const sharedTests = () => {
-    it('contains media with tags', () => {
-      cy.get('.media .media-content a').should('have.attr', 'href', '/about/');
+    // it('contains media with tags', () => {
+    //   cy.get('.media .media-content a').should('have.attr', 'href', '/about/');
 
-      cy.get('.media .media-left a').should('have.attr', 'href', '/about/');
+    //   cy.get('.media .media-left a').should('have.attr', 'href', '/about/');
 
-      cy.get('.media .tags a.tag').should(($tags) => {
-        expect($tags).to.have.length.greaterThan(0);
+    //   cy.get('.media .tags a.tag').should(($tags) => {
+    //     expect($tags).to.have.length.greaterThan(0);
 
-        $tags.each((_, link) => {
-          expect(Cypress.$(link).attr('href')).to.match(/tag\/[a-zA-Z_-]+/);
-        });
-      });
-    });
+    //     $tags.each((_, link) => {
+    //       expect(Cypress.$(link).attr('href')).to.match(/tag\/[a-zA-Z_-]+/);
+    //     });
+    //   });
+    // });
 
     it('renders title and a blog', () => {
       cy.get('.title.is-1');
@@ -25,15 +25,16 @@ describe('Article', () => {
       cy.get('#disqus_thread');
     });
 
-    it('contains newsletter subscribe', () => {
-      cy.get('.box.tiny-letter').contains('Subscribe to the newsletter');
-      cy.get('.box.tiny-letter').contains('powered by TinyLetter');
-      cy.get('.box.tiny-letter')
-        .get('form')
-        .should((form) =>
-          expect(form.attr('action')).to.contain('https://tinyletter.com')
-        );
-    });
+    // Newsletter is disabled right now
+    // it('contains newsletter subscribe', () => {
+    //   cy.get('.box.tiny-letter').contains('Subscribe to the newsletter');
+    //   cy.get('.box.tiny-letter').contains('powered by TinyLetter');
+    //   cy.get('.box.tiny-letter')
+    //     .get('form')
+    //     .should((form) =>
+    //       expect(form.attr('action')).to.contain('https://tinyletter.com')
+    //     );
+    // });
   };
 
   context('Welcome article', () => {

@@ -1,5 +1,5 @@
 // Based on this code pen https://codepen.io/jamesduncombe/pen/QNMapK
-$terminal-bg: adjust-hue(#25313e, 0%);
+$terminal-bg: adjust-hue(#25313e, 0);
 $terminal-bar-bg: #191919;
 $terminal-recessed: desaturate(lighten($terminal-bg, 20%), 5%); //#6c7886
 

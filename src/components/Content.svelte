@@ -28,20 +28,7 @@
     }
   };
 
-  function scrollIntoAnchor(event) {
-    debugger;
-
-    event.stopPropagation();
-    event.preventDefault();
-
-    const href = event.target.getAttribute('href');
-    window.location.hash = '';
-    window.location.hash = href;
-    document.querySelector(href).scrollIntoView();
-  }
-
   on('.blog.content button.copy', 'click', copyCode, () => contentContainer);
-  on('a[href^="#"]', 'click', scrollIntoAnchor, () => contentContainer);
 </script>
 
 <div class="content is-medium blog {extraClass}" bind:this={contentContainer}>

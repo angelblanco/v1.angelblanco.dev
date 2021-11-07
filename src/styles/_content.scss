@@ -66,6 +66,12 @@
     font-size: 0.85rem;
   }
 
+  @include touch() {
+    pre {
+      font-size: 0.95rem;
+    }
+  }
+
   .github-link-container,
   .svelte-repl-link-container {
     text-align: center;

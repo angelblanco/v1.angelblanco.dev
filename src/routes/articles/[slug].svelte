@@ -1,6 +1,6 @@
 <script context="module">
   export async function load({ page, fetch }) {
-    const { path, params } = page;
+    const { params } = page;
 
     // the `slug` parameter is available because
     // this file is called [slug].svelte
@@ -8,7 +8,7 @@
     const data = await res.json();
 
     if (res.status === 200) {
-      return { props: { article: data, path } };
+      return { props: { article: data } };
     }
 
     // Fallthrough route
@@ -34,7 +34,6 @@
     setOgUrl,
   } from './../../stores/meta';
   export let article;
-  export let path;
 
   let articleSectionContainer;
   let afterArticleContainer;
@@ -83,7 +82,7 @@
 
   <Content html={article.intro} />
 
-  <TableOfContent toc={article.toc.tree} {path} />
+  <TableOfContent toc={article.toc.tree} />
 
   <Content extraClass="articleBody" html={article.html} />
 
