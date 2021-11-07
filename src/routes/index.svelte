@@ -35,14 +35,14 @@
   <div class="container reading-width">
     <div class="notification is-primary is-light">
       <div class="columns">
-        <div class="column">
+        <div class="column is-size-5">
           Welcome to <strong>Angel Blanco's</strong> blog! 🚀
         </div>
         <div class="column is-hidden-print">
           <div class="is-clearfix">
             <a
               href="/articles/"
-              class="is-pulled-right-tablet button is-danger is-small"
+              class="is-pulled-right-tablet button is-danger"
             >
               See the latest articles
             </a>

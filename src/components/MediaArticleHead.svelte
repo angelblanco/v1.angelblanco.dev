@@ -50,8 +50,12 @@
 
   <div class="media-right">
     {#if article.tweet}
-      <TweetLink id={article.tweet} extraClass="icon is-large">
-        <i class="fab fa-twitter fa-lg" />
+      <TweetLink
+        id={article.tweet}
+        extraClass="icon is-large"
+        label="Twitter feed"
+      >
+        <i class="fab fa-twitter fa-2x" />
       </TweetLink>
     {/if}
   </div>

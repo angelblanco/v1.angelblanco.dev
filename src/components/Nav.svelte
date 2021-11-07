@@ -99,9 +99,10 @@
       align-items: center;
       gap: 1rem;
 
-      &:hover {
-        background-color: $primary-light;
-        color: $primary;
+      &:hover,
+      &:focus {
+        background-color: $info-light;
+        color: $info;
       }
     }
   }

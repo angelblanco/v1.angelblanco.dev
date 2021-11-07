@@ -66,7 +66,9 @@ export function createMarkdownItInstance(options = {}) {
   const finalOptions = { highlight, ...options };
 
   const mdInstance = new MarkdownIt(finalOptions)
-    .use(markdownItAnchor)
+    .use(markdownItAnchor, {
+      permalink: markdownItAnchor.permalink.headerLink(),
+    })
     .use(markdownitEmoji)
     .use(markdowContainer);
 

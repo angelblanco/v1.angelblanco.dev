@@ -38,12 +38,8 @@
     {/if}
     <!-- Read More button -->
     {#if withReadMore}
-      <div class="is-pulled-right is-block">
-        <a
-          rel="prefetch"
-          href={article.url}
-          class="button read-more is-info is-outlined"
-        >
+      <div class="read-more is-block">
+        <a rel="prefetch" href={article.url} class="button is-info is-outlined">
           Read More
         </a>
       </div>
@@ -69,10 +65,30 @@
 
     .bottom-row {
       padding: 1rem;
+      display: flex;
 
       .tags {
-        padding-top: 5px;
-        margin: 0;
+        margin: 0 !important;
+      }
+
+      .tag {
+        margin-bottom: 0;
+      }
+    }
+
+    .read-more {
+      margin-left: auto;
+    }
+
+    @include mobile() {
+      .read-more {
+        margin-left: 0;
+        width: 100%;
+      }
+
+      .read-more .button {
+        width: 100%;
+        display: block;
       }
     }
 

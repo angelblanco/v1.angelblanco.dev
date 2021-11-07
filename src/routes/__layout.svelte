@@ -4,11 +4,21 @@
   import GoogleAnalytics from '../components/GoogleAnalytics.svelte';
   import Footer from '../components/Footer.svelte';
   import BackToTop from '../components/BackToTop.svelte';
-  export let segment = '';
+  import { getStores } from '$app/stores';
+  import { derived } from 'svelte/store';
+  import trimStart from 'lodash/trimStart.js';
+
+  const { page } = getStores();
+
+  const segment = derived(page, ($page) => {
+    const segments = trimStart($page.path || '', '/').split('/');
+
+    return segments.length > 0 ? segments[0] : '';
+  });
 </script>
 
 <GoogleAnalytics />
-<Nav {segment} />
+<Nav segment={$segment} />
 <BackToTop />
 
 <main class="blog">
