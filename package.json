@@ -52,7 +52,7 @@
     "globby": "^12.0.2",
     "is-url": "^1.2.4",
     "jsdom": "^18.0.0",
-    "markdown-it": "^12.2.0",
+    "markdown-it": "^12.3.2",
     "markdown-it-anchor": "^8.4.1",
     "markdown-it-container": "^3.0.0",
     "markdown-it-emoji": "^2.0.0",
