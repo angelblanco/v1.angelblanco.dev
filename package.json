@@ -63,7 +63,7 @@
     "prettier-plugin-svelte": "^2.4.0",
     "prismjs": "^1.17.1",
     "rollup-pluginutils": "^2.8.2",
-    "shelljs": "^0.8.4",
+    "shelljs": "^0.8.5",
     "sirv-cli": "^1.0.14",
     "sitemap-generator": "^8.5.1",
     "stylelint": "^14.0.0",
