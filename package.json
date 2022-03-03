@@ -71,7 +71,7 @@
     "stylelint-config-standard-scss": "^2.0.0",
     "svelte": "^3.34.0",
     "svelte-preprocess": "^4.2.0",
-    "urijs": "^1.19.7",
+    "urijs": "^1.19.9",
     "wait-port": "^0.2.9"
   }
 }
