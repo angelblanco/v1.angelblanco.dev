@@ -1,12 +1,12 @@
 <script context="module">
-  export function load({ page, fetch }) {
+  export function load({ url, fetch, params }) {
     if (
-      !page.params.pageNumber ||
-      `${parseInt(page.params.pageNumber)}` === page.params.pageNumber
+      !params.pageNumber ||
+      `${parseInt(params.pageNumber)}` === params.pageNumber
     ) {
-      const { path } = page;
+      const path = url.pathname;
 
-      return fetch(`/api/articles/all/${page.params.pageNumber || 1}`)
+      return fetch(`/api/articles/all/${params.pageNumber || 1}`)
         .then((r) => r.json())
         .then(({ articles, pages, page }) => {
           return { props: { articles, pages, page, path } };

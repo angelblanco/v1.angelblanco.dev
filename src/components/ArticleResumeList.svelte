@@ -25,11 +25,7 @@
           <hr />
         {/each}
 
-        <nav
-          class="pagination is-centered is-small"
-          role="navigation"
-          aria-label="pagination"
-        >
+        <nav class="pagination is-centered is-small" aria-label="pagination">
           {#if hasPrevPage}
             <a href={uriForPage(page - 1)} class="pagination-previous">
               <span class="icon"> <i class="fas fa-angle-double-left" /> </span>

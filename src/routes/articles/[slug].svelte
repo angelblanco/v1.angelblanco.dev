@@ -1,7 +1,5 @@
 <script context="module">
-  export async function load({ page, fetch }) {
-    const { params } = page;
-
+  export async function load({ params, fetch }) {
     // the `slug` parameter is available because
     // this file is called [slug].svelte
     const res = await fetch(`/api/articles/${params.slug}`);

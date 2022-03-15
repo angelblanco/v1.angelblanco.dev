@@ -16,5 +16,5 @@ export function getCanonicalUrlForPath(path) {
 export default () => {
   const { page } = getStores();
 
-  return derived(page, ($page) => getCanonicalUrlForPath($page.path));
+  return derived(page, ($page) => getCanonicalUrlForPath($page.url.pathname));
 };
