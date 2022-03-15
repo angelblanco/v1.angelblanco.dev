@@ -25,6 +25,7 @@ export async function handle({ event, resolve }) {
 
   if (
     prerendering &&
+    response.headers.get('content-type') &&
     response.headers.get('content-type').startsWith('text/html')
   ) {
     const body = await response.text();
