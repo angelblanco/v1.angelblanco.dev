@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="theme-color" content="#333333" />
+    <link rel="manifest" href="/manifest.json" crossorigin="use-credentials" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta http-equiv="content-security-policy" content=""><title>Install docker and docker compose on Ubuntu 20.04 - Angel Blanco&#39;s blog</title><meta name="description" content="Learn to install docker and docker-compose with some easy copy-paste steps on the latest Ubuntu" data-svelte="svelte-aky1d0"><meta property="og:url" content="https://angelblanco.dev/articles/install-docker-and-docker-compose-on-ubunt-20-04/" data-svelte="svelte-aky1d0"><meta property="og:title" content="Install docker and docker compose on Ubuntu 20.04" data-svelte="svelte-aky1d0"><meta property="og:description" content="Learn to install docker and docker-compose with some easy copy-paste steps on the latest Ubuntu" data-svelte="svelte-aky1d0"><meta property="og:image" content="https://angelblanco.dev/images/share-default.png" data-svelte="svelte-aky1d0"><meta property="og:image:width" content="1200" data-svelte="svelte-aky1d0"><meta property="og:image:height" content="630" data-svelte="svelte-aky1d0"><meta property="og:locale" content="en_US" data-svelte="svelte-aky1d0"><meta property="og:author" content="Ángel Blanco" data-svelte="svelte-aky1d0"><meta name="twitter:title" content="Install docker and docker compose on Ubuntu 20.04" data-svelte="svelte-aky1d0"><meta name="twitter:description" content="Learn to install docker and docker-compose with some easy copy-paste steps on the latest Ubuntu" data-svelte="svelte-aky1d0"><meta name="twitter:card" content="summary_large_image" data-svelte="svelte-aky1d0"><meta name="twitter:site" content="@angelblancodev" data-svelte="svelte-aky1d0"><meta name="twitter:creator" content="@angelblancodev" data-svelte="svelte-aky1d0"><meta name="twitter:image" content="https://angelblanco.dev/images/share-default.png" data-svelte="svelte-aky1d0">
+	<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-5c496c17.css">
+	<link rel="stylesheet" href="/_app/assets/pages/articles/_slug_.svelte-39d0f134.css">
+	<link rel="stylesheet" href="/_app/assets/TinyLetterSubscribeForm.svelte_svelte_type_style_lang-9e0ab98b.css">
+	<link rel="modulepreload" href="/_app/start-f8140ddd.js">
+	<link rel="modulepreload" href="/_app/chunks/vendor-54c6ab91.js">
+	<link rel="modulepreload" href="/_app/pages/__layout.svelte-97c00a7f.js">
+	<link rel="modulepreload" href="/_app/chunks/utils-123120c2.js">
+	<link rel="modulepreload" href="/_app/chunks/canonical-fdacf4d6.js">
+	<link rel="modulepreload" href="/_app/pages/articles/__layout.svelte-e94d3e2a.js">
+	<link rel="modulepreload" href="/_app/pages/articles/_slug_.svelte-5a52e418.js">
+	<link rel="modulepreload" href="/_app/chunks/Content-2ed3ba46.js">
+	<link rel="modulepreload" href="/_app/chunks/Head-46f166e7.js">
+	<link rel="modulepreload" href="/_app/chunks/meta-ebf74df4.js">
+	<link rel="modulepreload" href="/_app/chunks/Tags-89f21549.js">
+				<script>
+		if ('serviceWorker' in navigator) {
+			navigator.serviceWorker.register('/service-worker.js');
+		}
+	</script>
+  </head>
+  <body>
+    
+
+
+
+<nav class="navbar container is-hidden-print" aria-label="main navigation"><div class="navbar-brand"><a class="navbar-item svelte-19lyduh" href="/">
+      <img alt="logo" src="/logo.png" width="160" height="24"></a>
+
+    <span role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample"><span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span></span></div>
+
+  <div class="navbar-menu svelte-19lyduh"><div class="navbar-end"><a rel="prefetch" class="navbar-item is-primary is-active svelte-19lyduh" href="/articles/"><span class="icon is-hidden-desktop"><i class="fas fa-book fa-lg"></i></span>
+        <span>Articles</span></a>
+      <a rel="prefecth" class="navbar-item is-primary  svelte-19lyduh" href="/about/"><span class="icon is-hidden-desktop"><i class="fas fa-user fa-lg"></i></span>
+        <span>About</span></a>
+
+      <a href="https://github.com/angelblanco/angelblanco.dev" target="__blank" class="navbar-item svelte-19lyduh" aria-label="My Github page"><span class="icon"><i class="fab fa-github-alt fa-lg"></i></span>
+
+        <span class="is-hidden-desktop">Github</span></a></div></div>
+</nav>
+
+
+<div class="back-to-top is-hidden-print svelte-1d29tie hidden"><span class="icon is-large"><i class="fas fa-chevron-up fa-2x svelte-1d29tie"></i></span>
+</div>
+
+<main class="blog"><div class="container">
+
+
+
+<section class="section reading-width pb-0"><article class="media"><figure class="media-left"><a href="/about/" rel="prefecth" class="image is-64x64" aria-label="Abot the author"><img class="is-rounded" src="/images/me-128x128.jpeg" alt="user" width="128" height="128"></a></figure>
+
+  <div class="media-content"><div class="media-title-container svelte-1d83kht"><span>Ángel Blanco </span>
+
+      <span class="date-subtitle has-text-grey-light" aria-label="Written at 2020-09-19. Estimated 2 min read">2020-09-19 · 2 min read</span></div>
+
+    <div class="tags " aria-hidden="true"><a rel="prefetch" href="/tag/docker/" class="tag is-light is-medium docker" aria-hidden="true">Docker</a></div></div>
+
+  <div class="media-right"><a href="https://twitter.com/angelblancodev/status/1311017241203429377" target="__blank" class="tweet-link icon is-large" aria-label="Twitter feed"><i class="fab fa-twitter fa-2x"></i></a></div>
+</article></section>
+
+
+
+<div class="nprogress svelte-1cv4mhg hidden" style="transition: opacity 300ms linear"><div class="bar svelte-1cv4mhg" style="margin-left: -100%;transition: all 300ms linear"></div>
+</div>
+
+
+<div class="article-sidebar-overlay svelte-1uubpsp hidden"><div class="section reading-width svelte-1uubpsp"><div class="sidebar svelte-1uubpsp"><div class="social-icons has-text-align-left svelte-1uubpsp"><div class="is-clearfix"><a href="https://twitter.com/intent/tweet?url=https://angelblanco.dev/articles/install-docker-and-docker-compose-on-ubunt-20-04/&amp;text=Install%20docker%20and%20docker%20compose%20on%20Ubuntu%2020.04&amp;via=angelblancodev" target="__blank" class="button is-small svelte-1uubpsp"><span class="icon is-small svelte-1uubpsp"><i class="fab fa-twitter svelte-1uubpsp"></i></span>
+              <span>Share on Twitter</span></a>
+          </div><div class="is-clearfix"><a href="https://wwww.facebook.com/sharer.php?u=https://angelblanco.dev/articles/install-docker-and-docker-compose-on-ubunt-20-04/&amp;t=Install%20docker%20and%20docker%20compose%20on%20Ubuntu%2020.04" target="__blank" class="button is-small svelte-1uubpsp"><span class="icon is-small svelte-1uubpsp"><i class="fab fa-facebook svelte-1uubpsp"></i></span>
+              <span>Share on Facebook</span></a>
+          </div><div class="is-clearfix"><a href="https://www.linkedin.com/sharing/share-offsite/?url=https://angelblanco.dev/articles/install-docker-and-docker-compose-on-ubunt-20-04/" target="__blank" class="button is-small svelte-1uubpsp"><span class="icon is-small svelte-1uubpsp"><i class="fab fa-linkedin-in svelte-1uubpsp"></i></span>
+              <span>Share on Linkedin</span></a>
+          </div>
+
+        <div class="is-clearfix"><button class="button is-small svelte-1uubpsp"><span class="icon is-small svelte-1uubpsp"><i class="fas fa-comments svelte-1uubpsp"></i></span>
+            <span>Go Comments</span></button></div>
+
+        <div class="is-clearfix"><button class="button is-small  svelte-1uubpsp"><span class="icon is-small svelte-1uubpsp"><i class="fas fa-share-alt svelte-1uubpsp"></i></span>
+            <span class="svelte-1uubpsp">Share to clipboard</span></button></div></div></div></div>
+</div>
+
+<section class="section reading-width"><h1 class="title is-1">Install docker and docker compose on Ubuntu 20.04</h1>
+
+  <div class="content is-medium blog ">
+    <!-- HTML_TAG_START --><p>We are going to see how to install docker and docker compose on ubuntu 20.04 following the official documentation for your personal computer. Having docker installed on your local machine will let you have isolated containers (think of them as virtual machines) for each of your individual projects or scenarios.</p>
+<p>With docker you can have a nginx, a php-fpm, a mysql database, a mongodb instance, a redis with just a git pull of your repo. All the developers that run the same code will also have the same endpoint versions of the software. Sounds right? Lets install it!.</p>
+<!-- HTML_TAG_END -->
+  </div>
+
+  <div class="box toc svelte-nxtey2"><div class="menu"><p class="menu-label has-text-info svelte-nxtey2">On this article</p>
+      <ul class="menu-list"><li><a href="#docker-installation" class="svelte-nxtey2">Docker installation</a>
+
+            <ul><li><a href="#non-root-user-docker-install" class="svelte-nxtey2">Non-root user docker install</a>
+                  </li><li><a href="#start-docker-on-system-boot" class="svelte-nxtey2">Start docker on system boot</a>
+                  </li>
+              </ul>
+          </li><li><a href="#docker-compose-installation" class="svelte-nxtey2">Docker-compose installation</a>
+
+            
+          </li></ul></div></div>
+
+  <div class="content is-medium blog articleBody">
+    <!-- HTML_TAG_START --><h2 id="docker-installation" tabindex="-1"><a class="header-anchor" href="#docker-installation">Docker installation</a></h2>
+<blockquote>
+<p>This guide is a resume of the lines exposed by the <a href="https://docs.docker.com/install/linux/docker-ce/ubuntu/" target="_blank">offical docker install for Ubuntu</a>. If you got any problem you might refer to it looking for any change!</p>
+</blockquote>
+<pre class="terminal">
+  <div class="bar bar-language-bash">
+    <div class="btn"></div>
+    <div class="bar-title">bash</div>
+    <div><button class="button copy is-small is-pulled-right">Copy</button></div>  
+  </div>
+  <div class="body"><pre class="language-bash"><code><span class="hl--token hl--function">sudo</span> <span class="hl--token hl--function">apt-get</span> remove <span class="hl--token hl--function">docker</span> docker-engine docker.io containerd runc
+
+<span class="hl--token hl--function">sudo</span> <span class="hl--token hl--function">apt-get</span> update
+
+<span class="hl--token hl--function">sudo</span> <span class="hl--token hl--function">apt-get</span> <span class="hl--token hl--function">install</span> <span class="hl--token hl--punctuation">\</span>
+    apt-transport-https <span class="hl--token hl--punctuation">\</span>
+    ca-certificates <span class="hl--token hl--punctuation">\</span>
+    <span class="hl--token hl--function">curl</span> <span class="hl--token hl--punctuation">\</span>
+    gnupg-agent <span class="hl--token hl--punctuation">\</span>
+    software-properties-common
+
+<span class="hl--token hl--function">curl</span> -fsSL https://download.docker.com/linux/ubuntu/gpg <span class="hl--token hl--operator">|</span> <span class="hl--token hl--function">sudo</span> apt-key <span class="hl--token hl--function">add</span> -
+
+<span class="hl--token hl--function">sudo</span> add-apt-repository <span class="hl--token hl--punctuation">\</span>
+   <span class="hl--token hl--string">"deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   <span class="hl--token hl--variable"><span class="hl--token hl--variable">$(</span>lsb_release -cs<span class="hl--token hl--variable">)</span></span> \
+   stable"</span>
+
+<span class="hl--token hl--function">sudo</span> <span class="hl--token hl--function">apt-get</span> update
+
+<span class="hl--token hl--function">sudo</span> <span class="hl--token hl--function">apt-get</span> <span class="hl--token hl--function">install</span> docker-ce docker-ce-cli containerd.io
+</code></pre></div>
+  </pre>
+<p>At this point you must have access to docker as <strong>root user</strong>. We can verify it by runinng the following command.</p>
+<pre class="terminal">
+  <div class="bar bar-language-bash">
+    <div class="btn"></div>
+    <div class="bar-title">bash</div>
+    <div><button class="button copy is-small is-pulled-right">Copy</button></div>  
+  </div>
+  <div class="body"><pre class="language-bash"><code><span class="hl--token hl--function">sudo</span> <span class="hl--token hl--function">docker</span> run hello-world
+</code></pre></div>
+  </pre>
+<p>It's a little bit hidden on the docker docs but most developers need to follow the docker's <a href="https://docs.docker.com/install/linux/linux-postinstall" target="_blank">linux post installs intructions</a>.</p>
+<h3 id="non-root-user-docker-install" tabindex="-1"><a class="header-anchor" href="#non-root-user-docker-install">Non-root user docker install</a></h3>
+<p>The fist common task its to allow docker to be executed for non-root user in order to do that you could run the following commands:</p>
+<pre class="terminal">
+  <div class="bar bar-language-bash">
+    <div class="btn"></div>
+    <div class="bar-title">bash</div>
+    <div><button class="button copy is-small is-pulled-right">Copy</button></div>  
+  </div>
+  <div class="body"><pre class="language-bash"><code><span class="hl--token hl--comment"># !! WARNING: non-root user</span>
+<span class="hl--token hl--function">sudo</span> <span class="hl--token hl--function">groupadd</span> -f <span class="hl--token hl--function">docker</span>
+<span class="hl--token hl--function">sudo</span> <span class="hl--token hl--function">usermod</span> -aG <span class="hl--token hl--function">docker</span> <span class="hl--token hl--environment hl--constant">$USER</span>
+newgrp <span class="hl--token hl--function">docker</span>
+<span class="hl--token hl--function">docker</span> run hello-world
+</code></pre></div>
+  </pre>
+<h3 id="start-docker-on-system-boot" tabindex="-1"><a class="header-anchor" href="#start-docker-on-system-boot">Start docker on system boot</a></h3>
+<p>It's also usal to start the docker containers on system boot. If you want to achieve it you could enable it on <code>systemd</code>. You can read more about how to start containers automatically in <a href="https://docs.docker.com/config/containers/start-containers-automatically/" target="_blank">the official documentation</a>.</p>
+<pre class="terminal">
+  <div class="bar bar-language-text">
+    <div class="btn"></div>
+    <div class="bar-title">text</div>
+    <div><button class="button copy is-small is-pulled-right">Copy</button></div>  
+  </div>
+  <div class="body"><pre class="language-text"><code>sudo systemctl enable docker
+</code></pre></div>
+  </pre>
+<h2 id="docker-compose-installation" tabindex="-1"><a class="header-anchor" href="#docker-compose-installation">Docker-compose installation</a></h2>
+<p>Normally in your applications yo will a need multi-container application. For example if you need a redis, a php-fpm service and a mysql database you probably need docker compose.
+By defining a <code>docker-compose.yml</code> file you will have the hability to configure your application's services.</p>
+<blockquote>
+<p>This guide is a resume of the lines exposed by the <a href="https://docs.docker.com/compose/install/#linux" target="_blank">official install documentation</a>. If you got any problem you might refer to it looking for any change!</p>
+</blockquote>
+<p>With this simple two lines you will the latest stable version of docker compose and make it executable.</p>
+<pre class="terminal">
+  <div class="bar bar-language-bash">
+    <div class="btn"></div>
+    <div class="bar-title">bash</div>
+    <div><button class="button copy is-small is-pulled-right">Copy</button></div>  
+  </div>
+  <div class="body"><pre class="language-bash"><code><span class="hl--token hl--function">sudo</span> <span class="hl--token hl--function">curl</span> -L <span class="hl--token hl--string">"https://github.com/docker/compose/releases/latest/download/docker-compose-<span class="hl--token hl--variable"><span class="hl--token hl--variable">$(</span><span class="hl--token hl--function">uname</span> -s<span class="hl--token hl--variable">)</span></span>-<span class="hl--token hl--variable"><span class="hl--token hl--variable">$(</span><span class="hl--token hl--function">uname</span> -m<span class="hl--token hl--variable">)</span></span>"</span> -o /usr/local/bin/docker-compose
+<span class="hl--token hl--function">sudo</span> <span class="hl--token hl--function">chmod</span> +x /usr/local/bin/docker-compose
+</code></pre></div>
+  </pre>
+<p>Finally we test the installation by checking it with <code>--version</code>. You should have installed the <a href="https://github.com/docker/compose/releases/latest" target="_blank">latest docker-compose version</a>.</p>
+<pre class="terminal">
+  <div class="bar bar-language-bash">
+    <div class="btn"></div>
+    <div class="bar-title">bash</div>
+    <div><button class="button copy is-small is-pulled-right">Copy</button></div>  
+  </div>
+  <div class="body"><pre class="language-bash"><code><span class="hl--token hl--function">docker-compose</span> --version
+<span class="hl--token hl--comment"># docker-compose version X.XX.XX, build 8a1c60f6</span>
+</code></pre></div>
+  </pre>
+<!-- HTML_TAG_END -->
+  </div>
+
+  <div class="is-hidden-print"><hr>
+
+  <div><div class="has-text-centered"><div><span class="has-text-weight-bold has-text-centered has-text-grey-dark">Share
+        </span></div>
+      <div class="icons-container svelte-ralcnf"><a href="https://twitter.com/intent/tweet?url=https://angelblanco.dev/articles/install-docker-and-docker-compose-on-ubunt-20-04/&amp;text=Install%20docker%20and%20docker%20compose%20on%20Ubuntu%2020.04&amp;via=angelblancodev" target="__blank" class="icon is-large" aria-label="Share on Twitter"><i class="fab fa-2x fa-twitter svelte-ralcnf"></i>
+          </a><a href="https://wwww.facebook.com/sharer.php?u=https://angelblanco.dev/articles/install-docker-and-docker-compose-on-ubunt-20-04/&amp;t=Install%20docker%20and%20docker%20compose%20on%20Ubuntu%2020.04" target="__blank" class="icon is-large" aria-label="Share on Facebook"><i class="fab fa-2x fa-facebook svelte-ralcnf"></i>
+          </a><a href="https://www.linkedin.com/sharing/share-offsite/?url=https://angelblanco.dev/articles/install-docker-and-docker-compose-on-ubunt-20-04/" target="__blank" class="icon is-large" aria-label="Share on Linkedin"><i class="fab fa-2x fa-linkedin-in svelte-ralcnf"></i>
+          </a></div></div></div>
+
+  
+</div></section>
+
+<section class="section reading-width is-hidden-print" id="comments"><h3 class="title is-3">Comments</h3>
+
+  <div id="disqus_thread"></div></section>
+
+<div class="afterArticleContainer svelte-1xs3w5z"></div>
+
+</div></main>
+
+<footer class="footer info svelte-1vimzui" aria-hidden="true"><hr class="footerRule is-hidden-print svelte-1vimzui">
+
+  <div class="has-text-centered"><p class="has-text-grey-light is-family-monospace svelte-1vimzui">Personal website of <a href="/about/" class="has-text-grey-dark svelte-1vimzui">Ángel Blanco</a></p>
+
+    <p class="footer-github is-hidden-print svelte-1vimzui"><a href="https://github.com/angelblanco/angelblanco.dev" class="button svelte-1vimzui" target="__blank"><span class="icon"><span class="fab fa-github"></span></span>
+
+        <span>Developed by Ángel Blanco hosted on Github</span></a></p>
+
+    <div class="libraries-box is-m-auto is-hidden-print svelte-1vimzui"><div class="box"><p class="has-text-grey-light is-family-monospace svelte-1vimzui">This project <i class="fas fa-heart svelte-1vimzui"></i> this libraries
+        </p>
+
+        <div class="field is-grouped is-grouped-multiline is-m-auto justify-center"><div class="control"><div class="tags has-addons"><span class="tag is-dark">framework</span>
+                <a href="https://kit.svelte.dev/" class="tag is-light svelte-1vimzui">svelte-kit</a></div>
+            </div><div class="control"><div class="tags has-addons"><span class="tag is-dark">css</span>
+                <a href="https://bulma.io/" class="tag is-light svelte-1vimzui">bulma</a></div>
+            </div><div class="control"><div class="tags has-addons"><span class="tag is-dark">js</span>
+                <a href="https://svelte.dev/" class="tag is-light svelte-1vimzui">svelte</a></div>
+            </div><div class="control"><div class="tags has-addons"><span class="tag is-dark">bundler</span>
+                <a href="https://rollupjs.org/" class="tag is-light svelte-1vimzui">rollup</a></div>
+            </div><div class="control"><div class="tags has-addons"><span class="tag is-dark">md</span>
+                <a href="https://github.com/markdown-it/markdown-it" class="tag is-light svelte-1vimzui">markdown-it</a></div>
+            </div></div>
+
+        <p class="has-text-grey-light is-family-monospace is-size-7 svelte-1vimzui">And all of <a class="has-decoration-underline has-text-grey-dark svelte-1vimzui" href="/libraries/" rel="preload">these...</a></p></div></div></div>
+</footer>
+
+
+		<script type="module" data-hydrate="1vnd4t9">
+		import { start } from "/_app/start-f8140ddd.js";
+		start({
+			target: document.querySelector('[data-hydrate="1vnd4t9"]').parentNode,
+			paths: {"base":"","assets":""},
+			session: {},
+			route: true,
+			spa: false,
+			trailing_slash: "ignore",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [
+					import("/_app/pages/__layout.svelte-97c00a7f.js"),
+						import("/_app/pages/articles/__layout.svelte-e94d3e2a.js"),
+						import("/_app/pages/articles/_slug_.svelte-5a52e418.js")
+				],
+				params: {slug:"install-docker-and-docker-compose-on-ubunt-20-04"}
+			}
+		});
+	</script><script type="application/json" sveltekit:data-type="data" sveltekit:data-url="/api/articles/install-docker-and-docker-compose-on-ubunt-20-04">{"status":200,"statusText":"","headers":{"content-type":"application/json; charset=utf-8"},"body":"{\"id\":3,\"type\":\"article\",\"tweet\":\"1311017241203429377\",\"slug\":\"install-docker-and-docker-compose-on-ubunt-20-04\",\"url\":\"/articles/install-docker-and-docker-compose-on-ubunt-20-04/\",\"title\":\"Install docker and docker compose on Ubuntu 20.04\",\"intro\":\"\u003Cp>We are going to see how to install docker and docker compose on ubuntu 20.04 following the official documentation for your personal computer. Having docker installed on your local machine will let you have isolated containers (think of them as virtual machines) for each of your individual projects or scenarios.\u003C/p>\\n\u003Cp>With docker you can have a nginx, a php-fpm, a mysql database, a mongodb instance, a redis with just a git pull of your repo. All the developers that run the same code will also have the same endpoint versions of the software. Sounds right? Lets install it!.\u003C/p>\\n\",\"description\":\"Learn to install docker and docker-compose with some easy copy-paste steps on the latest Ubuntu\",\"tags\":[\"docker\"],\"date\":\"September 19, 2020\",\"readingTimeText\":\"2 min read\",\"readingTimeMinutes\":1.86,\"words\":372,\"note\":false,\"shortLink\":\"/go/YS0z\",\"toc\":{\"tree\":[{\"level\":2,\"title\":\"Docker installation\",\"anchor\":\"#docker-installation\",\"children\":[{\"level\":3,\"title\":\"Non-root user docker install\",\"anchor\":\"#non-root-user-docker-install\",\"children\":[]},{\"level\":3,\"title\":\"Start docker on system boot\",\"anchor\":\"#start-docker-on-system-boot\",\"children\":[]}]},{\"level\":2,\"title\":\"Docker-compose installation\",\"anchor\":\"#docker-compose-installation\",\"children\":[]}],\"plain\":[{\"level\":2,\"title\":\"Docker installation\",\"anchor\":\"#docker-installation\"},{\"level\":3,\"title\":\"Non-root user docker install\",\"anchor\":\"#non-root-user-docker-install\"},{\"level\":3,\"title\":\"Start docker on system boot\",\"anchor\":\"#start-docker-on-system-boot\"},{\"level\":2,\"title\":\"Docker-compose installation\",\"anchor\":\"#docker-compose-installation\"}]},\"meta\":{\"id\":3,\"date\":\"2020-09-19T00:00:00.000Z\",\"tweet\":\"1311017241203429377\",\"title\":\"Install docker and docker compose on Ubuntu 20.04\",\"description\":\"Learn to install docker and docker-compose with some easy copy-paste steps on the latest Ubuntu\",\"intro\":\"We are going to see how to install docker and docker compose on ubuntu 20.04 following the official documentation for your personal computer. Having docker installed on your local machine will let you have isolated containers (think of them as virtual machines) for each of your individual projects or scenarios.\\n\\nWith docker you can have a nginx, a php-fpm, a mysql database, a mongodb instance, a redis with just a git pull of your repo. All the developers that run the same code will also have the same endpoint versions of the software. Sounds right? Lets install it!.\\n\",\"tags\":[\"docker\"],\"published\":true,\"slug\":\"install-docker-and-docker-compose-on-ubunt-20-04\",\"titleSlug\":\"install-docker-and-docker-compose-on-ubuntu-20\",\"readingStats\":{\"text\":\"2 min read\",\"minutes\":1.86,\"time\":111600,\"words\":372}},\"html\":\"\u003Ch2 id=\\\"docker-installation\\\" tabindex=\\\"-1\\\">\u003Ca class=\\\"header-anchor\\\" href=\\\"#docker-installation\\\">Docker installation\u003C/a>\u003C/h2>\\n\u003Cblockquote>\\n\u003Cp>This guide is a resume of the lines exposed by the \u003Ca href=\\\"https://docs.docker.com/install/linux/docker-ce/ubuntu/\\\" target=\\\"_blank\\\">offical docker install for Ubuntu\u003C/a>. If you got any problem you might refer to it looking for any change!\u003C/p>\\n\u003C/blockquote>\\n\u003Cpre class=\\\"terminal\\\">\\n  \u003Cdiv class=\\\"bar bar-language-bash\\\">\\n    \u003Cdiv class=\\\"btn\\\">\u003C/div>\\n    \u003Cdiv class=\\\"bar-title\\\">bash\u003C/div>\\n    \u003Cdiv>\u003Cbutton class=\\\"button copy is-small is-pulled-right\\\">Copy\u003C/button>\u003C/div>  \\n  \u003C/div>\\n  \u003Cdiv class=\\\"body\\\">\u003Cpre class=\\\"language-bash\\\">\u003Ccode>\u003Cspan class=\\\"hl--token hl--function\\\">sudo\u003C/span> \u003Cspan class=\\\"hl--token hl--function\\\">apt-get\u003C/span> remove \u003Cspan class=\\\"hl--token hl--function\\\">docker\u003C/span> docker-engine docker.io containerd runc\\n\\n\u003Cspan class=\\\"hl--token hl--function\\\">sudo\u003C/span> \u003Cspan class=\\\"hl--token hl--function\\\">apt-get\u003C/span> update\\n\\n\u003Cspan class=\\\"hl--token hl--function\\\">sudo\u003C/span> \u003Cspan class=\\\"hl--token hl--function\\\">apt-get\u003C/span> \u003Cspan class=\\\"hl--token hl--function\\\">install\u003C/span> \u003Cspan class=\\\"hl--token hl--punctuation\\\">\\\\\u003C/span>\\n    apt-transport-https \u003Cspan class=\\\"hl--token hl--punctuation\\\">\\\\\u003C/span>\\n    ca-certificates \u003Cspan class=\\\"hl--token hl--punctuation\\\">\\\\\u003C/span>\\n    \u003Cspan class=\\\"hl--token hl--function\\\">curl\u003C/span> \u003Cspan class=\\\"hl--token hl--punctuation\\\">\\\\\u003C/span>\\n    gnupg-agent \u003Cspan class=\\\"hl--token hl--punctuation\\\">\\\\\u003C/span>\\n    software-properties-common\\n\\n\u003Cspan class=\\\"hl--token hl--function\\\">curl\u003C/span> -fsSL https://download.docker.com/linux/ubuntu/gpg \u003Cspan class=\\\"hl--token hl--operator\\\">|\u003C/span> \u003Cspan class=\\\"hl--token hl--function\\\">sudo\u003C/span> apt-key \u003Cspan class=\\\"hl--token hl--function\\\">add\u003C/span> -\\n\\n\u003Cspan class=\\\"hl--token hl--function\\\">sudo\u003C/span> add-apt-repository \u003Cspan class=\\\"hl--token hl--punctuation\\\">\\\\\u003C/span>\\n   \u003Cspan class=\\\"hl--token hl--string\\\">\\\"deb [arch=amd64] https://download.docker.com/linux/ubuntu \\\\\\n   \u003Cspan class=\\\"hl--token hl--variable\\\">\u003Cspan class=\\\"hl--token hl--variable\\\">$(\u003C/span>lsb_release -cs\u003Cspan class=\\\"hl--token hl--variable\\\">)\u003C/span>\u003C/span> \\\\\\n   stable\\\"\u003C/span>\\n\\n\u003Cspan class=\\\"hl--token hl--function\\\">sudo\u003C/span> \u003Cspan class=\\\"hl--token hl--function\\\">apt-get\u003C/span> update\\n\\n\u003Cspan class=\\\"hl--token hl--function\\\">sudo\u003C/span> \u003Cspan class=\\\"hl--token hl--function\\\">apt-get\u003C/span> \u003Cspan class=\\\"hl--token hl--function\\\">install\u003C/span> docker-ce docker-ce-cli containerd.io\\n\u003C/code>\u003C/pre>\u003C/div>\\n  \u003C/pre>\\n\u003Cp>At this point you must have access to docker as \u003Cstrong>root user\u003C/strong>. We can verify it by runinng the following command.\u003C/p>\\n\u003Cpre class=\\\"terminal\\\">\\n  \u003Cdiv class=\\\"bar bar-language-bash\\\">\\n    \u003Cdiv class=\\\"btn\\\">\u003C/div>\\n    \u003Cdiv class=\\\"bar-title\\\">bash\u003C/div>\\n    \u003Cdiv>\u003Cbutton class=\\\"button copy is-small is-pulled-right\\\">Copy\u003C/button>\u003C/div>  \\n  \u003C/div>\\n  \u003Cdiv class=\\\"body\\\">\u003Cpre class=\\\"language-bash\\\">\u003Ccode>\u003Cspan class=\\\"hl--token hl--function\\\">sudo\u003C/span> \u003Cspan class=\\\"hl--token hl--function\\\">docker\u003C/span> run hello-world\\n\u003C/code>\u003C/pre>\u003C/div>\\n  \u003C/pre>\\n\u003Cp>It's a little bit hidden on the docker docs but most developers need to follow the docker's \u003Ca href=\\\"https://docs.docker.com/install/linux/linux-postinstall\\\" target=\\\"_blank\\\">linux post installs intructions\u003C/a>.\u003C/p>\\n\u003Ch3 id=\\\"non-root-user-docker-install\\\" tabindex=\\\"-1\\\">\u003Ca class=\\\"header-anchor\\\" href=\\\"#non-root-user-docker-install\\\">Non-root user docker install\u003C/a>\u003C/h3>\\n\u003Cp>The fist common task its to allow docker to be executed for non-root user in order to do that you could run the following commands:\u003C/p>\\n\u003Cpre class=\\\"terminal\\\">\\n  \u003Cdiv class=\\\"bar bar-language-bash\\\">\\n    \u003Cdiv class=\\\"btn\\\">\u003C/div>\\n    \u003Cdiv class=\\\"bar-title\\\">bash\u003C/div>\\n    \u003Cdiv>\u003Cbutton class=\\\"button copy is-small is-pulled-right\\\">Copy\u003C/button>\u003C/div>  \\n  \u003C/div>\\n  \u003Cdiv class=\\\"body\\\">\u003Cpre class=\\\"language-bash\\\">\u003Ccode>\u003Cspan class=\\\"hl--token hl--comment\\\"># !! WARNING: non-root user\u003C/span>\\n\u003Cspan class=\\\"hl--token hl--function\\\">sudo\u003C/span> \u003Cspan class=\\\"hl--token hl--function\\\">groupadd\u003C/span> -f \u003Cspan class=\\\"hl--token hl--function\\\">docker\u003C/span>\\n\u003Cspan class=\\\"hl--token hl--function\\\">sudo\u003C/span> \u003Cspan class=\\\"hl--token hl--function\\\">usermod\u003C/span> -aG \u003Cspan class=\\\"hl--token hl--function\\\">docker\u003C/span> \u003Cspan class=\\\"hl--token hl--environment hl--constant\\\">$USER\u003C/span>\\nnewgrp \u003Cspan class=\\\"hl--token hl--function\\\">docker\u003C/span>\\n\u003Cspan class=\\\"hl--token hl--function\\\">docker\u003C/span> run hello-world\\n\u003C/code>\u003C/pre>\u003C/div>\\n  \u003C/pre>\\n\u003Ch3 id=\\\"start-docker-on-system-boot\\\" tabindex=\\\"-1\\\">\u003Ca class=\\\"header-anchor\\\" href=\\\"#start-docker-on-system-boot\\\">Start docker on system boot\u003C/a>\u003C/h3>\\n\u003Cp>It's also usal to start the docker containers on system boot. If you want to achieve it you could enable it on \u003Ccode>systemd\u003C/code>. You can read more about how to start containers automatically in \u003Ca href=\\\"https://docs.docker.com/config/containers/start-containers-automatically/\\\" target=\\\"_blank\\\">the official documentation\u003C/a>.\u003C/p>\\n\u003Cpre class=\\\"terminal\\\">\\n  \u003Cdiv class=\\\"bar bar-language-text\\\">\\n    \u003Cdiv class=\\\"btn\\\">\u003C/div>\\n    \u003Cdiv class=\\\"bar-title\\\">text\u003C/div>\\n    \u003Cdiv>\u003Cbutton class=\\\"button copy is-small is-pulled-right\\\">Copy\u003C/button>\u003C/div>  \\n  \u003C/div>\\n  \u003Cdiv class=\\\"body\\\">\u003Cpre class=\\\"language-text\\\">\u003Ccode>sudo systemctl enable docker\\n\u003C/code>\u003C/pre>\u003C/div>\\n  \u003C/pre>\\n\u003Ch2 id=\\\"docker-compose-installation\\\" tabindex=\\\"-1\\\">\u003Ca class=\\\"header-anchor\\\" href=\\\"#docker-compose-installation\\\">Docker-compose installation\u003C/a>\u003C/h2>\\n\u003Cp>Normally in your applications yo will a need multi-container application. For example if you need a redis, a php-fpm service and a mysql database you probably need docker compose.\\nBy defining a \u003Ccode>docker-compose.yml\u003C/code> file you will have the hability to configure your application's services.\u003C/p>\\n\u003Cblockquote>\\n\u003Cp>This guide is a resume of the lines exposed by the \u003Ca href=\\\"https://docs.docker.com/compose/install/#linux\\\" target=\\\"_blank\\\">official install documentation\u003C/a>. If you got any problem you might refer to it looking for any change!\u003C/p>\\n\u003C/blockquote>\\n\u003Cp>With this simple two lines you will the latest stable version of docker compose and make it executable.\u003C/p>\\n\u003Cpre class=\\\"terminal\\\">\\n  \u003Cdiv class=\\\"bar bar-language-bash\\\">\\n    \u003Cdiv class=\\\"btn\\\">\u003C/div>\\n    \u003Cdiv class=\\\"bar-title\\\">bash\u003C/div>\\n    \u003Cdiv>\u003Cbutton class=\\\"button copy is-small is-pulled-right\\\">Copy\u003C/button>\u003C/div>  \\n  \u003C/div>\\n  \u003Cdiv class=\\\"body\\\">\u003Cpre class=\\\"language-bash\\\">\u003Ccode>\u003Cspan class=\\\"hl--token hl--function\\\">sudo\u003C/span> \u003Cspan class=\\\"hl--token hl--function\\\">curl\u003C/span> -L \u003Cspan class=\\\"hl--token hl--string\\\">\\\"https://github.com/docker/compose/releases/latest/download/docker-compose-\u003Cspan class=\\\"hl--token hl--variable\\\">\u003Cspan class=\\\"hl--token hl--variable\\\">$(\u003C/span>\u003Cspan class=\\\"hl--token hl--function\\\">uname\u003C/span> -s\u003Cspan class=\\\"hl--token hl--variable\\\">)\u003C/span>\u003C/span>-\u003Cspan class=\\\"hl--token hl--variable\\\">\u003Cspan class=\\\"hl--token hl--variable\\\">$(\u003C/span>\u003Cspan class=\\\"hl--token hl--function\\\">uname\u003C/span> -m\u003Cspan class=\\\"hl--token hl--variable\\\">)\u003C/span>\u003C/span>\\\"\u003C/span> -o /usr/local/bin/docker-compose\\n\u003Cspan class=\\\"hl--token hl--function\\\">sudo\u003C/span> \u003Cspan class=\\\"hl--token hl--function\\\">chmod\u003C/span> +x /usr/local/bin/docker-compose\\n\u003C/code>\u003C/pre>\u003C/div>\\n  \u003C/pre>\\n\u003Cp>Finally we test the installation by checking it with \u003Ccode>--version\u003C/code>. You should have installed the \u003Ca href=\\\"https://github.com/docker/compose/releases/latest\\\" target=\\\"_blank\\\">latest docker-compose version\u003C/a>.\u003C/p>\\n\u003Cpre class=\\\"terminal\\\">\\n  \u003Cdiv class=\\\"bar bar-language-bash\\\">\\n    \u003Cdiv class=\\\"btn\\\">\u003C/div>\\n    \u003Cdiv class=\\\"bar-title\\\">bash\u003C/div>\\n    \u003Cdiv>\u003Cbutton class=\\\"button copy is-small is-pulled-right\\\">Copy\u003C/button>\u003C/div>  \\n  \u003C/div>\\n  \u003Cdiv class=\\\"body\\\">\u003Cpre class=\\\"language-bash\\\">\u003Ccode>\u003Cspan class=\\\"hl--token hl--function\\\">docker-compose\u003C/span> --version\\n\u003Cspan class=\\\"hl--token hl--comment\\\"># docker-compose version X.XX.XX, build 8a1c60f6\u003C/span>\\n\u003C/code>\u003C/pre>\u003C/div>\\n  \u003C/pre>\\n\"}"}</script>
+  </body>
+</html>
