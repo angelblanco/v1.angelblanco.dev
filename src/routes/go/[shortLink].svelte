@@ -1,9 +1,7 @@
 <script context="module">
   import { reverseShortner } from '../../services/shortner';
 
-  export async function load({ page, fetch }) {
-    const params = page.params;
-
+  export async function load({ params, fetch }) {
     try {
       let { id, preffix } = reverseShortner(params.shortLink);
 

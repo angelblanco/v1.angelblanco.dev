@@ -67,7 +67,7 @@
 
   // Single page application handling
   $: {
-    const page_path = $page.path;
+    const page_path = $page.url.pathname;
 
     if (mounted && window.gtag) {
       gtag('config', trackingId, { page_path });

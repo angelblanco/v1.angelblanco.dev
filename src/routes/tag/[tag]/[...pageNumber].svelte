@@ -1,6 +1,6 @@
 <script context="module">
-  export function load({ page, fetch }) {
-    const { params, path } = page;
+  export function load({ params, url, fetch }) {
+    const path = url.pathname;
 
     const pageNumber = params.pageNumber || 1;
 

@@ -11,7 +11,7 @@
   const { page } = getStores();
 
   const segment = derived(page, ($page) => {
-    const segments = trimStart($page.path || '', '/').split('/');
+    const segments = trimStart($page.url.pathname || '', '/').split('/');
 
     return segments.length > 0 ? segments[0] : '';
   });

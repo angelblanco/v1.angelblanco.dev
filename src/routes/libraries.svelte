@@ -1,6 +1,6 @@
 <script context="module">
-  export async function load({ fetch, page }) {
-    const { path } = page;
+  export async function load({ fetch, url }) {
+    const path = url.pathname;
 
     // the `slug` parameter is available because
     // this file is called [slug].svelte

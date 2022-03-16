@@ -4,6 +4,7 @@ import { markdownIt } from './src/services/markdown/rollupPlugin.js';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
 import replace from '@rollup/plugin-replace';
+
 const docLocation = fileURLToPath(new URL('./docs/articles', import.meta.url));
 
 const pathToScss = (scss) =>
@@ -18,6 +19,9 @@ const scssPreppendData = [
 export default {
   // options passed to svelte.preprocess (https://svelte.dev/docs#svelte_preprocess)
   kit: {
+    prerender: {
+      default: true,
+    },
     adapter: adapter({
       pages: 'dist',
     }),
@@ -32,6 +36,14 @@ export default {
           preventAssignment: true,
         }),
       ],
+      ssr: {
+        noExternal: [
+          '@fortawesome/free-brands-svg-icons',
+          '@fortawesome/free-regular-svg-icons',
+          '@fortawesome/free-solid-svg-icons',
+          '@fortawesome/fontawesome-svg-core',
+        ],
+      },
     }),
 
     trailingSlash: 'ignore',

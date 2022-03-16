@@ -1,13 +1,12 @@
 <script context="module">
   import trimEnd from 'lodash/trimEnd.js';
 
-  export async function load({ page, fetch }) {
+  export async function load({ url, fetch, params }) {
     const allowedLangs = [
       { locale: 'en', title: 'English', link: '/about/' },
       { locale: 'es', title: 'Spanish', link: '/about/es/' },
     ];
 
-    const { params, path } = page;
     const res = await fetch(`/api/about`);
     const data = await res.json();
 
@@ -21,7 +20,7 @@
 
     if (res.status === 200 && isAllowedLang && translation) {
       return {
-        props: { translation, lang, allowedLangs, path },
+        props: { translation, lang, allowedLangs, path: url.pathname },
       };
     }
 
