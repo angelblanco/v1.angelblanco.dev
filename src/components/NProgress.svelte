@@ -83,4 +83,10 @@
       }
     }
   }
+
+  @media print {
+    .nprogress {
+      display: none;
+    }
+  }
 </style>

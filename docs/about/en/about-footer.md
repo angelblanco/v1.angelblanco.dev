@@ -3,9 +3,11 @@ title: 'About footer'
 published: false # This is not an article
 ---
 
+::: page-break
+
 ## Hobbies :guitar:?
 
-My main hobby is music. I love to play rock & blues on my guitar. :guitar: I'm trying to learn to sing :microphone: and once in a while I play :computer: games too. :smile: I have a dog :dog: and I try to keep myself as healthy :muscle: as developer can!
+My main hobby is music. I love to play rock & blues on my guitar. :guitar: I'm trying to learn to sing :microphone: and once in a while I play computer :computer: games too. :smile: I have a dog :dog: and I try to keep myself as healthy :muscle: as a developer can!
 
 ## About this blog
 

@@ -1,5 +1,5 @@
 export default function (md, container) {
-  const tagRegex = /^tag-list\s+\"([a-zA-Z-\s]*)\"\s+\"([a-zA-Z\-\,\s]*)\"$/;
+  const tagRegex = /^tag-list\s+\"([a-zA-Z-\s]*)\"\s+\"([a-zA-Z0-9\-\,\s]*)\"$/;
 
   const parseParams = (params) => {
     const [, classes, tagsString] = params.trim().match(tagRegex);
