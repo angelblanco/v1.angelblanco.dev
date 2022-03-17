@@ -4,9 +4,15 @@ describe('Hole page links', () => {
       onEachLink(link) {
         cy.checkMeta();
 
+        let linkToCheck = link;
+
+        if (link.endsWith('/')) {
+          linkToCheck = linkToCheck.slice(0, -1);
+        }
+
         // Verify not short links
-        if (!link.includes('/go')) {
-          cy.url().should('include', link);
+        if (!linkToCheck.includes('/go')) {
+          cy.url().should('include', linkToCheck);
         }
 
         // Verify #anchors

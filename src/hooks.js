@@ -30,7 +30,7 @@ export async function handle({ event, resolve }) {
   ) {
     const body = await response.text();
 
-    return new Response(body, response);
+    return new Response(minify(body, minification_options), response);
   }
 
   return response;
