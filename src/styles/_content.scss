@@ -111,3 +111,13 @@
 .title.is-6 {
   letter-spacing: 0.03em;
 }
+
+.page-break {
+  page-break-after: always;
+}
+
+@media print {
+  .tags {
+    page-break-inside: avoid;
+  }
+}

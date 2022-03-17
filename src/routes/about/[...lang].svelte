@@ -90,7 +90,15 @@
     </div>
 
     <Content>
-      {@html translation.aboutMe}
+      {@html translation.aboutMe.html}
+    </Content>
+
+    <Content>
+      {@html translation.experience.html}
+    </Content>
+
+    <Content>
+      {@html translation.aboutFooter.html}
     </Content>
   </div>
 </section>

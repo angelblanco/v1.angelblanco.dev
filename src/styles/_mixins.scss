@@ -28,16 +28,23 @@
 
 @mixin linkStyle($link-mixin-color: $text-underline-color) {
   padding: 2px;
-  box-shadow: 0 0 0 $white, inset 0 -3px lighten($link-mixin-color, 10%);
+  box-shadow: 0 0 $white, inset 0 -4px lighten($link-mixin-color, 10%);
   position: relative;
   transition-duration: 0.2s;
   transition-property: box-shadow, color, border-radius;
+
+  @media print {
+    box-shadow: none;
+    text-decoration: underline;
+    text-decoration-color: lighten($link-mixin-color, 10%);
+    text-underline-offset: 0.25rem;
+  }
 
   &:hover {
     border-radius: 2px;
     color: $link-mixin-color;
     box-shadow: 1px 0 4px $white,
-      inset 0 -1.375em 0 findlightcolor($link-mixin-color);
+      inset 0 -1.375em 0 findLightColor($link-mixin-color);
   }
 }
 

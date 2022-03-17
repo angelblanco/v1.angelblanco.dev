@@ -26,7 +26,7 @@ i.dot {
       color: $color;
     }
 
-    background-color: findlightcolor($color);
+    background-color: findLightColor($color);
   }
 
   i.dot.#{$tag} {

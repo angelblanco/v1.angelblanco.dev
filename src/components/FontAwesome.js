@@ -12,6 +12,8 @@ import {
   faBomb,
   faBook,
   faUser,
+  faCompassDrafting,
+  faGaugeHigh,
 } from '@fortawesome/free-solid-svg-icons';
 
 // Tree shaking brand imports
@@ -41,6 +43,8 @@ const icons = [
   faBomb,
   faBook,
   faUser,
+  faCompassDrafting,
+  faGaugeHigh,
 
   // Brands
   faTwitter,
