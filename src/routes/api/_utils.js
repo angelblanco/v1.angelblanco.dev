@@ -3,7 +3,5 @@ export async function serveStaticImport(importCallback, res) {
 }
 
 export async function staticImportMarkdown(importCallback) {
-  const { html, title, slug, meta } = (await importCallback()).default;
-
-  return { html, title, slug, meta };
+  return (await importCallback()).default;
 }

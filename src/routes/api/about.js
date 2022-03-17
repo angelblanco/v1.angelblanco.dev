@@ -3,15 +3,15 @@ import { staticImportMarkdown } from './_utils';
 const langs = ['en', 'es'];
 const files = {
   aboutMe: 'about-me',
+  aboutFooter: 'about-footer',
+  experience: 'experience',
 };
 
 async function html(lang, aboutFile) {
   const loadModule = () =>
     import(`../../../docs/about/${lang}/${aboutFile}.md`);
 
-  const file = await staticImportMarkdown(loadModule);
-
-  return file.html;
+  return await staticImportMarkdown(loadModule);
 }
 
 export async function get(req, res, next) {
@@ -24,8 +24,8 @@ export async function get(req, res, next) {
 
     Object.entries(files).forEach(([fileKey, file]) => {
       promises.push(
-        html(lang, file).then((html) => {
-          body[lang][fileKey] = html;
+        html(lang, file).then((file) => {
+          body[lang][fileKey] = file;
         })
       );
     });

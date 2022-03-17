@@ -45,8 +45,6 @@ export default {
         ],
       },
     }),
-
-    trailingSlash: 'ignore',
   },
 
   preprocess: preprocess({ scss: { prependData: scssPreppendData } }),

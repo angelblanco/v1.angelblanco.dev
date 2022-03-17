@@ -36,9 +36,21 @@
   export let allowedLangs;
   export let translation;
   export let path;
+  import { onMount } from 'svelte';
   import Content from '../../components/Content.svelte';
   import Head from '../../components/Head.svelte';
+  import NProgress from '../../components/NProgress.svelte';
+  import { documentOffset } from '../../components/utils';
   import { setTitle, setOgDescription, setOgUrl } from '../../stores/meta';
+
+  let sectionContainer;
+  let afterSectionContainer;
+  let endOffset = null;
+  let startOffset = null;
+  onMount(() => {
+    startOffset = documentOffset(sectionContainer).top;
+    endOffset = documentOffset(afterSectionContainer).top;
+  });
 
   setMeta();
 
@@ -63,9 +75,11 @@
 
 <Head />
 
-<section class="section reading-width">
-  <div class="columns is-centered">
-    <div class="column is-narrow">
+<NProgress {endOffset} {startOffset} />
+
+<section bind:this={sectionContainer} class="section reading-width">
+  <div class="profile-columns is-centered">
+    <div>
       <figure class="image is-128x128">
         <img
           class="is-rounded"
@@ -90,15 +104,38 @@
     </div>
 
     <Content>
-      {@html translation.aboutMe}
+      {@html translation.aboutMe.html}
+    </Content>
+
+    <Content>
+      {@html translation.experience.html}
+    </Content>
+
+    <Content>
+      {@html translation.aboutFooter.html}
     </Content>
   </div>
 </section>
+
+<div bind:this={afterSectionContainer} class="afterArticleContainer" />
 
 <style lang="scss">
   @media print {
     .lang-button {
       display: none;
     }
+  }
+
+  .profile-columns {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .afterArticleContainer {
+    position: relative;
+    top: -3.5rem; // - .section padding
+    visibility: hidden;
+    pointer-events: none;
   }
 </style>

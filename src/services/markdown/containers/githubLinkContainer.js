@@ -1,6 +1,6 @@
 export default function (md, container) {
   const githubRegex =
-    /^github-link\s+(https\:\/\/github\.com\/[a-zA-Z-_0-9?&=\/]+)\s+([a-zA-Z-_0-9?&= ]+)$/;
+    /^github-link\s+(https\:\/\/github\.com\/[a-zA-Z-_0-9?&=\/\.]+)\s+([a-zA-Z-_0-9?&= ]+)$/;
 
   const parseParams = (params) => {
     const [, url, title] = params.trim().match(githubRegex);
