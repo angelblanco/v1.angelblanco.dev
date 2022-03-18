@@ -40,10 +40,7 @@
         </div>
         <div class="column is-hidden-print">
           <div class="is-clearfix">
-            <a
-              href="/articles/"
-              class="is-pulled-right-tablet button is-danger"
-            >
+            <a href="/articles" class="is-pulled-right-tablet button is-danger">
               See the latest articles
             </a>
           </div>
@@ -60,7 +57,7 @@
     </div>
 
     <a
-      href="/articles/"
+      href="/articles"
       class="button all-articles w-100 is-5 is-large is-outlined is-primary
         is-hidden-print"
     >

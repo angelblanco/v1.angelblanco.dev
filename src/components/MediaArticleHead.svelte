@@ -18,7 +18,7 @@
 <article class="media">
   <figure class="media-left">
     <a
-      href="/about/"
+      href="/about"
       rel="prefecth"
       class="image is-64x64"
       aria-label="Abot the author"

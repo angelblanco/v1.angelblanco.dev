@@ -3,8 +3,8 @@
 
   export async function load({ url, fetch, params }) {
     const allowedLangs = [
-      { locale: 'en', title: 'English', link: '/about/' },
-      { locale: 'es', title: 'Spanish', link: '/about/es/' },
+      { locale: 'en', title: 'English', link: '/about' },
+      { locale: 'es', title: 'Spanish', link: '/about/es' },
     ];
 
     const res = await fetch(`/api/about`);

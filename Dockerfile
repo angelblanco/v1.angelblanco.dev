@@ -1,7 +1,12 @@
-FROM node:14-alpine as builder
+FROM node:16-alpine as builder
 
 # Copy the app
 WORKDIR /home/node/app
+
+# First copy deps for caching
+ADD package.json package.json
+ADD yarn.lock yarn.lock
+RUN yarn install 
 
 COPY . .
 

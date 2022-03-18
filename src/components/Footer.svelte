@@ -29,7 +29,7 @@
 
   <div class="has-text-centered">
     <p class="has-text-grey-light is-family-monospace">
-      Personal website of <a href="/about/" class="has-text-grey-dark"
+      Personal website of <a href="/about" class="has-text-grey-dark"
         >Ángel Blanco</a
       >
     </p>

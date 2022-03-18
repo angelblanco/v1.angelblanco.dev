@@ -46,7 +46,7 @@
         segment === 'tag'
           ? 'is-active'
           : ''}"
-        href="/articles/"
+        href="/articles"
       >
         <span class="icon is-hidden-desktop">
           <i class="fas fa-book fa-lg" />
@@ -57,7 +57,7 @@
         on:click={closeHamburger}
         rel="prefecth"
         class="navbar-item is-primary {segment === 'about' ? 'is-active' : ''}"
-        href="/about/"
+        href="/about"
       >
         <span class="icon is-hidden-desktop">
           <i class="fas fa-user fa-lg" />

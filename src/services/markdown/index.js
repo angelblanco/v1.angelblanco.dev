@@ -54,7 +54,7 @@ const markdownResource = (location, baseUri) => {
     return mapById;
   };
 
-  const url = (slug) => `${baseUri}/${slug}/`;
+  const url = (slug) => `${baseUri}/${slug}`;
 
   // Map an article for the views to be rendereed.
   const mapArticle = (article) => ({
