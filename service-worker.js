@@ -4,7 +4,7 @@ const timestamp = {
   }
 };
 const build = [
-  "/_app/start-2d63391a.js",
+  "/_app/start-23574c32.js",
   "/_app/pages/__layout.svelte-86e8d6de.js",
   "/_app/assets/pages/__layout.svelte-d2c48b10.css",
   "/_app/pages/__error.svelte-391b2434.js",
