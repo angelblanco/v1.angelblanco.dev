@@ -7,30 +7,30 @@ published: false # This is not an article
 
 #### 2012-2016 (University)
 
-- Gradute at ["Universidad de Salamanca"](https://usal.es) with a grade point average of `8.7` / `10`. My end-of-degree project was an iOS application that interacted with a Laravel backend that could be managed with a Laravel back office. It used `jQuery` and `Bootstrap` on the front end.
+- Gradute at ["Universidad de Salamanca"](https://usal.es) with a grade point average of `8.7` / `10`. My end-of-degree project was an iOS application connected to a Laravel API. It used Larvel, jQuery and Bootstrap on the administrator's web.
 - I completed an internship at [a research group (Bisite)](https://bisite.usal.es/) as an iOS software developer.
 
 #### 2017-2018
 
-- I completed a [Master's degree in Computer Engeniering](https://www.usal.es/master-ingenieria-informatica). The end-of-master project was built with Laravel and Vue.
+- I completed a [Master's degree in Computer Engineering](https://www.usal.es/master-ingenieria-informatica). I did my final project with Laravel and Vue.
 
-- I've joined [Beonprice](https://beonprice.com/product) at the beginning of my Master's degree and started my 3-month internship. After a successful relationship, I was hired as a Junior developer. I started my career doing [ETL](https://en.wikipedia.org/wiki/Extract,_transform,_load) with `php`, `symfony` and `laravel` which includes:
+- I've joined [Beonprice](https://beonprice.com/product) at the beginning of my Master's degree and started my 3-month internship. After a successful relationship, I started working as a Junior developer. I started my career doing [ETL](https://en.wikipedia.org/wiki/Extract,_transform,_load) with `PHP`, `Symfony` and `Laravel`, including:
   - Web crawling.
-  - Third-party integrations with other hospitality partners via Rest APIS, SFTP, SMTP, etc.
+  - Third-party integrations. Most of them with other hospitality partners via Rest APIS, SFTP, SMTP, etc.
 
 #### 2018-present
 
-After 1 year joined the solutions team and started working as a full-stack developer. Then in 2019, I was promoted to software architect and since 2020, I'm currently working as a Teach Lead in charge of other teammates.
+At this time, I joined the solutions team and started working as a full-stack developer. Then in 2019, I was promoted to software architect, and since 2020, I'm currently working as a Teach Lead in charge of other teammates.
 
-- I lead all kinds of projects inside the company, including Data visualization, dashboarding, reporting, business intelligence, real-time hotel price publication, configuration, email notifications...
+- I lead all kinds of projects inside the company, including Data visualization, dashboarding, reporting, business intelligence, real-time hotel price publication, configuration, email notifications, etc.
 - I work side to side with the product team refining the requirements and reducing the gap between the team and the business.
 - My role also includes helping new teammates to achieve their goals by reviewing their code and mentoring them.
 - Develop and maintain all the company microservices and web views.
-- High load APIS handling query optimization, monitoring, authentication, caching, high availability, or multi-tenancy.
-- I lead tech professionalization in the company including:
-  - Introducing Vue, tailwind, and webpack deprecating legacy jQuery.
-  - Kubernetes architecture migration.
-  - Creating shared [laravel packages](https://laravel.com/docs/8.x/packages) fully tested to reduce code duplication across the different microservices.
-  - Introducing CI/CD. Added testing into the existing codebase. Including `Laravel`, `PHPunit`, `Playwright`, `Cypress`, and `Mocha`.
-  - Upgrade legacy projects to the latest versions of `laravel`, `node`, and `webpack`.
-  - Usage of quality assurance tools like [sonarqube](https://www.sonarqube.org/), [eslint](https://eslint.org/), [airbnb javascript](https://github.com/airbnb/javascript), [stylelint](https://stylelint.io/) or [php cs fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer).
+- I deal with high load APIS, query optimization, monitoring, authentication, caching, high availability, or multi-tenancy.
+- I lead tech professionalization in the company, including:
+  - Implement the introduction Vue, tailwind, and Webpack. We deprecated jQuery.
+  - Desing and migration to Kubernetes.
+  - Suggest the creation of shared and well-tested [Laravel packages](https://laravel.com/docs/8.x/packages). Shared packages reduced code duplication across the entire organization.
+  - Implementation of CI/CD. Added testing into the existing codebase. We use `Laravel`, `PHPUnit`, `Playwright`, `Cypress`, and `Mocha`.
+  - Upgrade legacy projects to the latest versions of `Laravel`, `NodeJS`, and `Webpack`.
+  - I added quality assurance tools like [Sonarqube](https://www.sonarqube.org/), [Eslint](https://eslint.org/), [Airbnb Javascript](https://github.com/airbnb/javascript), [Stylelint](https://stylelint.io/) or [PHP CS Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer). They have successfully reduced technical debt.
