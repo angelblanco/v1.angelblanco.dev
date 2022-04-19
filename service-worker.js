@@ -1,5 +1,5 @@
 const build = [
-  "/_app/start-2886e72e.js",
+  "/_app/start-0bb85dfa.js",
   "/_app/pages/__layout.svelte-79f466b7.js",
   "/_app/assets/pages/__layout.svelte-d2c48b10.css",
   "/_app/pages/__error.svelte-8bdb086a.js",
@@ -7,7 +7,7 @@ const build = [
   "/_app/pages/articles/__layout.svelte-0ba19772.js",
   "/_app/pages/tag/__layout.svelte-8f875bda.js",
   "/_app/pages/404.svelte-7ac9ed05.js",
-  "/_app/pages/about/_...lang_.svelte-2123a17d.js",
+  "/_app/pages/about/_...lang_.svelte-ca0e5746.js",
   "/_app/assets/pages/about/_...lang_.svelte-1ff6df00.css",
   "/_app/pages/articles/_...pageNumber_.svelte-ba9fa7a1.js",
   "/_app/pages/articles/_slug_.svelte-e3005b53.js",
@@ -51,7 +51,7 @@ const files = [
   "/robots.txt",
   "/sitemap.xml"
 ];
-const version = "1650389689237";
+const version = "1650394379532";
 const ASSETS = `cache${version}`;
 const to_cache = build.concat(files);
 const cached = new Set(to_cache);
