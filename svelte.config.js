@@ -19,6 +19,7 @@ const scssPreppendData = [
 export default {
   // options passed to svelte.preprocess (https://svelte.dev/docs#svelte_preprocess)
   kit: {
+    trailingSlash: 'never',
     prerender: {
       default: true,
     },
