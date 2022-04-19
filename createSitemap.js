@@ -2,10 +2,11 @@ import waitPort from 'wait-port';
 import { exec } from 'child_process';
 import dotenv from 'dotenv';
 import isUrl from 'is-url';
-import { sed } from 'shelljs';
+import shell from 'shelljs';
 import trimEnd from 'lodash/trimEnd.js';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+import SitemapGenerator from 'sitemap-generator';
 
 const currentDir = dirname(fileURLToPath(import.meta.url));
 
@@ -27,7 +28,7 @@ if (!appRealUrl || !isUrl(appRealUrl)) {
 
 const url = `${options.protocol}://${options.host}:${options.port}`;
 
-const server = exec('yarn build && yarn sirv');
+const server = exec(`yarn build && yarn sirv --port ${options.port}`);
 
 const main = async () => {
   const open = await waitPort(options);
@@ -37,8 +38,6 @@ const main = async () => {
   }
 
   await new Promise((resolve, reject) => {
-    const SitemapGenerator = require('sitemap-generator');
-
     console.log(`Start sitemap generation for: ${url}\n`);
 
     const generator = SitemapGenerator(url, {
@@ -46,12 +45,12 @@ const main = async () => {
       filepath: options.siteMapFile,
     });
 
-    generator.on('add', (url) => {
-      if (!url.endsWith('/')) {
-        throw new Error('A sitemap url is not canonical: ' + url);
+    generator.on('add', (addedUrl) => {
+      if (url.endsWith('/') && addedUrl !== `${url}/`) {
+        throw new Error('A sitemap url is not canonical: ' + addedUrl);
       }
 
-      console.log(`+ ${url}`);
+      console.log(`+ ${addedUrl}`);
     });
 
     generator.on('done', () => resolve(generator));
@@ -62,7 +61,7 @@ const main = async () => {
 
   // Replace the sitemap urls for the real ones
   console.log(`\nTransforming "${url}" to "${appRealUrl}"\n`);
-  sed('-i', url, appRealUrl, options.siteMapFile);
+  shell.sed('-i', url, appRealUrl, options.siteMapFile);
   console.log('Transformation done.');
 };
 

@@ -68,7 +68,7 @@
         <p class="has-text-grey-light is-family-monospace is-size-7">
           And all of <a
             class="has-decoration-underline has-text-grey-dark"
-            href="/libraries/"
+            href="/libraries"
             rel="preload">these...</a
           >
         </p>

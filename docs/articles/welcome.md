@@ -15,7 +15,7 @@ intro: |
 
   During the COVID 19  lockdown, I had more time to finish the implementation and now it can be put into production. I've great inspiration from [Vuepress](https://vuepress.vuejs.org/) but decided to do all the job with Svelte to try it out.
 
-  I've open-sourced the code of my sapper project containing this own site on Github just in case you want to inspect it. You can learn a lit bit more about me [here](/about/).
+  I've open-sourced the code of my sapper project containing this own site on Github just in case you want to inspect it. You can learn a lit bit more about me [here](/about).
 
   During the start of this adventure, I will be posting some of the solutions to the "challenges" I've faced during the development.
 
