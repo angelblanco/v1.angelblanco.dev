@@ -1,18 +1,13 @@
-const timestamp = {
-  toString: () => {
-    throw new Error("`timestamp` has been removed from $service-worker. Use `version` instead");
-  }
-};
 const build = [
-  "/_app/start-7c5be9d9.js",
+  "/_app/start-2886e72e.js",
   "/_app/pages/__layout.svelte-79f466b7.js",
   "/_app/assets/pages/__layout.svelte-d2c48b10.css",
   "/_app/pages/__error.svelte-8bdb086a.js",
   "/_app/assets/pages/__error.svelte-e51d3d1c.css",
   "/_app/pages/articles/__layout.svelte-0ba19772.js",
   "/_app/pages/tag/__layout.svelte-8f875bda.js",
-  "/_app/pages/404.svelte-323efe98.js",
-  "/_app/pages/about/_...lang_.svelte-21ddd86b.js",
+  "/_app/pages/404.svelte-7ac9ed05.js",
+  "/_app/pages/about/_...lang_.svelte-2123a17d.js",
   "/_app/assets/pages/about/_...lang_.svelte-1ff6df00.css",
   "/_app/pages/articles/_...pageNumber_.svelte-ba9fa7a1.js",
   "/_app/pages/articles/_slug_.svelte-e3005b53.js",
@@ -30,6 +25,7 @@ const build = [
   "/_app/chunks/utils-480c8ecb.js",
   "/_app/chunks/canonical-09a4e5e1.js",
   "/_app/chunks/meta-26c41c91.js",
+  "/_app/chunks/trimEnd-c543d9cd.js",
   "/_app/chunks/Content-08727e80.js",
   "/_app/chunks/Head-52212885.js",
   "/_app/chunks/NProgress-24b60464.js",
@@ -55,7 +51,8 @@ const files = [
   "/robots.txt",
   "/sitemap.xml"
 ];
-const ASSETS = `cache${timestamp}`;
+const version = "1650389689237";
+const ASSETS = `cache${version}`;
 const to_cache = build.concat(files);
 const cached = new Set(to_cache);
 self.addEventListener("install", (event) => {

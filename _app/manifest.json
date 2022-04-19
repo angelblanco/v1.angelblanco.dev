@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-7c5be9d9.js",
+    "file": "start-2886e72e.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -72,31 +72,33 @@
     ]
   },
   "src/routes/404.svelte": {
-    "file": "pages/404.svelte-323efe98.js",
+    "file": "pages/404.svelte-7ac9ed05.js",
     "src": "src/routes/404.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-047e673f.js",
       "src/routes/__error.svelte",
+      "_trimEnd-c543d9cd.js",
       "_canonical-09a4e5e1.js",
       "_index-a898a6a8.js",
       "_meta-26c41c91.js"
     ]
   },
   "src/routes/about/[...lang].svelte": {
-    "file": "pages/about/_...lang_.svelte-21ddd86b.js",
+    "file": "pages/about/_...lang_.svelte-2123a17d.js",
     "src": "src/routes/about/[...lang].svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-047e673f.js",
-      "_canonical-09a4e5e1.js",
+      "_trimEnd-c543d9cd.js",
       "_Content-08727e80.js",
       "_Head-52212885.js",
       "_NProgress-24b60464.js",
       "_utils-480c8ecb.js",
       "_meta-26c41c91.js",
+      "_canonical-09a4e5e1.js",
       "_index-a898a6a8.js"
     ],
     "css": [
@@ -248,6 +250,12 @@
     "imports": [
       "_index-a898a6a8.js",
       "_index-047e673f.js",
+      "_canonical-09a4e5e1.js"
+    ]
+  },
+  "_trimEnd-c543d9cd.js": {
+    "file": "chunks/trimEnd-c543d9cd.js",
+    "imports": [
       "_canonical-09a4e5e1.js"
     ]
   },
