@@ -96,7 +96,7 @@
         <a
           rel="preload"
           href={allowedLang.link}
-          class="button is-rounded is-small"
+          class="button is-rounded"
           class:is-active={lang === allowedLang.locale}
           class:is-primary={lang === allowedLang.locale}>{allowedLang.title}</a
         >
