@@ -4,48 +4,51 @@
     <loc>https://angelblanco.dev/</loc>
   </url>
   <url>
-    <loc>https://angelblanco.dev/articles/</loc>
+    <loc>https://angelblanco.dev/articles</loc>
   </url>
   <url>
-    <loc>https://angelblanco.dev/about/</loc>
+    <loc>https://angelblanco.dev/about</loc>
   </url>
   <url>
-    <loc>https://angelblanco.dev/tag/js/</loc>
+    <loc>https://angelblanco.dev/tag/js</loc>
   </url>
   <url>
-    <loc>https://angelblanco.dev/tag/node/</loc>
+    <loc>https://angelblanco.dev/tag/node</loc>
   </url>
   <url>
-    <loc>https://angelblanco.dev/tag/docker/</loc>
+    <loc>https://angelblanco.dev/tag/docker</loc>
   </url>
   <url>
-    <loc>https://angelblanco.dev/articles/add-gtag-analytics-to-sapper/</loc>
+    <loc>https://angelblanco.dev/articles/add-gtag-analytics-to-sapper</loc>
   </url>
   <url>
-    <loc>https://angelblanco.dev/tag/svelte/</loc>
+    <loc>https://angelblanco.dev/tag/svelte</loc>
   </url>
   <url>
-    <loc>https://angelblanco.dev/tag/blog/</loc>
+    <loc>https://angelblanco.dev/tag/blog</loc>
   </url>
   <url>
-    <loc>https://angelblanco.dev/articles/simple-svelte-back-to-top/</loc>
+    <loc>https://angelblanco.dev/articles/simple-svelte-back-to-top</loc>
   </url>
   <url>
-    <loc>https://angelblanco.dev/articles/install-docker-and-docker-compose-on-ubunt-20-04/</loc>
+    <loc>https://angelblanco.dev/articles/install-docker-and-docker-compose-on-ubunt-20-04</loc>
   </url>
   <url>
-    <loc>https://angelblanco.dev/articles/how-to-create-a-json-toc-with-markdown-it-anchor-using-jsdom/</loc>
+    <loc>https://angelblanco.dev/articles/how-to-create-a-json-toc-with-markdown-it-anchor-using-jsdom</loc>
   </url>
   <url>
-    <loc>https://angelblanco.dev/tag/github/</loc>
+    <loc>https://angelblanco.dev/tag/github</loc>
   </url>
   <url>
-    <loc>https://angelblanco.dev/articles/welcome/</loc>
+    <loc>https://angelblanco.dev/articles/welcome</loc>
   </url>
   <url>
-    <loc>https://angelblanco.dev/libraries/</loc>
+    <loc>https://angelblanco.dev/libraries</loc>
   </url>
   <url>
-    <loc>https://angelblanco.dev/subscribe/</loc>
+    <loc>https://angelblanco.dev/subscribe</loc>
+  </url>
+  <url>
+    <loc>https://angelblanco.dev/about/es</loc>
   </url>
 </urlset>
