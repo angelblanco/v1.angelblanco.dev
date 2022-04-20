@@ -1,12 +1,12 @@
 const build = [
-  "/_app/start-4286cfa6.js",
+  "/_app/start-b149b19c.js",
   "/_app/pages/__layout.svelte-522e2cd4.js",
   "/_app/assets/pages/__layout.svelte-d2c48b10.css",
   "/_app/pages/__error.svelte-8bdb086a.js",
   "/_app/assets/pages/__error.svelte-e51d3d1c.css",
   "/_app/pages/articles/__layout.svelte-0ba19772.js",
   "/_app/pages/tag/__layout.svelte-8f875bda.js",
-  "/_app/pages/404.svelte-7ac9ed05.js",
+  "/_app/pages/404.svelte-59aaf72b.js",
   "/_app/pages/about/_...lang_.svelte-ca0e5746.js",
   "/_app/assets/pages/about/_...lang_.svelte-1ff6df00.css",
   "/_app/pages/articles/_...pageNumber_.svelte-ba9fa7a1.js",
@@ -22,6 +22,7 @@ const build = [
   "/_app/pages/tag/_tag_/_...pageNumber_.svelte-f5138475.js",
   "/_app/chunks/index-047e673f.js",
   "/_app/chunks/index-a898a6a8.js",
+  "/_app/chunks/singletons-d1fb5791.js",
   "/_app/chunks/utils-480c8ecb.js",
   "/_app/chunks/canonical-09a4e5e1.js",
   "/_app/chunks/meta-26c41c91.js",
@@ -51,7 +52,7 @@ const files = [
   "/robots.txt",
   "/sitemap.xml"
 ];
-const version = "1650410899830";
+const version = "1650495767153";
 const ASSETS = `cache${version}`;
 const to_cache = build.concat(files);
 const cached = new Set(to_cache);

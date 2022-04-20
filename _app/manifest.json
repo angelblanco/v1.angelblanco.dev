@@ -1,11 +1,12 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-4286cfa6.js",
+    "file": "start-b149b19c.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
       "_index-047e673f.js",
-      "_index-a898a6a8.js"
+      "_index-a898a6a8.js",
+      "_singletons-d1fb5791.js"
     ],
     "dynamicImports": [
       "src/routes/__layout.svelte",
@@ -72,7 +73,7 @@
     ]
   },
   "src/routes/404.svelte": {
-    "file": "pages/404.svelte-7ac9ed05.js",
+    "file": "pages/404.svelte-59aaf72b.js",
     "src": "src/routes/404.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -80,6 +81,7 @@
       "_index-047e673f.js",
       "src/routes/__error.svelte",
       "_trimEnd-c543d9cd.js",
+      "_singletons-d1fb5791.js",
       "_canonical-09a4e5e1.js",
       "_index-a898a6a8.js",
       "_meta-26c41c91.js"
@@ -231,6 +233,9 @@
     "imports": [
       "_index-047e673f.js"
     ]
+  },
+  "_singletons-d1fb5791.js": {
+    "file": "chunks/singletons-d1fb5791.js"
   },
   "_utils-480c8ecb.js": {
     "file": "chunks/utils-480c8ecb.js",
