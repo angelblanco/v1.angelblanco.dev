@@ -28,9 +28,7 @@ const main = async () => {
 
   const [, browser] = await Promise.all([
     waitOn({
-      resources: [
-        url,
-      ],
+      resources: [url],
       timeout: options.timeout,
     }),
     chromium.launch(),
