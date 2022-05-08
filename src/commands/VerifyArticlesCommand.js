@@ -117,6 +117,10 @@ export default class VerifyArticlesCommand extends BaseCommand {
       error(`The article id "${articleId}" is duplicated`);
     }
 
+    if (!attributes.ogImage) {
+      error('The article is missing its og image');
+    }
+
     // Set the article id.
     this.idMap.set(articleId, { date });
 

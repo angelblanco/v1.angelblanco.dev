@@ -32,7 +32,7 @@
     if (titleSize <= 10) {
       titleClass = 'og__title--2xl';
     } else if (titleSize <= 30) {
-      titleClass = '';
+      titleClass = 'og__title-xl';
     } else {
       titleClass = '';
     }

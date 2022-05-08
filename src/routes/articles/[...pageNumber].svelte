@@ -13,7 +13,9 @@
         });
     }
 
-    // Fallback to slug route
+    return {
+      status: 404,
+    };
   }
 </script>
 
