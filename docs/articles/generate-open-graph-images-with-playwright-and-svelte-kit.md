@@ -228,7 +228,7 @@ const main = async () => {
   await browser.close();
 };
 
-// Run the sitemap.
+// Run the generator.
 main()
   .then(() => {
     console.log('Og images generated successfully');
