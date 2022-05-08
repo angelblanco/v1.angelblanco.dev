@@ -11,20 +11,21 @@ const blogTag = {
 // Available tags with parent tag when needed in order to be displayed
 // On the side bar.
 const availableTags = [
-  // TODO: Enable it on first PHP Article
-  // {
-  //   title: 'PHP',
-  //   icon: 'fab fa-php',
-  //   color: '#7478ae',
-  //   tag: 'php'
-  // },
-  // {
-  //   title: 'Laravel',
-  //   icon: 'fab fa-laravel',
-  //   color: '#ef3b2d',
-  //   tag: 'laravel',
-  //   parent: 'php',
-  // },
+  {
+    title: 'PHP',
+    icon: 'fab fa-php',
+    color: '#7478ae',
+    tag: 'php',
+    enabled: false,
+  },
+  {
+    title: 'Laravel',
+    icon: 'fab fa-laravel',
+    color: '#ef3b2d',
+    tag: 'laravel',
+    parent: 'php',
+    enabled: false,
+  },
   {
     title: 'Javascript',
     icon: 'fab fa-js',
@@ -38,14 +39,14 @@ const availableTags = [
     tag: 'svelte',
     parent: 'js',
   },
-  // TODO: Enable it on first vue js article
-  // {
-  //   title: 'Vue Js',
-  //   icon: 'fab fa-vuejs',
-  //   color: '#3fb37f',
-  //   tag: 'vue',
-  //   parent: 'js',
-  // },
+  {
+    title: 'Vue Js',
+    icon: 'fab fa-vuejs',
+    color: '#3fb37f',
+    tag: 'vue',
+    parent: 'js',
+    enabled: false,
+  },
   {
     title: 'Node JS',
     icon: 'fab fa-node-js',
@@ -83,7 +84,9 @@ export function getTag(tag) {
 
 export const getTags = (names) => names.map(getTag);
 
-export const tags = availableTags.filter((tag) => tag.tag !== 'blog');
+export const tags = availableTags.filter(
+  (tag) => tag.enabled !== false && tag.tag !== 'blog'
+);
 
 const isArticleSectionTag = (tag) => tag.topic === false;
 
