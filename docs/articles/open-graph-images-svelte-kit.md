@@ -2,8 +2,9 @@
 id: 6
 title: Generate Open Graph images with Playwright and Svelte Kit
 share_tweet: Generate open graph images with @playwrightweb and @sveltejs"
-date: 2022-05-08
+date: '2022-05-21'
 description: Sharing your URLs to social media it's important. Getting a beautiful image preview could make a difference. Learn how to generate them with a Sveltekit route and a Playwright node script.
+shareImage: '/share/open-graph-images-svelte-kit.png'
 intro: |
   Getting the best experience out of a web application includes the ability to share its links as good as possible. As you have noticed, Facebook or Twitter automatically display a preview image of the resource you are trying to share.
 
@@ -180,7 +181,7 @@ yarn add --dev playwright wait-on
 Now we need to create our `NodeJs` script. Assuming we are going to create it on the root of our project. We will:
 
 - Trigger a build of our `sveltekit` application and then preview it. With the `wait-on"` library we ensure that the server is ready before the crawling starts.
-- Open a chromiun instance with playwright and take a screenshot of our previously build url.
+- Open a chromiun instance with playwright and take a screenshot of our previously built url.
 - After navigating to the target location, we locate the target element and save it to a file as png!
 
 ```js
@@ -289,6 +290,6 @@ Once you have understand this process, you can esaily:
 - Generate images for each of your links crawling them recurisvely with playwright and requesting them on demand.
 - Add extra information to the image like tags.
 
-Now you are ready to unistall Photoshop and style everything with CSS :laugh:
+Now you are ready to unistall Photoshop and style everything with CSS :sunglasses:
 
 ::: github-link https://github.com/angelblanco/angelblanco.dev You can check the source code of this process for this page on Github

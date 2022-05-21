@@ -4,6 +4,7 @@ date: '2020-09-19'
 tweet: '1311017241203429377'
 title: 'Install docker and docker compose on Ubuntu 20.04'
 description: 'Learn to install docker and docker-compose with some easy copy-paste steps on the latest Ubuntu'
+shareImage: '/share/install-docker-and-docker-compose-on-ubunt-20.04.png'
 intro: |
   We are going to see how to install docker and docker compose on ubuntu 20.04 following the official documentation for your personal computer. Having docker installed on your local machine will let you have isolated containers (think of them as virtual machines) for each of your individual projects or scenarios.
 

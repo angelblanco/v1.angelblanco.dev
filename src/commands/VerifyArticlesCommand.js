@@ -1,4 +1,6 @@
 import BaseCommand from './BaseCommand.js';
+import fs from 'fs';
+import trimStart from 'lodash/trimStart.js';
 
 export default class VerifyArticlesCommand extends BaseCommand {
   constructor(program) {
@@ -83,6 +85,17 @@ export default class VerifyArticlesCommand extends BaseCommand {
       error('Title must be present with at least 10 characters.');
     }
 
+    if (
+      attributes.shareImage &&
+      attributes.shareImage.startsWith('/') &&
+      !fs.existsSync(this.staticPath(trimStart(attributes.shareImage, '/')))
+    ) {
+      error(
+        'Share image does not exist: ' +
+          this.staticPath(trimStart(attributes.shareImage, '/'))
+      );
+    }
+
     if (!attributes.intro || attributes.intro.length < 100) {
       error('All articles must have an intro with at least 100 characters');
     }
@@ -115,10 +128,6 @@ export default class VerifyArticlesCommand extends BaseCommand {
     const articleId = parseInt(attributes.id, 10);
     if (this.idMap.has(articleId)) {
       error(`The article id "${articleId}" is duplicated`);
-    }
-
-    if (!attributes.ogImage) {
-      error('The article is missing its og image');
     }
 
     // Set the article id.

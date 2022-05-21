@@ -5,6 +5,7 @@ share_tweet: "Add Google Analytics' gtag to sapper with @sveltejs"
 tweet: ''
 date: '2020-10-28'
 description: 'Step by step guide to create a component that tracks your sapper application every time the user changes its URL with virtual page views.'
+shareImage: '/share/add-gtag-analytics-to-sapper.png'
 intro: |
   Adding Google Analytics support to a single page application that changes the URL on the client-side could be tricky. It's not as simple as adding tracking to a server-side rendered application that refreshes its scripts on every page hit.
 

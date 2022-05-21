@@ -61,6 +61,7 @@ const markdownResource = (location, baseUri) => {
     id: article.id,
     type: article.type,
     tweet: article.tweet,
+    shareImage: article.shareImage,
     slug: article.slug,
     url: article.type === 'article' ? url(article.slug) : null,
     title: article.title,

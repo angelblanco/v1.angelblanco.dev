@@ -41,7 +41,12 @@
   import Head from '../../components/Head.svelte';
   import NProgress from '../../components/NProgress.svelte';
   import { documentOffset } from '../../components/utils';
-  import { setTitle, setOgDescription, setOgUrl } from '../../stores/meta';
+  import {
+    setTitle,
+    setOgDescription,
+    setOgUrl,
+    setOgImageUrl,
+  } from '../../stores/meta';
 
   let sectionContainer;
   let afterSectionContainer;
@@ -56,6 +61,7 @@
 
   function setMeta() {
     setOgUrl(path);
+    setOgImageUrl('/share/about-me-en.png');
 
     if (lang === 'es') {
       setTitle('Sobre mí!');

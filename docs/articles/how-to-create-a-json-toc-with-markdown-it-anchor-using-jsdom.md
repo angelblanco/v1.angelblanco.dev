@@ -4,6 +4,7 @@ date: '2020-09-18'
 tweet: '1311016921006059527'
 title: 'How to create a JSON table of contents with markdown-it and markdown-it-anchor'
 description: Steps by step guide parse your markdown's HTML at compile stage using node and jsdom with full github repository.
+shareImage: '/share/how-to-create-a-json-toc-with-markdown-it-anchor-using-jsdom.png'
 intro: |
   There are some plugins to create a table of content using markdown-it, but sometimes you want to create a custom component for rendering your TOC.
 

@@ -179,6 +179,7 @@ export function parseCode(code, id = '', md) {
     type: meta.published === false ? 'doc' : 'article',
     note: meta.note === true,
     title: meta.title,
+    shareImage: meta.shareImage || null,
     tweet: meta.tweet || null,
     shortLink: articleId
       ? shortLinkTo(preffixForResource('articles'), articleId)

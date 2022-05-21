@@ -6,6 +6,7 @@ tweet: '1310714468469538822'
 note: true
 noTags: true
 title: 'Welcome to my personal blog'
+shareImage: '/share/welcome.png'
 description: It's finally up! Checkout my open source blog built from scratch.
 intro: |
   For the past few months, I've been working on building a tech blog using
