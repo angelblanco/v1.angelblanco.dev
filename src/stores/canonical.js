@@ -7,10 +7,7 @@ export function getCanonicalUrlForFile(file) {
 }
 
 export function getCanonicalUrlForPath(path) {
-  const base = trim(getCanonicalUrlForFile(path), '/');
-
-  // Github pages redirects to `/` by default and we need to trim the hole url for the base path.
-  return `${base}/`;
+  return trim(getCanonicalUrlForFile(path), '/');
 }
 
 export default () => {

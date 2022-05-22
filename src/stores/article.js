@@ -15,9 +15,13 @@ export const shareLinks = derived(article, ($article) => {
     return null;
   }
 
+  const twitterTitle = $article?.meta?.share_tweet || $article.title;
+
   const base = {
     title: $article.title,
+    twitterTitle,
     encodedTitle: encodeURI($article.title),
+    encodedTwitterTitle: encodeURI(twitterTitle),
     shortUrl: getCanonicalUrlForPath($article.shortLink),
     url: getCanonicalUrlForPath($article.url),
   };
@@ -34,14 +38,14 @@ export const shareLinks = derived(article, ($article) => {
       icon: 'fa-twitter',
       intent: `https://twitter.com/intent/tweet?url=${
         shareItems.encodedUrl
-      }&text=${shareItems.encodedTitle}&via=${
+      }&text=${shareItems.encodedTwitterTitle}&via=${
         import.meta.env.VITE_TWITTER_USER
       }`,
     },
     facebook: {
       name: 'Facebook',
       icon: 'fa-facebook',
-      intent: `https://wwww.facebook.com/sharer.php?u=${shareItems.encodedUrl}&t=${shareItems.encodedTitle}`,
+      intent: `https://wwww.facebook.com/share.php?u=${shareItems.encodedUrl}&t=${shareItems.encodedTitle}`,
     },
     linkedin: {
       name: 'Linkedin',
