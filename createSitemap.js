@@ -26,7 +26,7 @@ if (!appRealUrl || !isUrl(appRealUrl)) {
   throw new Error('The app url must be set on your dot env file');
 }
 
-const url = `${options.protocol}://${options.host}:${options.port}/`;
+const url = `${options.protocol}://${options.host}:${options.port}`;
 
 const server = exec(`yarn build && yarn sirv --port ${options.port}`);
 
