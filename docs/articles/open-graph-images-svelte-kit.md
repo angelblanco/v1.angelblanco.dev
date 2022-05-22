@@ -6,11 +6,11 @@ date: '2022-05-21'
 description: Sharing your URLs to social media it's important. Getting a beautiful image preview could make a difference. Learn how to generate them with a Sveltekit route and a Playwright node script.
 shareImage: '/share/open-graph-images-svelte-kit.png'
 intro: |
-  Getting the best experience out of a web application includes the ability to share its links as good as possible. As you have noticed, Facebook or Twitter automatically display a preview image of the resource you are trying to share.
+  Getting the best experience out of a web application includes having appealing links when they hit social media. As you have noticed, Facebook or Twitter will automatically display a preview of the URL you are posting.
 
-  All the social media platforms get these images' URLs from [The Open Graph Protocol](https://ogp.me/) image metadata tag. You can check [Vercel's](https://github.com/vercel/og-image) on-demand generator or [Github's](https://github.blog/2021-06-22-framework-building-open-graph-images/) newest approach to it.
+  Nowadays, all the social media platforms get the preview information from [The Open Graph Protocol](https://ogp.me/), including the image metadata tag. Big companies care about it, and there are great posts about their strategies like [Vercel's](https://github.com/vercel/og-image) on-demand generator or [Github's](https://github.blog/2021-06-22-framework-building-open-graph-images/) newest approach.
 
-  As a reference, I will use this webpage built with [Svelte kit](https://kit.svelte.dev/). Then with [Playwright](https://playwright.dev/) we are going to create images like this one.
+  As a reference, I will use this webpage built with [Svelte Kit](https://kit.svelte.dev/). Then with [Playwright](https://playwright.dev/), we are going to create images like this one.
 
   ![preview](/images/share-angel-blanco-dev.png)
 tags: ['svelte', 'node', 'js']
@@ -18,24 +18,24 @@ tags: ['svelte', 'node', 'js']
 
 ## The concept
 
-> [The Open Graph Protocol](https://ogp.me/) enables any web page to become a rich object in a social graph. For instance, this is used on Facebook to allow any web page to have the same functionality as any other object on Facebook. - https://ogp.me
+> [The Open Graph Protocol](https://ogp.me/) enables any web page to become a rich object in a social graph. For instance, this is used on Facebook to allow any web page to have the same functionality as any other object on Facebook. - [https://ogp.me](https://ogp.me/)
 
-Dealing with title, type, url or locale properties is quite straightforward, as they could easily be injected in most common applications with ease. However generating dynamic images could look quite challenging, but in reality, it could be easier than you think!
+Dealing with title, type, URL or locale properties is straightforward. You will render them in your template. However, generating dynamic images could look quite challenging. In reality, it could be easier than you think!
 
-When you are decided to integrate the image metadata on a **static prerenderd site** you have different choices:
+If you decide to integrate the image metadata on a **static pre-rendered site**, you will have different choices:
 
 1. **Use the same image** for all of your links.
-2. **Manually create and upload custom images per url** and fallback to a default one if missing. Take in mind that using third party images is always tricky. The external service may remove, update or transform the image. Also you have to be careful with the license of the image you are using.
-3. **Create on-demand images** using a webserver and a browser automation tool.
+2. **Manually create and upload custom images per URL** and fall back to a default one when missing.
+3. **Create on-demand image files** using a web server and a browser automation tool.
 
-Creating on-demand images with automation will take **2 steps**:
+Creating on-demand images with automation will take **two steps**:
 
-- Create a route that will render the image as HTML. We will pass the data to be rendered as **query or route parameters**.
-- Once we are happy with the style of our route, we will **crawl the page and get a screenshoot** with a `Node JS` script. We will only include our target element.
+- Create a route that renders the image as HTML. We can pass the data as **query or route parameters**.
+- Once we are happy with the style of our page, we will **crawl it and get a screenshot** with a `Node JS` script. We will only include our target element, being pixel-perfect.
 
-## Create a route on sveltekit for previewing the image.
+## Create a route on Svelte Kit for previewing the image.
 
-We will start from a blank layout. If your page is already using a layout you can create a blank layout on the root of the `routes` folder.
+We will start with a blank layout. If your page is already using one, you can create a blank one at the root of the `routes` folder.
 
 ```svelte
 <!-- routes/layout-blank.svelte -->
@@ -44,13 +44,13 @@ We will start from a blank layout. If your page is already using a layout you ca
 
 Then you will create the actual index for your page. Either: `ogImage@blank.svelte` or `ogImage/index@blank.svelte`.
 
-This component has all the styles in here, basically:
+In our `.svelte` file:
 
-- We get the title from page url search parameter `title`. If not present we add one.
-- We inspect the title length to determine the font-size of the title.
-- Our target image will be `1200px` x `630px`. I choose that size based on various great post [like this one](https://iamturns.com/open-graph-image-size/). Note that the target container for the screenshoot has a class `.og__image`.
+- The title is a query parameter.
+- The title's font size varies with the title length.
+- Our target image will live inside a `1200px` x `630px` container. This size comes from various great posts [like this one](https://iamturns.com/open-graph-image-size/).
 
-> For creating svg patterns I've used [Haikei!](https://app.haikei.app/). Don't forget to set the canvas size to 1200px x 630px!
+> To create the SVG patterns, I've used [Haikei!](https://app.haikei.app/). I can't recommend it enough. PD: Don't forget to set the canvas size to 1200px x 630px!
 
 ```svelte
 <!-- routes/ogImage/index@blank.svelte || outes/ogImage@blank.svelte -->
@@ -167,22 +167,22 @@ This component has all the styles in here, basically:
 </style>
 ```
 
-## Create the playwright script.
+## Create the Playwright's script.
 
-First of all you need to install the libraries we are going to use. In this case [Playwright Library](https://playwright.dev/docs/library) and [wait-on](https://github.com/jeffbski/wait-on).
+First of all, you need to install the libraries. We need [Playwright Library](https://playwright.dev/docs/library) and [wait-on](https://github.com/jeffbski/wait-on).
 
 ```bash
 yarn add --dev playwright wait-on
 ```
 
-> Note we are installing [Playwright Library](https://playwright.dev/docs/library), which can be used to automate a browser from a Node JS script.
-> I recommend you to try [Playwright test](https://playwright.dev/docs/intro) too if you want to add end-to-end tests to any of your current applications, it's great!
+> Note we are installing ["Playwright Library"](https://playwright.dev/docs/library) to automate a browser from a Node JS script.
+> I recommend you to try ["Playwright Test"](https://playwright.dev/docs/intro) too. It's perfect for adding end-to-end tests to any of your current applications!
 
-Now we need to create our `NodeJs` script. Assuming we are going to create it on the root of our project. We will:
+Now we need to create our `NodeJs` script. Assuming we are going to place it at the root of our project. We will:
 
-- Trigger a build of our `sveltekit` application and then preview it. With the `wait-on"` library we ensure that the server is ready before the crawling starts.
-- Open a chromiun instance with playwright and take a screenshot of our previously built url.
-- After navigating to the target location, we locate the target element and save it to a file as png!
+- Build our `Svelte Kit` application for production and preview it on a given port. With the `wait-on` library, we ensure that the server is ready before crawling starts.
+- Open a `chromium` instance with Playwright and navigate to the URL of our recently created page.
+- Once we are there, we will locate the target element and save it to a file as `.png`!
 
 ```js
 import waitOn from 'wait-on';
@@ -253,19 +253,13 @@ main()
   });
 ```
 
-Finally you can run it with node:
+Finally, you can run it with `node`.
 
 ```bash
 node createOpenGraphImage.js
 ```
 
-Now you can take as many screenshoots as you want using a loop. Normally the entries
-on the loop could be esaily be generated based on your markdown files. You can use any
-[glob library](https://github.com/sindresorhus/globby) you like to read all the files.
-
-Another alternative is to **crawl all of your web pages links**. Then, using the `og:title` you can create the image if missing. Please let me know in the comments if you want to know how to do that!
-
-Assuming we have some hardcoded entries we can update our code to something like this:
+With a for loop, we will have all the screenshots we want.
 
 ```js
 const entries = [
@@ -282,14 +276,17 @@ for (let entry of entries) {
 }
 ```
 
-## Going deeper
+Once you have understood this process, you can take many screenshots as you wish. For example, you can use a [glob library](https://github.com/sindresorhus/globby) to get all the markdown files inside a folder. However, sometimes it might be simpler to use a crawler and traverse all the links within your app.
 
-Once you have understand this process, you can esaily:
+## What's next?
 
-- Integrate this process on your CI system, for example after PR.
-- Generate images for each of your links crawling them recurisvely with playwright and requesting them on demand.
-- Add extra information to the image like tags.
+After this introduction, you can go deeper with some of these ideas:
 
-Now you are ready to unistall Photoshop and style everything with CSS :sunglasses:
+- Integrate this process into your CI system at PR. This way, you will never forget to create an image.
+- Generate images for each of your links. Crawl them recursively with Playwright and request them on demand.
+- Customize the look and feel of the image. You can use tags, swap the SVG pattern, change the font, etc.
+- On your dynamic site, you can create a small `NodeJs` server. There you will generate the images just in time. After generation, you will persist them. If the file already exists, your reverse proxy or CDN will serve that file for you.
 
-::: github-link https://github.com/angelblanco/angelblanco.dev You can check the source code of this process for this page on Github
+Now you are ready to uninstall Photoshop and style everything with CSS :sunglasses:
+
+::: github-link https://github.com/angelblanco/angelblanco.dev You can check the source code of the process I use for this page on Github
