@@ -2,7 +2,7 @@
 id: 6
 title: Generate Open Graph images with Playwright and Svelte Kit
 share_tweet: Generate open graph images with @playwrightweb and @sveltejs"
-date: '2022-05-21'
+date: '2022-05-22'
 description: Sharing your URLs to social media it's important. Getting a beautiful image preview could make a difference. Learn how to generate them with a Sveltekit route and a Playwright node script.
 shareImage: '/share/open-graph-images-svelte-kit.png'
 intro: |

@@ -86,10 +86,10 @@
 <section bind:this={sectionContainer} class="section reading-width">
   <div class="profile-columns is-centered">
     <div>
-      <figure class="image is-128x128">
+      <figure class="image profile__image">
         <img
           class="is-rounded"
-          src="/images/me-650x650.jpeg"
+          src="/images/profile-600x600.jpeg"
           alt="It's me, Ángel!"
         />
       </figure>
@@ -97,7 +97,7 @@
   </div>
 
   <div>
-    <div class="buttons has-addons is-pulled-right mt-2 mb-0 lang-button">
+    <div class="buttons has-addons profile__buttons mt-2 mb-0 lang-button">
       {#each allowedLangs as allowedLang}
         <a
           rel="preload"
@@ -143,5 +143,30 @@
     top: -3.5rem; // - .section padding
     visibility: hidden;
     pointer-events: none;
+  }
+
+  .profile__buttons {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 2rem !important;
+  }
+
+  .profile__image {
+    width: 250px;
+    height: 250px;
+  }
+
+  @include tablet() {
+    .profile__buttons {
+      float: right;
+      width: auto;
+      justify-content: flex-start;
+      margin-bottom: 0 !important;
+    }
+
+    .profile__image {
+      width: 300px;
+      height: 300px;
+    }
   }
 </style>
