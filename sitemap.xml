@@ -19,16 +19,19 @@
     <loc>https://angelblanco.dev/tag/docker</loc>
   </url>
   <url>
-    <loc>https://angelblanco.dev/articles/add-gtag-analytics-to-sapper</loc>
+    <loc>https://angelblanco.dev/articles/open-graph-images-svelte-kit</loc>
   </url>
   <url>
     <loc>https://angelblanco.dev/tag/svelte</loc>
   </url>
   <url>
-    <loc>https://angelblanco.dev/tag/blog</loc>
+    <loc>https://angelblanco.dev/articles/add-gtag-analytics-to-sapper</loc>
   </url>
   <url>
     <loc>https://angelblanco.dev/articles/simple-svelte-back-to-top</loc>
+  </url>
+  <url>
+    <loc>https://angelblanco.dev/tag/blog</loc>
   </url>
   <url>
     <loc>https://angelblanco.dev/articles/install-docker-and-docker-compose-on-ubunt-20-04</loc>
@@ -40,7 +43,7 @@
     <loc>https://angelblanco.dev/tag/github</loc>
   </url>
   <url>
-    <loc>https://angelblanco.dev/articles/welcome</loc>
+    <loc>https://angelblanco.dev/articles/2</loc>
   </url>
   <url>
     <loc>https://angelblanco.dev/libraries</loc>
@@ -50,5 +53,11 @@
   </url>
   <url>
     <loc>https://angelblanco.dev/about/es</loc>
+  </url>
+  <url>
+    <loc>https://angelblanco.dev/articles/welcome</loc>
+  </url>
+  <url>
+    <loc>https://angelblanco.dev/articles/</loc>
   </url>
 </urlset>
