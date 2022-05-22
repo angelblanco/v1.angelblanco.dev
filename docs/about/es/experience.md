@@ -13,19 +13,18 @@ published: false # This is not an article
 ### 2017-2018
 
 - Completé mi [Máster en ingeniería informática](https://www.usal.es/master-ingenieria-informatica). El proyecto de fin de máster estaba hecho con Laravel y Vue.
-- Me uní a [Beonprice](https://beonprice.com/product) al comienzo del máster como parte de las prácticas en empresa. Después de una relación satisfactoria por ambas partes me contrataron como desarrollador junior. Mis primeras tareas en la compañía incluían fundamentalmente el desarrollo de [ETL](https://es.wikipedia.org/wiki/Extract,_transform_and_load) con `php`, `symfony` y `laravel`:
+- Me uní a [Beonprice](https://beonprice.com/product) al comienzo del máster como parte de las prácticas en empresa. Después de una relación satisfactoria por ambas partes me contrataron como desarrollador junior. Mis primeras tareas en la compañía incluían fundamentalmente el desarrollo de [ETL](https://es.wikipedia.org/wiki/Extract,_transform_and_load) con `php`, `symfony` y `laravel`.
 - Web crawling.
 - Integraciones con otras empresas de la industria hotelera. Para ello era necesario tener conocimiento de APIS, JSON, XML, SFTP, SMTP, etc.
 
 ### 2018-present
 
-Después de un año desarrollando integraciones pase a ser desarrollador full-stack centrado en la solución web. En 2019 fuí ascendido a arquitecto software y desde 2020 soy tech leader gestionando un pequeño equipo de 4 desarrolladores.
+Después de un año desarrollando integraciones pase a ser desarrollador full-stack centrado en todo el producto web. En 2019 fuí ascendido a arquitecto software y desde 2020 soy tech leader gestionando un pequeño equipo de 4 desarrolladores.
 
 - He liderado todo tipo de proyectos dentro de la compañía que incluyen visualización de datos, dashboarding, reporting, business intelligence, envíos de precios en tiempo real para los hoteles, vistas de configuración, notificaciones...
 - Parte de mi responsabilidad incluye trabajar codo con codo con el equipo de producto para refinar y
   materializar los requisitos.
 - He formado y asistido a las nuevas incorporaciones a la compañía. Siempre intento hacer crecer al equipo profesionalmente involucrando a todos en revisiones de código con Pull Requests.
-- Trabajo codo con codo con el equipo de producto para pulir los requisitos.
 - He desarrollado diferentes microservicios. Entre ellos diferentes APIs de gran volumen de datos donde he debido gestionar optimización de consultas, monitorización, autenticación, autorización, caché, alta
   disponibilidad y multi-tenancy.
 - Alta involucración en la profesionalización de la empresa:

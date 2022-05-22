@@ -9,28 +9,30 @@
       return { props: { article: data } };
     }
 
-    // Fallthrough route
+    return {
+      status: 404,
+    };
   }
 </script>
 
 <script>
   import { onMount } from 'svelte';
-  import Content from './../../components/Content.svelte';
+  import Content from '../../components/Content.svelte';
   import Head from '../../components/Head.svelte';
-  import { documentOffset } from './../../components/utils';
-  import MediaArticleHead from './../../components/MediaArticleHead.svelte';
-  import ArticleSidebar from './../../components/ArticleSidebar.svelte';
-  import ArticleFooter from './../../components/ArticleFooter.svelte';
-  import NProgress from './../../components/NProgress.svelte';
-  import TableOfContent from './../../components/TableOfContent.svelte';
-  import DisqusComments from './../../components/DisqusComments.svelte';
-  import { setArticle } from './../../stores/article';
+  import { documentOffset } from '../../components/utils';
+  import MediaArticleHead from '../../components/MediaArticleHead.svelte';
+  import ArticleSidebar from '../../components/ArticleSidebar.svelte';
+  import ArticleFooter from '../../components/ArticleFooter.svelte';
+  import NProgress from '../../components/NProgress.svelte';
+  import TableOfContent from '../../components/TableOfContent.svelte';
+  import DisqusComments from '../../components/DisqusComments.svelte';
+  import { setArticle } from '../../stores/article';
   import {
     setTitle,
     setOgDescription,
     setOgImageUrl,
     setOgUrl,
-  } from './../../stores/meta';
+  } from '../../stores/meta';
   export let article;
 
   let articleSectionContainer;

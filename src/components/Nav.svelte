@@ -10,15 +10,6 @@
 <nav class="navbar container is-hidden-print" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="/">
-      <!-- 
-      <div class="image is-24x24" style="margin-right: 10px;">
-        <img
-          class="is-rounded"
-          src="/images/me-128x128.jpeg"
-          alt={import.meta.env.VITE_APP_BASE_TITLE}
-        />
-      </div>
-       -->
       <img alt="logo" src="/logo.png" width="160" height="24" />
     </a>
 

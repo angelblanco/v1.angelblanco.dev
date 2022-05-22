@@ -1,4 +1,6 @@
 import BaseCommand from './BaseCommand.js';
+import fs from 'fs';
+import trimStart from 'lodash/trimStart.js';
 
 export default class VerifyArticlesCommand extends BaseCommand {
   constructor(program) {
@@ -81,6 +83,17 @@ export default class VerifyArticlesCommand extends BaseCommand {
       attributes.title.length < 10
     ) {
       error('Title must be present with at least 10 characters.');
+    }
+
+    if (
+      attributes.shareImage &&
+      attributes.shareImage.startsWith('/') &&
+      !fs.existsSync(this.staticPath(trimStart(attributes.shareImage, '/')))
+    ) {
+      error(
+        'Share image does not exist: ' +
+          this.staticPath(trimStart(attributes.shareImage, '/'))
+      );
     }
 
     if (!attributes.intro || attributes.intro.length < 100) {

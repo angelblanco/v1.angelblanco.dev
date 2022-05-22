@@ -121,3 +121,7 @@
     page-break-inside: avoid;
   }
 }
+
+img {
+  image-rendering: -webkit-optimize-contrast;
+}

@@ -5,11 +5,12 @@ share_tweet: "Add Google Analytics' gtag to sapper with @sveltejs"
 tweet: ''
 date: '2020-10-28'
 description: 'Step by step guide to create a component that tracks your sapper application every time the user changes its URL with virtual page views.'
+shareImage: '/share/add-gtag-analytics-to-sapper.png'
 intro: |
   Adding Google Analytics support to a single page application that changes the URL on the client-side could be tricky. It's not as simple as adding tracking to a server-side rendered application that refreshes its scripts on every page hit.
 
   To get the real flow of a user across your Sapper website, you need to track all the URL changes that happen when the user follows a Svelte link. Let's simplify the tracking of the pageview event on Sapper with a component without using any third party library!
-tags: ['svelte', 'js', 'blog']
+tags: ['svelte', 'js']
 ---
 
 ## In-depth tutorial

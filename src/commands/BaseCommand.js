@@ -55,6 +55,14 @@ export default class BaseCommand {
     );
   }
 
+  staticPath(subPath = '') {
+    return this.path.resolve(
+      path.dirname(fileURLToPath(import.meta.url)),
+      '../../static',
+      subPath
+    );
+  }
+
   articlePath(subPath = '') {
     return this.path.resolve(this.docPath('articles'), subPath);
   }

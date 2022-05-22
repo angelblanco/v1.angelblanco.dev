@@ -1,4 +1,4 @@
-import waitPort from 'wait-port';
+import waitOn from 'wait-on';
 import { exec } from 'child_process';
 import dotenv from 'dotenv';
 import isUrl from 'is-url';
@@ -31,11 +31,10 @@ const url = `${options.protocol}://${options.host}:${options.port}`;
 const server = exec(`yarn build && yarn sirv --port ${options.port}`);
 
 const main = async () => {
-  const open = await waitPort(options);
-
-  if (!open) {
-    throw new Error('Unable to open server');
-  }
+  await waitOn({
+    resources: [`${options.protocol}://${options.host}:${options.port}/`],
+    timeout: options.timeout,
+  });
 
   await new Promise((resolve, reject) => {
     console.log(`Start sitemap generation for: ${url}\n`);

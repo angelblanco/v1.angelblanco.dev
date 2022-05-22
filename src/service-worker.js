@@ -59,7 +59,7 @@ self.addEventListener('fetch', (event) => {
   // cache if the user is offline. (If the pages never change, you
   // might prefer a cache-first approach to a network-first one.)
   event.respondWith(
-    caches.open(`offline${timestamp}`).then(async (cache) => {
+    caches.open(`offline${version}`).then(async (cache) => {
       try {
         const response = await fetch(event.request);
         cache.put(event.request, response.clone());

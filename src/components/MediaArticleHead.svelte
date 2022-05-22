@@ -15,7 +15,7 @@
   }
 </script>
 
-<article class="media">
+<article class="media media-article-head">
   <figure class="media-left">
     <a
       href="/about"
@@ -25,7 +25,7 @@
     >
       <img
         class="is-rounded"
-        src="/images/me-128x128.jpeg"
+        src="/images/profile-128x128.jpeg"
         alt="user"
         width="128"
         height="128"
@@ -62,6 +62,9 @@
 </article>
 
 <style lang="scss">
+  .media-article-head {
+    align-items: center;
+  }
   .media-title-container {
     margin-bottom: 0.5rem;
     display: flex;

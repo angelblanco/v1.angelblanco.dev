@@ -10,7 +10,7 @@ export const defaults = {
   ogTitle: import.meta.env.VITE_APP_BASE_TITLE,
   ogDescription:
     'A personal web development blog focused on Javascript, Vue, Svelte, PHP, Laravel, Docker, back-end, front-end, microservices, Linux, Zsh, and more.',
-  ogImageUrl: getCanonicalUrlForFile('/images/share-default.png'),
+  ogImageUrl: getCanonicalUrlForFile('/images/share-angel-blanco-dev.png'),
   ogUrl: null,
 };
 

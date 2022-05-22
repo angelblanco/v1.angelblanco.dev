@@ -5,6 +5,7 @@ share_tweet: 'Simple back to top component with @sveltejs'
 tweet: '1311017385768480768'
 date: '2020-09-26'
 description: 'Learn how to create a back to top button in Svelte 3.'
+shareImage: '/share/simple-svelte-back-to-top.png'
 intro: |
   Creating a button that returns the user to the top the page is a simple task that could be easily achieved with any javascript framework and some basic styling. Learning how to build this kind of simple components could be a good quick start for Svelte 3.
 tags: ['svelte', 'js', 'blog']
