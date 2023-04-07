@@ -40,7 +40,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.1.0",
     "@rollup/plugin-replace": "^4.0.0",
     "@sveltejs/adapter-static": "^1.0.0-next.21",
-    "@sveltejs/kit": "^1.0.0-next.188",
+    "@sveltejs/kit": "^1.15.2",
     "bulma": "^0.9.0",
     "chalk": "^5.0.1",
     "cypress": "^9.5.2",
