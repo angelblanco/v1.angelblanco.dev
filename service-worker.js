@@ -1,5 +1,5 @@
 const build = [
-  "/_app/start-4055b8b9.js",
+  "/_app/start-17025aac.js",
   "/_app/pages/__layout.svelte-16418dae.js",
   "/_app/assets/pages/__layout.svelte-0e409964.css",
   "/_app/pages/__error.svelte-74d825f5.js",
@@ -68,7 +68,7 @@ const files = [
   "/share/welcome.png",
   "/sitemap.xml"
 ];
-const version = "1653237639210";
+const version = "1759620107548";
 const ASSETS = `cache${version}`;
 const to_cache = build.concat(files);
 const cached = new Set(to_cache);
