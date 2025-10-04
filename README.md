@@ -1,15 +1,6 @@
-# My personal page angelblanco.dev
+# WARNING: Deprecated 
 
-This the project behind [angelblanco.dev](https://angelblanco.dev). It's built with [Svelte Kit](https://kit.svelte.dev/).
-You can run the project in your local environment with:
+See the new repo at [github/angelblanco.dev](https://github.com/angelblanco/angelblanco.dev)
 
-```bash
-yarn install
-yarn dev
-```
-
-For customization you can copy the default `.env.example` and fit it to your needs.
-
+This the first iteration of [angelblanco.dev](https://angelblanco.dev). It was built with [Svelte Kit](https://kit.svelte.dev/).
 You can always reach me on [Github](https://github.com/angelblanco) or at my [Twitter](https://twitter.com/angelblancodev).
-
-:wave::wave:
