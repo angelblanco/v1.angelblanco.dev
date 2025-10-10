@@ -1,0 +1,1 @@
+import{_ as i,a as o,e as m,c as s,t as _,f as S}from"./canonical-0a468a43.js";var c=i,f=o,E=m,a=s,u=_,x=S;function l(e,r,t){if(e=u(e),e&&(t||r===void 0))return e.slice(0,x(e)+1);if(!e||!(r=c(r)))return e;var n=a(e),d=E(n,a(r))+1;return f(n,0,d).join("")}var T=l;export{T as t};
