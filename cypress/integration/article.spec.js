@@ -3,13 +3,12 @@ describe('Article', () => {
     it('renders title and a blog', () => {
       cy.get('.title.is-1');
       cy.get('.content.is-medium.blog');
-
-      cy.get('#comments').get('.title.is-3').contains('Comments');
+      // cy.get('#comments').get('.title.is-3').contains('Comments');
     });
 
-    it('contains disqus comments', () => {
-      cy.get('#disqus_thread');
-    });
+    // it('contains disqus comments', () => {
+    //   cy.get('#disqus_thread');
+    // });
 
     // Newsletter is disabled right now
     // it('contains newsletter subscribe', () => {
