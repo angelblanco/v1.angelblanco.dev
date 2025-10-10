@@ -17,7 +17,7 @@ Cypress.Commands.add('checkMeta', () => {
         expect(content).not.to.be.empty;
 
         if (['og:url', 'og:image'].includes(ogAttr)) {
-          cy.request(content.replace('https://angelblanco.dev', '/'));
+          cy.request(content.replace('https://v1.angelblanco.dev', '/'));
         }
       }
     );
@@ -37,7 +37,7 @@ Cypress.Commands.add('checkMeta', () => {
       expect(content).not.to.be.empty;
 
       if (['twitter:image'].includes(twitterAttr)) {
-        cy.request(content.replace('https://angelblanco.dev', '/'));
+        cy.request(content.replace('https://v1.angelblanco.dev', '/'));
       }
     });
   });

@@ -289,4 +289,4 @@ After this introduction, you can go deeper with some of these ideas:
 
 Now you are ready to uninstall Photoshop and style everything with CSS :sunglasses:
 
-::: github-link https://github.com/angelblanco/angelblanco.dev You can check the source code of the process I use for this page on Github
+::: github-link https://github.com/angelblanco/v1.angelblanco.dev You can check the source code of the process I use for this page on Github

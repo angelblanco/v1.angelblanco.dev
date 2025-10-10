@@ -1,5 +1,6 @@
 <script>
   import { interval } from './utils';
+  import LegacyNote from './LegacyNote.svelte';
 
   const libraries = [
     { tag: 'framework', title: 'svelte-kit', link: 'https://kit.svelte.dev/' },
@@ -24,6 +25,8 @@
   }, 2000);
 </script>
 
+<LegacyNote />
+
 <footer class="footer {flavour}" aria-hidden="true">
   <hr class="footerRule is-hidden-print" />
 
@@ -36,7 +39,7 @@
 
     <p class="footer-github is-hidden-print">
       <a
-        href="https://github.com/angelblanco/angelblanco.dev"
+        href="https://github.com/angelblanco/v1.angelblanco.dev"
         class="button"
         target="__blank"
       >

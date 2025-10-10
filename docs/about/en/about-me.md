@@ -22,7 +22,7 @@ backend microservices deployed to [Kubernetes](https://kubernetes.io/).
 
 Handling TBs of data has led me to expand my skills with [MongoDB](https://www.mongodb.com/), [Redis](https://redis.io/) and [PostgreSQL](https://www.postgresql.org/).
 
-::: github-link https://github.com/angelblanco/angelblanco.dev My blog is made with Sveltekit and open-sourced on Github
+::: github-link https://github.com/angelblanco/v1.angelblanco.dev My blog is made with Sveltekit and open-sourced on Github
 
 In the past, I've also briefly worked with `Swift` as an `iOS` developer. Finally, you can find a brief resume of some other libraries that I know here:
 

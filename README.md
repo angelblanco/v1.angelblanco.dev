@@ -1,4 +1,4 @@
-# WARNING: Deprecated 
+# WARNING: Deprecated
 
 See the new repo at [github/angelblanco.dev](https://github.com/angelblanco/angelblanco.dev)
 

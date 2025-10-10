@@ -53,7 +53,7 @@
       </div>
 
       <div class="og__ref">
-        <span class="og__ref-link"> https://angelblanco.dev </span>
+        <span class="og__ref-link"> https://v1.angelblanco.dev </span>
         a web development blog.
       </div>
     </div>

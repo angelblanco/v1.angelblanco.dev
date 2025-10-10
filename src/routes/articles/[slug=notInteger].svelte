@@ -89,12 +89,6 @@
   <ArticleFooter />
 </section>
 
-<section class="section reading-width is-hidden-print" id="comments">
-  <h3 class="title is-3">Comments</h3>
-
-  <DisqusComments {article} />
-</section>
-
 <div bind:this={afterArticleContainer} class="afterArticleContainer" />
 
 <!-- Uncomment to have shortlinks

@@ -1,7 +1,7 @@
 <script>
   export let segment;
   export let isHamburgerOpen = false;
-
+  import LegacyNote from './LegacyNote.svelte';
   function closeHamburger() {
     isHamburgerOpen = false;
   }
@@ -58,7 +58,7 @@
 
       <a
         on:click={closeHamburger}
-        href={import.meta.env.VITE_PROJECT_GITHUB_URL}
+        href="https://github.com/angelblanco"
         target="__blank"
         class="navbar-item"
         aria-label="My Github page"
@@ -72,6 +72,7 @@
     </div>
   </div>
 </nav>
+<LegacyNote />
 
 <style lang="scss">
   $nav-transition-duration: 0.2s;

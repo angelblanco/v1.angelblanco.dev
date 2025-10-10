@@ -19,7 +19,7 @@ muchas vistas y todos sus microservicios, que actualmente desplegamos en [Kubern
 
 Trabajar con TBs de datos me ha llevado a formarme sobre [MongoDB](https://www.mongodb.com/), [Redis](https://redis.io/) y [PostgreSQL](https://www.postgresql.org/).
 
-::: github-link https://github.com/angelblanco/angelblanco.dev Mi blog lo he hecho con Sveltekit y lo puedes ver en Github
+::: github-link https://github.com/angelblanco/v1,angelblanco.dev Mi blog lo he hecho con Sveltekit y lo puedes ver en Github
 
 En el pasado trabajé brevemente desarrollando aplicaciones para `iOS` con `Swift`. Aquí abajo puedes encontrar también un breve resumen de otras tecnologías con las que me siento agusto:
 
